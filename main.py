@@ -16,17 +16,25 @@ from config.tts_config import TTSConfig
 from core.llm_engine import LLMEngine
 from core.tts_engine import TTSEngine
 
+from utils.text_processing import SentenceSplitter
+from utils.audio_queue import AudioQueue
+
 # Configure logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.ERROR  # Keep it quiet for CLI usage
 )
+logging.getLogger("httpx").setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
 class VoiceAssistant:
     def __init__(self, llm_config: LLMConfig, tts_config: TTSConfig):
         self.llm = LLMEngine(llm_config)
         self.tts = TTSEngine(tts_config)
+        
+        # New streaming components
+        self.audio_queue = AudioQueue(self.tts)
+        self.splitter = SentenceSplitter()
         self.history = []
         
         print(f"Initializing Voice Assistant...")
@@ -34,13 +42,16 @@ class VoiceAssistant:
         print(f"TTS: {tts_config.engine}")
         if tts_config.engine == "piper":
             print(f"Voice: {tts_config.piper_voice}")
-        
+            
     def run_interactive(self):
         """Run the main interaction loop."""
         print("\n" + "=" * 50)
         print("🎙️  Voice Assistant Ready!")
         print("Type 'quit', 'exit', or press Ctrl+C to stop.")
         print("=" * 50 + "\n")
+        
+        # Start audio worker thread
+        self.audio_queue.start()
         
         try:
             while True:
@@ -56,26 +67,36 @@ class VoiceAssistant:
                 
                 print("Assistant: ", end="", flush=True)
                 
-                # Streaming generation with TTS processing
+                # Streaming generation loop
                 full_response = ""
                 
-                # Simple implementation: Wait for full response, then speak
-                # (For real streaming TTS, we'd need a sentence buffer implementation)
-                print("(thinking...)", end="\r")
+                # Use streaming chat from LLM engine
+                # Reset splitter buffer for new turn
+                self.splitter.buffer = ""
                 
-                response_text = self.llm.chat(self.history)
-                print(f"{response_text}\n")
+                for chunk in self.llm.stream_chat(self.history):
+                    # Print chunk to terminal immediately
+                    print(chunk, end="", flush=True)
+                    full_response += chunk
+                    
+                    # Process for sentences
+                    for sentence in self.splitter.process(chunk):
+                        self.audio_queue.add(sentence)
                 
-                self.history.append({'role': 'assistant', 'content': response_text})
+                # Flush remaining text (incomplete sentence at end)
+                for sentence in self.splitter.flush():
+                    self.audio_queue.add(sentence)
                 
-                # Speak response
-                print("🔊 Speaking...", end="\r")
-                self.tts.speak(response_text)
-                print(" " * 20, end="\r")  # Clear speaking status
+                print("\n")
+                
+                self.history.append({'role': 'assistant', 'content': full_response})
                 
         except KeyboardInterrupt:
             print("\n\nGoodbye! 👋")
+            self.audio_queue.stop()
             sys.exit(0)
+        finally:
+            self.audio_queue.stop()
             
 def parsing_args():
     parser = argparse.ArgumentParser(description="Self-Hosted Voice Assistant")
