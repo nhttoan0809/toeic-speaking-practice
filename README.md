@@ -1,346 +1,275 @@
-# Self-Hosted LLM with TTS Integration
+# Self-Hosted LLM Voice Assistant
 
-This project provides verification scripts and setup instructions for self-hosting a Large Language Model (LLM) with Text-to-Speech (TTS) capabilities on Apple M4 Pro (24GB RAM).
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Status](https://img.shields.io/badge/status-stable-green)
+![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)
 
-## 📋 Quick Start
+An enterprise-grade, privacy-focused voice assistant framework designed for **Apple Silicon** and local environments. It strictly decouples **Language Modeling (LLM)** from **Text-to-Speech (TTS)**, allowing developers to compose powerful voice applications with zero external dependencies for data processing.
+
+---
+
+## 📚 Table of Contents
+
+- [Introduction](#introduction)
+- [Key Features](#key-features)
+- [Architecture](#architecture)
+- [Folder Structure](#folder-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+  - [Basic Text Mode](#basic-text-mode)
+  - [Streaming Mode](#streaming-mode)
+  - [Voice Integration](#voice-integration)
+- [Configuration](#configuration)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## 👋 Introduction
+
+The **Self-Hosted LLM Voice Assistant** is a modular framework built to bring low-latency, conversational AI to local hardware. Unlike cloud-based solutions (Siri, Alexa), this project runs entirely on your device, ensuring **100% data privacy** and **no subscription fees**.
+
+It leverages **Ollama** for efficient LLM inference and supports multiple TTS engines (Edge-TTS, Piper) with a focus on modularity. Whether you need a simple chatbot, a streaming assistant, or a full voice interface, this framework provides the building blocks.
+
+---
+
+## 🚀 Key Features
+
+- **Strict Service Decoupling**: LLM and TTS logic are isolated in independent services (`services/llm` and `services/tts`). Zero spaghetti code.
+- **Dual Response Modes**: Support for both **full-text buffering** (for coherence) and **streaming tokens** (for low latency).
+- **In-Memory Audio Pipeline**: Audio is generated as raw bytes and played directly from memory. No temporary files or disk I/O latency.
+- **Apple Silicon Optimized**: Native Metal support via Ollama for blazing fast inference on M1/M2/M3/M4 chips.
+- **Pluggable Engines**:
+  - **LLM**: Switch between Ollama, LlamaCpp, or generic APIs easily.
+  - **TTS**: Swap between Edge-TTS (high quality online) and Piper (100% offline).
+
+---
+
+## 🏗 Overall Architecture
+
+The system follows a CLEAN architecture pattern, separating core engines from business logic services. Integration happens only at the application layer (Examples).
+
+```mermaid
+graph TD
+    subgraph "Application Layer (Examples)"
+        Client[Client Script]
+    end
+
+    subgraph "Service Layer"
+        LLM_S[LLM Service]
+        TTS_S[TTS Service]
+    end
+
+    subgraph "Core Engine Layer"
+        Ollama[Ollama Engine]
+        EdgeTTS[Edge/Piper Engine]
+    end
+
+    subgraph "Hardware/System"
+        GPU[Apple Neural Engine]
+        Audio[System Audio / Pygame]
+    end
+
+    Client -->|Text Prompt| LLM_S
+    LLM_S -->|Context/History| Ollama
+    Ollama -->|Inference| GPU
+
+    Client -->|Response Text| TTS_S
+    TTS_S -->|Text| EdgeTTS
+    EdgeTTS -->|Audio Bytes| Client
+    Client -->|Bytes| Audio
+```
+
+---
+
+## 📂 Folder Structure
+
+We maintain a flat, predictable structure for ease of navigation.
+
+```bash
+self-host-llm/
+├── config/              # Centralized configuration (Models, Voice params)
+├── core/                # Low-level wrappers for external tools (Ollama, EdgeTTS)
+├── services/            # Pure Business Logic
+│   ├── llm/             # LLM Service (State management, History)
+│   └── tts/             # TTS Service (Stateless text-to-bytes)
+├── utils/               # Shared Utilities (Audio Player, Text Processing)
+├── examples/            # 🟢 READY-TO-RUN Examples (Start Here!)
+├── tests/               # Unit and Integration verification scripts
+└── requirements.txt     # Python dependencies
+```
+
+---
+
+## ⚡️ Getting Started
 
 ### Prerequisites
 
-1. **macOS Sonoma (v14) or newer**
-2. **Apple Silicon (M4 Pro with 24GB RAM)**
-3. **Python 3.8+**
+- **macOS** (Recommended) or Linux.
+- **Python 3.10+** installed.
+- **Ollama** installed and running (`brew install ollama`).
 
-### Installation Steps
+### Installation
 
-#### 1. Install Ollama
+1.  **Clone the repository**
 
-Download and install Ollama from [ollama.ai](https://ollama.ai/download) or use Homebrew:
+    ```bash
+    git clone https://github.com/yourusername/self-host-llm.git
+    cd self-host-llm
+    ```
 
-```bash
-brew install ollama
-```
+2.  **Create a Virtual Environment**
 
-Start Ollama service:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate
+    ```
 
-```bash
-ollama serve
-```
+3.  **Install Dependencies**
 
-#### 2. Download a Model
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Choose one of the recommended models:
+4.  **Download Model**
+    Ensure Ollama is running and pull your preferred model:
+    ```bash
+    ollama pull mistral-small
+    ```
 
-```bash
-# Option A: Mistral Small 3 (24B) - Best balance for 24GB RAM
-ollama pull mistral-small
+---
 
-# Option B: Qwen QwQ (32B) - Advanced reasoning
-ollama pull qwq:32b
+## 🎮 Usage
 
-# Option C: Qwen2.5 Coder (32B) - Best for coding tasks
-ollama pull qwen2.5-coder:32b
-```
+We provide **4 distinctive examples** demonstrating how to compose the services.
 
-The download will take some time (~14-18GB depending on model).
+### 1. Basic Text Mode
 
-#### 3. Set Up Python Environment
-
-```bash
-# Create virtual environment (in this directory)
-python3 -m venv venv
-
-# Activate it
-source venv/bin/activate
-
-# Install Python dependencies
-pip install ollama piper-tts
-
-# Optional: Install edge-tts as alternative
-pip install edge-tts
-```
-
-#### 4. Download TTS Voice Models (for Piper)
+Simple Q&A with full-text response.
 
 ```bash
-# Create directory for TTS models
-mkdir -p ~/tts-models
-cd ~/tts-models
-
-# Download Piper voice model (en_US-lessac-medium)
-wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx
-wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx.json
+python examples/01_basic_text.py
 ```
 
-**Alternative:** If you prefer Edge-TTS (requires internet), skip the Piper model download.
+### 2. Streaming Mode
 
-## 🧪 Running Verification Tests
-
-### Test 1: Verify LLM
+ChatGPT-style typewriter effect.
 
 ```bash
-python tests/verify_llm.py
+python examples/02_streaming_text.py
 ```
 
-This tests:
+### 3. Text with Audio
 
-- Ollama connection
-- Model response generation
-- Basic natural language understanding
-
-**Options:**
+Generates the full answer, then reads it aloud. Best for short, coherent answers.
 
 ```bash
-# Test with different model
-python tests/verify_llm.py --model qwq:32b
-
-# See all options
-python tests/verify_llm.py --help
+python examples/03_text_with_audio.py
 ```
 
-### Test 2: Verify TTS
+### 4. Streaming + Audio (Post-Collection)
+
+Streams text to the screen for immediate visual feedback, while buffering for audio playback at the end.
 
 ```bash
-# Test Piper TTS
-python tests/verify_tts.py --engine piper
-
-# Test Edge-TTS (requires internet)
-python tests/verify_tts.py --engine edge-tts
+python examples/04_streaming_and_audio.py
 ```
 
-This tests:
+---
 
-- TTS engine installation
-- Audio file generation
-- Audio playback
+## 🧩 Core Services API
 
-**Options:**
+The repository's core value lies in its clean, decoupled Service APIs. These services abstract away the complexity of underlying engines.
+
+### 1. `LLMService`
+
+Located in `services/llm/llm_service.py`. Handles conversational state and text generation.
+
+```python
+from services.llm.llm_service import LLMService
+
+llm = LLMService(config)
+
+# 1. Manage Conversation History
+llm.add_user_message("Hello!")
+llm.add_assistant_message("Hi there.")
+
+# 2. Generate Full Text (Blocking)
+response = llm.generate_text()
+# Returns: "I am a helpful assistant..."
+
+# 3. Generate Stream (Iterator)
+for chunk in llm.generate_stream():
+    print(chunk, end="", flush=True)
+# Yields: "I", " am", " a", " helpful"...
+```
+
+### 2. `TTSService`
+
+Located in `services/tts/tts_service.py`. Stateless service for audio synthesis.
+
+```python
+from services.tts.tts_service import TTSService
+
+tts = TTSService(config)
+
+# Convert Text to Audio Bytes (In-Memory)
+audio_data = tts.generate_audio("Hello world")
+
+if audio_data:
+    # Play directly or save to file
+    AudioPlayer.play_audio_data(audio_data)
+```
+
+---
+
+## ⚙️ Env Configuration
+
+Configuration is managed via Python dataclasses in `config/`. You can override defaults via CLI arguments in the examples.
+
+| Module  | File                     | Key Settings                                                             |
+| :------ | :----------------------- | :----------------------------------------------------------------------- |
+| **LLM** | `config/model_config.py` | `model_name` (default: `mistral-small`), `temperature`, `context_window` |
+| **TTS** | `config/tts_config.py`   | `engine` (edge-tts/piper), `voice`, `rate`, `pitch`                      |
+
+**Example Config Override (CLI):**
 
 ```bash
-# Custom text
-python tests/verify_tts.py --engine piper --text "Hello, world!"
-
-# Custom Piper model
-python tests/verify_tts.py --engine piper --model ~/my-models/voice.onnx
-
-# See all options
-python tests/verify_tts.py --help
+python examples/03_text_with_audio.py --model llama3 --tts-engine piper
 ```
 
-### Test 3: Verify Combined LLM + TTS
+---
 
-```bash
-python tests/verify_combined.py
-```
+## 🗺 Roadmap
 
-This tests the complete pipeline:
+- [x] **Phase 1**: Core Engine Implementation (Ollama + EdgeTTS)
+- [x] **Phase 2**: Service Decoupling & Modularization
+- [x] **Phase 3**: In-Memory Audio Pipeline (Zero-Latency)
+- [ ] **Phase 4**: Web Interface (Next.js/React)
+- [ ] **Phase 5**: Wake Word Detection
 
-1. LLM generates a response
-2. TTS converts response to speech
-3. Audio is played
+---
 
-**Options:**
+## 🤝 Contributing
 
-```bash
-# Different model and question
-python tests/verify_combined.py --model qwq:32b --question "What is Python?"
+We welcome contributions from the community!
 
-# Use Edge-TTS instead of Piper
-python tests/verify_combined.py --tts-engine edge-tts
+1.  Fork the project.
+2.  Create your feature branch (`git checkout -b feature/amazing-feature`).
+3.  Commit your changes (`git commit -m 'Add some amazing feature'`).
+4.  Push to the branch (`git push origin feature/amazing-feature`).
+5.  Open a Pull Request.
 
-# See all options
-python tests/verify_combined.py --help
-```
+---
 
-## ✅ Expected Results
+## � License
 
-### Successful LLM Test
+Distributed under the MIT License. See `LICENSE` for more information.
 
-```
-==============================================================
-LLM Verification Test
-==============================================================
+---
 
-Model: mistral-small
-Test Query: 'What is the capital of France? Answer in one sentence.'
-
-Connecting to Ollama and generating response...
-------------------------------------------------------------
-
-✓ Response received:
-The capital of France is Paris.
-
-------------------------------------------------------------
-✅ LLM test PASSED!
-==============================================================
-```
-
-### Successful TTS Test
-
-```
-==============================================================
-Piper TTS Verification Test
-==============================================================
-
-Model: /Users/username/tts-models/en_US-lessac-medium.onnx
-Text: 'Hello, this is a test of the text to speech system.'
-
-Generating speech...
-------------------------------------------------------------
-✓ Audio file created: verify_tts_output.wav
-✓ File size: 123456 bytes
-
-Playing audio...
-------------------------------------------------------------
-✅ Piper TTS test PASSED!
-==============================================================
-```
-
-### Successful Combined Test
-
-```
-==============================================================
-Combined LLM + TTS Verification Test
-==============================================================
-
-LLM Model: mistral-small
-TTS Engine: piper
-Question: 'What is artificial intelligence? Answer in one short sentence.'
-
-==============================================================
-
-[STEP 1/3] Generating LLM response...
-Asking LLM (mistral-small): 'What is artificial intelligence? Answer in one short sentence.'
-------------------------------------------------------------
-
-✓ LLM Response:
-Artificial intelligence is the simulation of human intelligence by machines.
-
-------------------------------------------------------------
-
-[STEP 2/3] Converting to speech...
-Converting to speech with Piper...
-✓ Audio generated: combined_test_piper.wav
-
-[STEP 3/3] Playing audio...
-Playing audio...
-✓ Audio played successfully
-
-==============================================================
-✅ Combined LLM + TTS test PASSED!
-==============================================================
-
-Summary:
-  • LLM responded successfully
-  • TTS converted 68 characters to speech
-  • Audio played successfully
-==============================================================
-```
-
-## 🔧 Troubleshooting
-
-### Ollama Issues
-
-**Problem:** `Connection refused` or `Ollama not running`
-
-```bash
-# Start Ollama service
-ollama serve
-
-# In another terminal, check if it's running
-ollama list
-```
-
-**Problem:** Model not found
-
-```bash
-# List downloaded models
-ollama list
-
-# Pull the required model
-ollama pull mistral-small
-```
-
-### Piper TTS Issues
-
-**Problem:** `piper: command not found`
-
-```bash
-# Reinstall piper-tts
-pip install --upgrade piper-tts
-```
-
-**Problem:** Model file not found
-
-```bash
-# Verify model exists
-ls -lh ~/tts-models/
-
-# Re-download if needed (see Installation Steps above)
-```
-
-### Edge-TTS Issues
-
-**Problem:** `edge-tts: command not found`
-
-```bash
-pip install edge-tts
-```
-
-**Problem:** Timeout or connection error
-
-- Edge-TTS requires internet connection
-- Check your network connection
-- Try again or use Piper instead
-
-## 📊 Model Recommendations
-
-| Model                 | Size (Q4) | Best For                              | RAM Usage |
-| --------------------- | --------- | ------------------------------------- | --------- |
-| **Mistral Small 3**   | ~14GB     | General NLU, balanced performance     | ~15GB     |
-| **Qwen QwQ 32B**      | ~18GB     | Advanced reasoning, complex questions | ~19GB     |
-| **Qwen2.5 Coder 32B** | ~18GB     | Code generation, technical tasks      | ~19GB     |
-| Llama 3.1 8B          | ~5GB      | Quick responses, simple tasks         | ~6GB      |
-
-All models run efficiently on Apple M4 Pro (24GB RAM) with Metal acceleration.
-
-## 🚀 Running the Full Application
-
-Now that you have verified the components, you can run the full interactive assistant:
-
-```bash
-# Run with default settings (Mistral Small + Edge-TTS)
-python main.py
-
-# Run with specific model
-python main.py --model qwq:32b
-
-# Switch to Piper TTS (offline)
-python main.py --tts-engine piper
-```
-
-### Key Features
-
-- **Interactive Chat**: Remembers conversation history
-- **Streaming Response**: Shows text as it generates
-- **Voice Output**: Reads responses aloud automatically
-- **Robustness**: Handles errors gracefully
-
-## 🎯 Next Steps
-
-Once all verification tests pass, you can:
-
-1. **Build the full application** - Create a complete LLM + TTS application (see implementation plan)
-2. **Experiment with models** - Try different models for different use cases
-3. **Customize TTS voices** - Download additional Piper voices from [Hugging Face](https://huggingface.co/rhasspy/piper-voices)
-4. **Integrate into your projects** - Use these scripts as foundation for your own applications
-
-## 📚 Additional Resources
-
-- [Ollama Documentation](https://ollama.ai/docs)
-- [Piper TTS Repository](https://github.com/rhasspy/piper)
-- [Edge-TTS Documentation](https://github.com/rhasspy/piper-voices)
-- [Implementation Plan](/.gemini/antigravity/brain/33b8ba41-70a6-440c-bd3d-9af6d71255e4/implementation_plan.md)
-
-## 📝 License
-
-These verification scripts are provided as-is for testing and development purposes.
+_Built with ❤️ for privacy and local AI._

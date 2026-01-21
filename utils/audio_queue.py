@@ -1,19 +1,15 @@
-import queue
-import threading
-import logging
-from typing import Optional
-from core.tts_engine import TTSEngine
+from tts_service import TTSService
+from audio_player import AudioPlayer
 
 logger = logging.getLogger(__name__)
 
 class AudioQueue:
     """
     Manages a queue of text sentences to be synthesized and played sequentially.
-    Crucial for streaming TTS where generation speed != playback speed.
     """
     
-    def __init__(self, tts_engine: TTSEngine):
-        self.tts = tts_engine
+    def __init__(self, tts_service: TTSService):
+        self.tts = tts_service
         self.queue = queue.Queue()
         self.is_running = False
         self.playback_thread = None
@@ -33,10 +29,8 @@ class AudioQueue:
         """Stop playback and clear queue."""
         self.is_running = False
         self._stop_event.set()
-        # Clear queue
         with self.queue.mutex:
             self.queue.queue.clear()
-        # Add Sentinel to unblock get() if stuck (though we use timeout)
         self.queue.put(None) 
             
     def add(self, text: str):
@@ -50,25 +44,20 @@ class AudioQueue:
         
         while not self._stop_event.is_set():
             try:
-                # Wait for text with timeout to check stop_event periodically
                 text = self.queue.get(timeout=0.5)
                 
-                if text is None: # Sentinel
+                if text is None:
                     break
                     
                 if self._stop_event.is_set():
                     break
                     
-                # Synthesize and play (blocking operation)
-                # Note: Ideally synthesize could be parallel to playback of previous chunk
-                # For MVP, sequential synthesis -> playback in this thread is acceptable
-                # but might cause small gaps if synthesis is slow.
-                # A better design would be: 
-                # Thread 1: Synthesize -> AudioBuffer
-                # Thread 2: Play from AudioBuffer
+                # Synthesize to bytes
+                audio_data = self.tts.generate_audio(text)
                 
-                # Using existing synchronous speak() which handles synth + play
-                self.tts.speak(text)
+                # Play directly from memory
+                if audio_data:
+                    AudioPlayer.play_audio_data(audio_data)
                 
                 self.queue.task_done()
                 

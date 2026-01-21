@@ -14,7 +14,6 @@ Usage:
 
 import sys
 import argparse
-from typing import Optional
 
 try:
     from ollama import chat

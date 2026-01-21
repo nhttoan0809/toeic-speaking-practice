@@ -1,7 +1,6 @@
 import logging
-import sys
-from typing import Iterator, Dict, Any, List, Optional
-from config.model_config import LLMConfig
+from typing import Iterator, Dict, Any, List
+from config import LLMConfig
 
 try:
     import ollama
