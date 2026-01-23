@@ -91,7 +91,7 @@ graph TD
 We maintain a flat, predictable structure for ease of navigation.
 
 ```bash
-self-host-llm/
+llm-services/
 ├── config/              # Centralized configuration (Models, Voice params)
 ├── core/                # Low-level wrappers for external tools (Ollama, EdgeTTS)
 ├── services/            # Pure Business Logic
@@ -118,8 +118,8 @@ self-host-llm/
 1.  **Clone the repository**
 
     ```bash
-    git clone https://github.com/yourusername/self-host-llm.git
-    cd self-host-llm
+    git clone https://github.com/nhttoan0809/toeic-speaking-practice.git
+    cd llm-services
     ```
 
 2.  **Create a Virtual Environment**
