@@ -9,20 +9,31 @@ from services.llm.llm_service import LLMService
 
 def main():
     print("=== Example 2: Streaming Text (No Audio) ===")
+    print("=== Interactive Chat (type 'exit' or 'quit' to stop) ===")
+
     llm_config, _ = parse_args()
     
     llm = LLMService(llm_config)
     
-    text = "Write a haiku about rain."
-    print(f"User: {text}")
-    print("Assistant: ", end="", flush=True)
-    
-    llm.add_user_message(text)
-    
-    for chunk in llm.generate_stream():
-        print(chunk, end="", flush=True)
+    while True:
+        text = input("User: ")
+
+        # Exit condition
+        if text.lower() in ("exit", "quit"):
+            print("Goodbye 👋")
+            break
+
+        if not text:
+            continue
         
-    print("\n")
+        print("Assistant: ", end="", flush=True)
+        
+        llm.add_user_message(text)
+        streaming_response = llm.generate_stream()
+        for chunk in streaming_response:
+            print(chunk, end="", flush=True)
+            
+        print("\n")
 
 if __name__ == "__main__":
     main()
