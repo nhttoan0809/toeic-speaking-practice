@@ -34,9 +34,7 @@ class TTSClient:
             
             # Use the async edge-tts synthesis if using edge-tts
             if self.config.engine == "edge-tts":
-                print("Go here! Using edge-tts")
-                # audio_bytes = await self.engine.synthesize_bytes_edge_tts(text)
-                audio_bytes = self.engine.synthesize_to_bytes(text)
+                audio_bytes = await self.engine.synthesize_bytes_edge_tts(text)
             else:
                 # For piper or other sync engines
                 audio_bytes = self.engine.synthesize_to_bytes(text)

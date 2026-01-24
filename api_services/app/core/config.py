@@ -36,7 +36,7 @@ class Settings(BaseSettings):
     LLM_SYSTEM_PROMPT: str = "You are a helpful and intelligent AI assistant. Answer questions clearly and concisely."
     
     # TTS Configuration
-    TTS_ENGINE: str = "edge-tts"
+    TTS_ENGINE: str = "piper"
     TTS_EDGE_VOICE: str = "en-US-GuyNeural"
     TTS_EDGE_RATE: str = "+0%"
     TTS_EDGE_VOLUME: str = "+0%"
