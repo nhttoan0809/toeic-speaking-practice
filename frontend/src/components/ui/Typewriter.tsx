@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 interface TypewriterProps {
+  fixedText?: string;
   texts: string[];
   speed?: number;
   pause?: number;
   className?: string;
 }
 
-export default function Typewriter({ texts, speed = 50, pause = 2000, className }: TypewriterProps) {
+export default function Typewriter({ fixedText, texts, speed = 50, pause = 2000, className }: TypewriterProps) {
   const [displayedText, setDisplayedText] = useState('');
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -37,6 +38,7 @@ export default function Typewriter({ texts, speed = 50, pause = 2000, className 
 
   return (
     <span className={className}>
+      {fixedText}
       {displayedText}
       <motion.span
         animate={{ opacity: [0, 1, 0] }}

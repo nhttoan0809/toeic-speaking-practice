@@ -3,6 +3,7 @@ import { posts } from '../data/posts';
 import type { Post } from '../data/posts';
 import Typewriter from '../components/ui/Typewriter';
 import PostModal from '../components/ui/PostModal';
+import GradientText from '../components/ui/GradientText';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -10,8 +11,12 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const slogans = [
-    "Ms.Smile TOEIC - nơi khơi nguồn cảm hứng chinh phục mọi mục tiêu",
-    "Ms.Smile TOEIC - Siêu chất siêu nhộn"
+    "Khơi nguồn cảm hứng, chinh phục mọi mục tiêu!",
+    "Siêu chất siêu nhộn!",
+    "Thoải mái học tập, hiệu quả tăng nhanh!",
+    "Vui vẻ mỗi buổi, tiến bộ mỗi ngày!"
+    // "Nền tảng tiếng Anh, bệ phóng thành công!",
+    // "Tiếng Anh không học, đời không nể!",
   ];
 
   const handleOpenPost = (post: Post) => {
@@ -31,11 +36,19 @@ export default function Home() {
           <span className="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent font-bold text-sm mb-6 tracking-wide uppercase">
             Start Your Journey
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 text-slate-800 drop-shadow-sm">
-             Welcome to <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-primary-light">Ms.Smile TOEIC</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 text-slate-800 drop-shadow-sm flex items-center justify-center gap-4 flex-wrap">
+             Welcome to 
+             <GradientText
+                colors={["#0d9488", "#2dd4bf", "#0d9488", "#2dd4bf", "#0d9488"]}
+                animationSpeed={3}
+                showBorder={false}
+              >
+                Ms.Smile TOEIC
+              </GradientText>
           </h1>
           <div className="h-24 md:h-16 flex items-center justify-center">
             <Typewriter 
+              fixedText="Ms.Smile TOEIC - "
               texts={slogans} 
               className="text-xl md:text-3xl font-medium text-slate-500"
               speed={40}
@@ -43,7 +56,7 @@ export default function Home() {
             />
           </div>
           <p className="mt-8 text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
-            Học TOEIC không còn là nỗi ám ảnh. Trải nghiệm phương pháp học <span className="text-slate-800 font-semibold">mới mẻ</span>, <span className="text-slate-800 font-semibold">thú vị</span> và <span className="text-slate-800 font-semibold">hiệu quả</span> ngay hôm nay.
+            Học TOEIC không còn là nỗi ám ảnh.<br />Trải nghiệm phương pháp học <span className="text-slate-800 font-semibold">mới mẻ</span>, <span className="text-slate-800 font-semibold">thú vị</span> và <span className="text-slate-800 font-semibold">hiệu quả</span> ngay hôm nay.
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -74,13 +87,13 @@ export default function Home() {
               key={post.id}
               onClick={() => handleOpenPost(post)}
               className="group relative aspect-square bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all cursor-pointer border border-slate-100"
+              transition={{ duration: 0 }}
               whileHover={{ y: -8 }}
-              whileTap={{ scale: 0.98 }}
             >
               <img 
                 src={post.image} 
                 alt="Post" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform"
               />
               <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                 <span className="text-white font-bold text-lg">Xem chi tiết</span>

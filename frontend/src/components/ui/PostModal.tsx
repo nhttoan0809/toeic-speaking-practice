@@ -49,7 +49,7 @@ export default function PostModal({ post, isOpen, onClose }: PostModalProps) {
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-20 p-2 bg-white/80 backdrop-blur-md rounded-full text-slate-900 hover:bg-white transition-colors shadow-sm"
+              className="absolute top-4 right-4 z-20 p-2 bg-white/80 backdrop-blur-md rounded-full text-slate-900 hover:bg-white transition-colors shadow-sm cursor-pointer"
             >
               <X className="w-6 h-6" />
             </button>

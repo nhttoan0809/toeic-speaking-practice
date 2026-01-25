@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../../assets/images/logo.webp';
+import GradientText from '../ui/GradientText';
 
 
 export default function Header() {
@@ -18,7 +20,7 @@ export default function Header() {
   };
 
   const navLinks = [
-    { name: 'Speaking & Writing', path: '/speaking-writing', type: 'internal' },
+    { name: 'Speaking & Writing', path: '/toeic-speaking-practice/speaking-writing', type: 'internal' },
     {
       name: 'Thư viện tài liệu',
       type: 'dropdown',
@@ -47,9 +49,19 @@ export default function Header() {
     <header className="bg-white shadow-sm border-b border-slate-100 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-black tracking-tight text-primary hover:text-primary-dark transition-colors flex items-center gap-2">
-          <span className="bg-primary/10 p-1 rounded-lg">😊</span>
-          Ms.Smile TOEIC
+        <Link to="/toeic-speaking-practice" className="text-2xl font-black tracking-tight text-primary hover:text-primary-dark transition-colors flex items-center gap-2">
+          <img src={logo} alt="Logo - Ms.Smile TOEIC" className="size-16" />
+          <div className='flex flex-col justify-center'>
+            <GradientText
+            colors={["#0d9488", "#2dd4bf", "#0d9488", "#2dd4bf", "#0d9488"]} // Primary emerald colors
+            animationSpeed={3}
+            showBorder={false}
+            className="p-1"
+            >
+              Ms.Smile TOEIC
+            </GradientText>
+            <span className="text-sm text-slate-500">Siêu chất siêu nhộn</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

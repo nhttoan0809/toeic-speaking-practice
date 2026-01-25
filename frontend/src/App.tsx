@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/toeic-speaking-practice" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="speaking-writing" element={<SpeakingWriting />} />
         </Route>
