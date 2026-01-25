@@ -80,7 +80,7 @@ export default function PostModal({ post, isOpen, onClose }: PostModalProps) {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 w-full py-4 bg-accent hover:bg-accent-hover text-white rounded-2xl font-black text-xl shadow-xl shadow-orange-200 transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  Tham gia ngay tại Facebook
+                  Tham gia ngay
                   <ExternalLink className="w-6 h-6" />
                 </a>
               </div>
