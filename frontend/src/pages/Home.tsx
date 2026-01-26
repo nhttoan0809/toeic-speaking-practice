@@ -1,28 +1,59 @@
-import { useState } from 'react';
-import { posts } from '../data/posts';
-import type { Post } from '../data/posts';
+import { useState, useEffect } from 'react';
 import Typewriter from '../components/ui/Typewriter';
 import PostModal from '../components/ui/PostModal';
 import GradientText from '../components/ui/GradientText';
 import { motion } from 'framer-motion';
+import { supabase } from '../lib/supabase';
+import type { Post } from '../lib/types';
 
 export default function Home() {
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [slogans, setSlogans] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const slogans = [
-    "Khơi nguồn cảm hứng, chinh phục mọi mục tiêu!",
-    "Siêu chất siêu nhộn!",
-    "Thoải mái học tập, hiệu quả tăng nhanh!",
-    "Vui vẻ mỗi buổi, tiến bộ mỗi ngày!"
-    // "Nền tảng tiếng Anh, bệ phóng thành công!",
-    // "Tiếng Anh không học, đời không nể!",
-  ];
+  useEffect(() => {
+    async function fetchData() {
+      setLoading(true);
+      
+      // Fetch Banners (Slogans)
+      const { data: bannerData } = await supabase
+        .from('banners')
+        .select('text')
+        .eq('is_active', true);
+      
+      if (bannerData) {
+        setSlogans(bannerData.map(b => b.text));
+      }
+
+      // Fetch Posts
+      const { data: postData } = await supabase
+        .from('posts')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (postData) {
+        setPosts(postData);
+      }
+      
+      setLoading(false);
+    }
+    fetchData();
+  }, []);
 
   const handleOpenPost = (post: Post) => {
     setSelectedPost(post);
     setIsModalOpen(true);
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-12 pb-20">
@@ -47,13 +78,15 @@ export default function Home() {
               </GradientText>
           </h1>
           <div className="h-24 md:h-16 flex items-center justify-center">
-            <Typewriter 
-              fixedText="Ms.Smile TOEIC - "
-              texts={slogans} 
-              className="text-xl md:text-3xl font-medium text-slate-500"
-              speed={40}
-              pause={2500}
-            />
+            {slogans.length > 0 && (
+              <Typewriter 
+                fixedText="Ms.Smile TOEIC - "
+                texts={slogans} 
+                className="text-xl md:text-3xl font-medium text-slate-500"
+                speed={40}
+                pause={2500}
+              />
+            )}
           </div>
           <p className="mt-8 text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
             Học TOEIC không còn là nỗi ám ảnh.<br />Trải nghiệm phương pháp học <span className="text-slate-800 font-semibold">mới mẻ</span>, <span className="text-slate-800 font-semibold">thú vị</span> và <span className="text-slate-800 font-semibold">hiệu quả</span> ngay hôm nay.
@@ -91,7 +124,7 @@ export default function Home() {
               whileHover={{ y: -8 }}
             >
               <img 
-                src={post.image} 
+                src={post.image_url} 
                 alt="Post" 
                 className="w-full h-full object-cover transition-transform"
               />

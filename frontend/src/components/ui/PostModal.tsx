@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink } from 'lucide-react';
-import type { Post } from '../../data/posts';
+import type { Post } from '../../lib/types';
 import { useEffect } from 'react';
 
 interface PostModalProps {
@@ -59,7 +59,7 @@ export default function PostModal({ post, isOpen, onClose }: PostModalProps) {
               {/* Image Section */}
               <div className="w-full bg-slate-100 shrink-0">
                 <img
-                  src={post.image}
+                  src={post.image_url}
                   alt="Post content"
                   className="w-full h-auto max-h-[400px] object-contain mx-auto"
                 />
