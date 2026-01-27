@@ -7,5 +7,11 @@ export default defineConfig({
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: 800, // kB
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        admin: "admin.html"
+      }
+    }
   }
 })
