@@ -76,7 +76,7 @@ export default function AdminDashboard() {
         <nav className="flex-1 p-4 space-y-2">
           <button
             onClick={() => setActiveTab('banners')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all ${
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all cursor-pointer ${
               activeTab === 'banners' ? 'bg-primary text-white shadow-lg shadow-teal-200/50' : 'text-slate-600 hover:bg-slate-50'
             }`}
           >
@@ -84,7 +84,7 @@ export default function AdminDashboard() {
           </button>
           <button
             onClick={() => setActiveTab('posts')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all ${
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all cursor-pointer ${
               activeTab === 'posts' ? 'bg-primary text-white shadow-lg shadow-teal-200/50' : 'text-slate-600 hover:bg-slate-50'
             }`}
           >

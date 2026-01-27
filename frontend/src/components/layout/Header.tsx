@@ -97,11 +97,11 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.15, ease: "easeOut" }}
-                    className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-slate-100 py-2 mt-0 overflow-visible"
+                    className="absolute top-full left-0 bg-white rounded-xl shadow-xl border border-slate-100 py-2 mt-0 overflow-visible"
                     style={{ transformOrigin: "top left" }}
                   >
                     {link.items?.map((item) => (
-                      <div key={item.name} className="relative group/sub w-full"
+                      <div key={item.name} className="relative group/sub min-w-[185px]"
                           // Use a timeout or clearer logic for sub-dropdowns if needed, 
                           // but usually nested heavy UI relies on CSS hover or careful JS.
                            onMouseEnter={() => item.type === 'sub-dropdown' && setActiveSubDropdown(item.id || null)}
@@ -112,7 +112,7 @@ export default function Header() {
                             href={item.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block px-5 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors"
+                            className="block px-5 py-3 text-sm w-auto font-medium text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors"
                           >
                             {item.name}
                           </a>
@@ -132,7 +132,7 @@ export default function Header() {
                                 exit={{ opacity: 0, x: -10 }}
                                 transition={{ duration: 0.15 }}
                                 // Removed ml-1, using absolute styling to attach directly to the right
-                                className="absolute top-0 left-full w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 -ml-1" 
+                                className="absolute top-0 left-full min-w-[158px] bg-white rounded-xl shadow-xl border border-slate-100 py-2 -ml-1" 
                               >
                                 {item.items?.map((subItem) => (
                                   <a
