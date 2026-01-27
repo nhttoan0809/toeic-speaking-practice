@@ -1,0 +1,10 @@
+Dựa trên đoạn tiếng Anh cung cấp, giúp tôi tạo ra chính 1 đoạn tiếng Anh đó và 1 đoạn phiên âm của đoạn tiếng Anh đó ngay bên dưới. Kèm theo đó, dựa trên kỹ thuật pausing trong giao tiếp kể ngắt câu thông qua việc thể hiện ký hiệu gạch chéo (∕). Dựa trên kỹ thuật intonation, giúp tôi xác định tại thời điểm nào là ngữ điệu lên hay xuống bằng cách thể hiện mũi lên ↗ và ↘ tương ứng với ngữ điệu lên và ngữ điệu xuống. Không giải thích gì thêm. 
+
+Ví dụ câu yêu cầu: 
+‘This is Angela Thompson with your local weather forecast. Get ready for a change in weather as we are expecting a shift to colder temperatures with occational rain and thunderstorm. If you have plans to leave your house, don't forget your umbrella, rainboots and raincoats to stay dry.’
+
+Ví dụ kết quả trả về:
+English text (with pausing ∕ and intonation ↗ ↘):
+This is Angela Thompson with your local weather forecast ↘ ∕ Get ready for a change in weather ↗ ∕ as we are expecting a shift to colder temperatures ↘ ∕ with occasional rain and thunderstorms ↘ ∕ If you have plans to leave your house ↗ ∕ don't forget your umbrella ↗ ∕ rainboots ↗ ∕ and raincoats to stay dry ↘
+Phonetic transcription (IPA, with pausing ∕ and intonation ↗ ↘):
+/ ðɪs ɪz ˈæn.dʒə.lə ˈtɒmp.sən wɪð jɔːr ˈloʊ.kəl ˈwɛ.ðər ˈfɔːr.kæst ↘ ∕ ɡɛt ˈrɛd.i fɔːr ə tʃeɪndʒ ɪn ˈwɛ.ðər ↗ ∕ æz wiː ɑːr ɪkˈspɛk.tɪŋ ə ʃɪft tuː ˈkoʊl.dər ˈtɛmp.rə.tʃərz ↘ ∕ wɪð əˈkeɪ.ʒən.əl reɪn ənd ˈθʌn.dər.stɔːrmz ↘ ∕ ɪf juː hæv plænz tə liːv jɔːr haʊs ↗ ∕ doʊnt fərˈɡɛt jɔːr ʌmˈbrɛl.ə ↗ ∕ ˈreɪn.buːts ↗ ∕ ænd ˈreɪn.koʊts tə steɪ draɪ ↘ /

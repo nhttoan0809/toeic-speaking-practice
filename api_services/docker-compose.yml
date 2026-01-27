@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chat-api-service
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount llm-services for imports
+      - ../llm-services:/llm-services:ro
+      # Mount audio output (if you want to persist)
+      - ./audio_output:/app/audio_output
+    environment:
+      - APP_NAME=Chat API Service
+      - APP_VERSION=1.0.0
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+      - CORS_ALLOW_ORIGINS=*
+      - CORS_ALLOW_CREDENTIALS=true
+      - CORS_ALLOW_METHODS=*
+      - CORS_ALLOW_HEADERS=*
+      - LLM_FRAMEWORK=ollama
+      - LLM_MODEL_NAME=mistral-small
+      - LLM_TEMPERATURE=0.7
+      - LLM_TOP_P=0.9
+      - LLM_MAX_TOKENS=2048
+      - LLM_CONTEXT_WINDOW=8192
+      - LLM_SYSTEM_PROMPT=You are a helpful and intelligent AI assistant. Answer questions clearly and concisely.
+      - TTS_ENGINE=edge-tts
+      - TTS_EDGE_VOICE=en-US-GuyNeural
+      - TTS_EDGE_RATE=+0%
+      - TTS_EDGE_VOLUME=+0%
+      - TTS_EDGE_PITCH=+0Hz
+      - TTS_OUTPUT_DIR=audio_output
+      - TTS_OUTPUT_FORMAT=mp3
+    restart: unless-stopped
+    networks:
+      - chat-network
+    # Note: If using Ollama, ensure it's accessible from the container
+    # You might need to add extra_hosts or connect to Ollama's network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  chat-network:
+    driver: bridge

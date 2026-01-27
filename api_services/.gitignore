@@ -1,0 +1,4 @@
+__pycache__
+audio_output
+.env
+**/**.mp3
