@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/ui/Layout';
-import Home from './pages/Home';
-import SpeakingWriting from './pages/SpeakingWriting';
-import AdminLogin from './pages/admin/AdminLogin';
-import AdminDashboard from './pages/admin/AdminDashboard';
+import Home from './pages/home/HomePage';
+import SpeakingWriting from './pages/speaking-writing/SpeakingWritingPage';
+import AdminLogin from './pages/admin/AdminLoginPage';
+import AdminDashboard from './pages/admin/AdminDashboardPage';
 import { AdminProtectedRoute } from './components/admin/AdminProtectedRoute';
 
 function App() {
