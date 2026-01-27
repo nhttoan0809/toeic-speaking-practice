@@ -24,6 +24,7 @@ class ChatMessage(BaseModel):
 class ChatRequest(BaseModel):
     """Chat request with message history."""
     messages: List[ChatMessage] = Field(..., min_length=1, description="Chat message history")
+    system_prompt: Optional[str] = Field(None, description="Optional system prompt to override default configuration")
     
     @field_validator('messages')
     @classmethod
@@ -38,7 +39,8 @@ class ChatRequest(BaseModel):
             "example": {
                 "messages": [
                     {"role": "user", "content": "Tell me a joke"}
-                ]
+                ],
+                "system_prompt": "You are a sarcastic comedian."
             }
         }
 

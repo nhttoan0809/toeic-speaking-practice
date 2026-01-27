@@ -1,5 +1,5 @@
 import logging
-from typing import List, Dict
+from typing import List, Dict, Optional
 from config.model_config import LLMConfig
 from services.llm.llm_service import LLMService
 
@@ -13,12 +13,13 @@ class LLMClient:
         self.service = LLMService(config)
         logger.info(f"LLMClient initialized with model: {config.model_name}")
     
-    def chat(self, messages: List[Dict[str, str]]) -> str:
+    def chat(self, messages: List[Dict[str, str]], system_prompt: Optional[str] = None) -> str:
         """
         Generate chat response from message history.
         
         Args:
             messages: List of message dicts with 'role' and 'content' keys
+            system_prompt: Optional system prompt to use
             
         Returns:
             Generated text response
@@ -29,7 +30,7 @@ class LLMClient:
         try:
             # Clear existing history and set new messages
             self.service.history = messages
-            response = self.service.generate_text()
+            response = self.service.generate_text(system_prompt=system_prompt)
             
             if response.startswith("Error:"):
                 raise Exception(response)

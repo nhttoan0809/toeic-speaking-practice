@@ -9,6 +9,7 @@ from app.services.llm_client import LLMClient
 from app.services.tts_client import TTSClient
 from config.model_config import LLMConfig
 from config.tts_config import TTSConfig
+from app.core.prompt_loader import load_prompt
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
@@ -67,7 +68,7 @@ async def chat_text(request: ChatRequest) -> ApiResponse[ChatTextResponseData]:
         logger.info(f"Processing chat request with {len(messages)} messages")
         
         # Generate response
-        response_text = llm_client.chat(messages)
+        response_text = llm_client.chat(messages, system_prompt=request.system_prompt)
         
         # Create response data
         response_data = ChatTextResponseData(message=response_text)
@@ -113,7 +114,7 @@ async def chat_voice(request: ChatRequest) -> Response:
         logger.info(f"Processing voice chat request with {len(messages)} messages")
         
         # Generate text response
-        response_text = llm_client.chat(messages)
+        response_text = llm_client.chat(messages, system_prompt=request.system_prompt)
         logger.info(f"Generated text response: {response_text[:100]}...")
         
         # Generate audio from text (async)
@@ -137,4 +138,49 @@ async def chat_voice(request: ChatRequest) -> Response:
         raise
     except Exception as e:
         logger.error(f"Chat voice endpoint error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+@router.post(
+    "/transcriptions",
+    response_model=ApiResponse[ChatTextResponseData],
+    summary="Generate transcription with pausing and intonation",
+    description="Process text and return English text with pausing/intonation and phonetic transcription"
+)
+async def transcriptions(request: ChatRequest) -> ApiResponse[ChatTextResponseData]:
+    """
+    Generate transcription with pausing and intonation.
+    
+    Args:
+        request: Chat request with OpenAI-style message history
+        
+    Returns:
+        ApiResponse with transcribed text message data
+        
+    Raises:
+        HTTPException: If LLM generation fails
+    """
+    try:
+        # Load system prompt from storage (default for this endpoint)
+        prompt_from_file = load_prompt("transcriptions.txt")
+        
+        # Use system_prompt from request if provided, otherwise use the one from file
+        system_prompt = request.system_prompt or prompt_from_file
+        
+        # Convert Pydantic models to dict format for LLM service
+        messages = [{"role": msg.role.value, "content": msg.content} for msg in request.messages]
+        
+        logger.info(f"Processing transcription request with {len(messages)} messages")
+        
+        # Generate response using the system prompt
+        response_text = llm_client.chat(messages, system_prompt=system_prompt)
+        
+        # Create response data
+        response_data = ChatTextResponseData(message=response_text)
+        
+        return success_response(data=response_data, message="Success")
+        
+    except FileNotFoundError:
+        logger.error("Transcription prompt file not found")
+        raise HTTPException(status_code=500, detail="Transcription prompt configuration error")
+    except Exception as e:
+        logger.error(f"Transcription endpoint error: {e}")
         raise HTTPException(status_code=500, detail=str(e))

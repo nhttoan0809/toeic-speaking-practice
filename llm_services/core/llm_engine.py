@@ -1,5 +1,5 @@
 import logging
-from typing import Iterator, Dict, Any, List
+from typing import Iterator, Dict, Any, List, Optional
 from config import LLMConfig
 
 try:
@@ -53,23 +53,33 @@ class LLMEngine:
             logger.error(f"Generation failed: {e}")
             return f"Error: {str(e)}"
     
-    def chat(self, messages: List[Dict[str, str]]) -> str:
+    def chat(self, messages: List[Dict[str, str]], system: Optional[str] = None) -> str:
         """
         Chat with conversation history.
         
         Args:
             messages: List of dicts with 'role' and 'content' keys
+            system: Optional system prompt to prepend
             
         Returns:
             The complete response text
         """
         try:
-            # If system prompt is set in config but not in messages, relying on modelfile or options
-            # Alternatively, we could prepend a system message here if needed
+            # Prepare messages
+            chat_messages = list(messages)
+            
+            # Use provided system prompt or fallback to config
+            system_prompt = system or self.config.system_prompt
+            
+            # Check if there's already a system message
+            has_system = any(msg.get('role') == 'system' for msg in chat_messages)
+            
+            if not has_system and system_prompt:
+                chat_messages.insert(0, {'role': 'system', 'content': system_prompt})
             
             response = ollama.chat(
                 model=self.config.model_name,
-                messages=messages,
+                messages=chat_messages,
                 options=self.config.to_dict()["options"],
                 stream=False
             )
@@ -78,20 +88,33 @@ class LLMEngine:
             logger.error(f"Chat failed: {e}")
             return f"Error: {str(e)}"
     
-    def stream_chat(self, messages: List[Dict[str, str]]) -> Iterator[str]:
+    def stream_chat(self, messages: List[Dict[str, str]], system: Optional[str] = None) -> Iterator[str]:
         """
         Stream chat responses token by token.
         
         Args:
             messages: List of dicts with 'role' and 'content' keys
+            system: Optional system prompt to prepend
             
         Yields:
             Response chunks as strings
         """
         try:
+            # Prepare messages
+            chat_messages = list(messages)
+            
+            # Use provided system prompt or fallback to config
+            system_prompt = system or self.config.system_prompt
+            
+            # Check if there's already a system message
+            has_system = any(msg.get('role') == 'system' for msg in chat_messages)
+            
+            if not has_system and system_prompt:
+                chat_messages.insert(0, {'role': 'system', 'content': system_prompt})
+
             stream = ollama.chat(
                 model=self.config.model_name,
-                messages=messages,
+                messages=chat_messages,
                 options=self.config.to_dict()["options"],
                 stream=True
             )
