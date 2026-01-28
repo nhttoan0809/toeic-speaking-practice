@@ -7,7 +7,7 @@ interface GradientTextProps {
   className?: string;
   colors?: string[];
   animationSpeed?: number;
-  showBorder?: false;
+  showBorder?: boolean;
   direction?: 'horizontal' | 'vertical';
   pauseOnHover?: boolean;
   yoyo?: boolean;
@@ -21,7 +21,7 @@ export default function GradientText({
   showBorder = false,
   direction = 'horizontal',
   pauseOnHover = false,
-  yoyo = true
+  yoyo = true,
 }: GradientTextProps) {
   const [isPaused, setIsPaused] = useState(false);
   const progress = useMotionValue(0);
@@ -65,13 +65,7 @@ export default function GradientText({
   }, [animationSpeed, progress, yoyo]);
 
   const backgroundPosition = useTransform(progress, (p) => {
-    if (direction === 'horizontal') {
-      return `${p}% 50%`;
-    } else if (direction === 'vertical') {
-      return `50% ${p}%`;
-    } else {
-      return `${p}% 50%`;
-    }
+    return direction === 'horizontal' ? `${p}% 50%` : `50% ${p}%`;
   });
 
   const handleMouseEnter = useCallback(() => {
@@ -82,14 +76,13 @@ export default function GradientText({
     if (pauseOnHover) setIsPaused(false);
   }, [pauseOnHover]);
 
-  const gradientAngle =
-    direction === 'horizontal' ? 'to right' : direction === 'vertical' ? 'to bottom' : 'to bottom right';
+  const gradientAngle = direction === 'horizontal' ? 'to right' : 'to bottom';
   const gradientColors = [...colors, colors[0]].join(', ');
 
   const gradientStyle = {
     backgroundImage: `linear-gradient(${gradientAngle}, ${gradientColors})`,
-    backgroundSize: direction === 'horizontal' ? '300% 100%' : direction === 'vertical' ? '100% 300%' : '300% 300%',
-    backgroundRepeat: 'repeat' as const
+    backgroundSize: direction === 'horizontal' ? '300% 100%' : '100% 300%',
+    backgroundRepeat: 'repeat' as const,
   };
 
   return (
@@ -98,7 +91,9 @@ export default function GradientText({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {showBorder && <motion.div className="gradient-overlay" style={{ ...gradientStyle, backgroundPosition }} />}
+      {showBorder && (
+        <motion.div className="gradient-overlay" style={{ ...gradientStyle, backgroundPosition }} />
+      )}
       <motion.div className="text-content" style={{ ...gradientStyle, backgroundPosition }}>
         {children}
       </motion.div>

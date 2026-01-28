@@ -1,6 +1,7 @@
 import { BookOpen, Mic2, PenTool } from 'lucide-react';
 import SidebarItem from './SidebarItem';
 import { SECTIONS } from './data';
+import type { Section } from './types';
 
 interface SidebarProps {
   activeSection: string;
@@ -20,10 +21,12 @@ export default function Sidebar({ activeSection, onSectionChange }: SidebarProps
       <nav className="flex-1 px-4 pb-8 space-y-6">
         {/* Main Overview */}
         <div>
-          <SidebarItem 
-            active={activeSection === 'overview'} 
-            onClick={() => onSectionChange('overview')}
-            section={SECTIONS[0]}
+          <SidebarItem
+            active={activeSection === 'overview'}
+            onClick={() => {
+              onSectionChange('overview');
+            }}
+            section={SECTIONS[0] ?? ({} as Section)}
           />
         </div>
 
@@ -33,11 +36,13 @@ export default function Sidebar({ activeSection, onSectionChange }: SidebarProps
             <Mic2 className="w-4 h-4" />
             Speaking
           </div>
-          {SECTIONS.filter(s => s.module === 'speaking').map(section => (
-            <SidebarItem 
+          {SECTIONS.filter((s) => s.module === 'speaking').map((section) => (
+            <SidebarItem
               key={section.id}
               active={activeSection === section.id}
-              onClick={() => onSectionChange(section.id)}
+              onClick={() => {
+                onSectionChange(section.id);
+              }}
               section={section}
             />
           ))}
@@ -49,11 +54,13 @@ export default function Sidebar({ activeSection, onSectionChange }: SidebarProps
             <PenTool className="w-4 h-4" />
             Writing
           </div>
-          {SECTIONS.filter(s => s.module === 'writing').map(section => (
-            <SidebarItem 
+          {SECTIONS.filter((s) => s.module === 'writing').map((section) => (
+            <SidebarItem
               key={section.id}
               active={activeSection === section.id}
-              onClick={() => onSectionChange(section.id)}
+              onClick={() => {
+                onSectionChange(section.id);
+              }}
               section={section}
             />
           ))}

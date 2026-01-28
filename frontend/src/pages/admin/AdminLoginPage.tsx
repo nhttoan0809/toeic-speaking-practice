@@ -16,18 +16,18 @@ export default function AdminLogin() {
     setError('');
 
     try {
-      const { data, error: queryError } = await supabase
+      const { data, error: queryError } = (await supabase
         .from('admin_users')
         .select('*')
         .eq('username', username)
         .eq('password', password)
-        .single();
+        .single()) as { data: { username: string } | null; error: unknown };
 
       if (queryError || !data) {
         setError('Sai tên đăng nhập hoặc mật khẩu');
       } else {
         localStorage.setItem('admin_auth', JSON.stringify({ username: data.username }));
-        navigate('/toeic-speaking-practice/admin');
+        void navigate('/toeic-speaking-practice/admin');
       }
     } catch {
       setError('Đã xảy ra lỗi. Vui lòng thử lại.');
@@ -47,13 +47,20 @@ export default function AdminLogin() {
           <p className="text-slate-500">Quản lý nội dung Ms.Smile TOEIC</p>
         </div>
 
-        <form onSubmit={handleLogin} className="space-y-6">
+        <form
+          onSubmit={(e) => {
+            void handleLogin(e);
+          }}
+          className="space-y-6"
+        >
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">Tên đăng nhập</label>
             <input
               type="text"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               placeholder="Nhập username"
               required
@@ -64,7 +71,9 @@ export default function AdminLogin() {
             <input
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               placeholder="Nhập password"
               required
@@ -72,9 +81,7 @@ export default function AdminLogin() {
           </div>
 
           {error && (
-            <div className="p-3 bg-red-50 text-red-500 text-sm rounded-lg font-medium">
-              {error}
-            </div>
+            <div className="p-3 bg-red-50 text-red-500 text-sm rounded-lg font-medium">{error}</div>
           )}
 
           <button

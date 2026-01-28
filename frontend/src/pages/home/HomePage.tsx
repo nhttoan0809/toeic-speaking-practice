@@ -15,15 +15,15 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      
+
       // Fetch Banners (Slogans)
       const { data: bannerData } = await supabase
         .from('banners')
         .select('text')
         .eq('is_active', true);
-      
+
       if (bannerData) {
-        setSlogans(bannerData.map(b => b.text));
+        setSlogans(bannerData.map((b: { text: string }) => b.text));
       }
 
       // Fetch Posts
@@ -31,14 +31,14 @@ export default function Home() {
         .from('posts')
         .select('*')
         .order('created_at', { ascending: false });
-      
+
       if (postData) {
         setPosts(postData);
       }
-      
+
       setLoading(false);
     }
-    fetchData();
+    void fetchData();
   }, []);
 
   const handleOpenPost = (post: Post) => {
@@ -61,10 +61,12 @@ export default function Home() {
       <PostGrid posts={posts} onOpenPost={handleOpenPost} />
 
       {/* Post Modal */}
-      <PostModal 
-        post={selectedPost} 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+      <PostModal
+        post={selectedPost}
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+        }}
       />
     </div>
   );

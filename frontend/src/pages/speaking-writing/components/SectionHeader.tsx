@@ -8,7 +8,7 @@ interface SectionHeaderProps {
 
 export default function SectionHeader({ section }: SectionHeaderProps) {
   return (
-    <motion.header 
+    <motion.header
       key={`${section.id}-header`}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}

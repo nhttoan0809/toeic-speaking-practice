@@ -9,7 +9,8 @@ export default function Layout() {
         <Outlet />
       </main>
       <footer className="bg-white text-slate-500 py-8 text-center text-sm border-t border-slate-100">
-        &copy; {new Date().getFullYear()} Ms.Smile TOEIC. All rights reserved. | <span className="text-primary font-medium">Be Confident. Be You.</span>
+        &copy; {new Date().getFullYear()} Ms.Smile TOEIC. All rights reserved. |{' '}
+        <span className="text-primary font-medium">Be Confident. Be You.</span>
       </footer>
     </div>
   );

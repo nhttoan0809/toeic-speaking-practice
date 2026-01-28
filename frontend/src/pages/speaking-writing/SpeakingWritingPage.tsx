@@ -11,7 +11,10 @@ export default function SpeakingWriting() {
   const [activeTab, setActiveTab] = useState<TabId>('eval');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const currentSection = SECTIONS.find(s => s.id === activeSection) || SECTIONS[0];
+  const currentSection = SECTIONS.find((s) => s.id === activeSection) ?? SECTIONS[0];
+  if (!currentSection) {
+    throw new Error('No sections found');
+  }
 
   // Body scroll lock & Fail-safe cleanup
   useEffect(() => {
@@ -32,26 +35,27 @@ export default function SpeakingWriting() {
   const handleSectionChange = (id: string) => {
     setActiveSection(id);
     setIsMobileMenuOpen(false);
-    
+
     const contentElement = document.getElementById('content-area');
     if (contentElement) {
-        // contentElement.scrollIntoView({ behavior: 'smooth' });
+      // contentElement.scrollIntoView({ behavior: 'smooth' });
     } else {
-        // window.scrollTo({ top: 0, behavior: 'smooth' });
+      // window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   return (
     <div className="w-full flex bg-slate-50 font-sans selection:bg-primary/20">
-      <Sidebar 
-        activeSection={activeSection} 
-        onSectionChange={handleSectionChange} 
-      />
+      <Sidebar activeSection={activeSection} onSectionChange={handleSectionChange} />
 
-      <MobileNav 
+      <MobileNav
         isOpen={isMobileMenuOpen}
-        onOpen={() => setIsMobileMenuOpen(true)}
-        onClose={() => setIsMobileMenuOpen(false)}
+        onOpen={() => {
+          setIsMobileMenuOpen(true);
+        }}
+        onClose={() => {
+          setIsMobileMenuOpen(false);
+        }}
         activeSection={activeSection}
         onSectionChange={handleSectionChange}
       />
@@ -61,7 +65,7 @@ export default function SpeakingWriting() {
         <div className="max-w-5xl mx-auto p-6 md:p-12">
           <SectionHeader section={currentSection} />
 
-          <ContentArea 
+          <ContentArea
             section={currentSection}
             activeTab={activeTab}
             onTabChange={setActiveTab}
