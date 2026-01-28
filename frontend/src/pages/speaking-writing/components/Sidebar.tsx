@@ -9,7 +9,7 @@ interface SidebarProps {
 
 export default function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
   return (
-    <aside className="hidden lg:flex flex-col w-80 bg-white border-r border-slate-200 sticky top-0 h-screen overflow-y-auto custom-scrollbar">
+    <aside className="hidden lg:flex flex-col w-80 bg-white border-r border-slate-200 sticky top-0 h-full overflow-y-auto custom-scrollbar">
       <div className="p-8">
         <h2 className="text-2xl font-black text-slate-900 tracking-tighter flex items-center gap-2">
           <BookOpen className="text-primary w-8 h-8" />

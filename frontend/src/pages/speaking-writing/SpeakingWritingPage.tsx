@@ -35,14 +35,14 @@ export default function SpeakingWriting() {
     
     const contentElement = document.getElementById('content-area');
     if (contentElement) {
-        contentElement.scrollIntoView({ behavior: 'smooth' });
+        // contentElement.scrollIntoView({ behavior: 'smooth' });
     } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-50 font-sans selection:bg-primary/20">
+    <div className="w-full flex bg-slate-50 font-sans selection:bg-primary/20">
       <Sidebar 
         activeSection={activeSection} 
         onSectionChange={handleSectionChange} 

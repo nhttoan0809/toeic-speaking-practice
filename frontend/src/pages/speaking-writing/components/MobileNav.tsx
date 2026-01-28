@@ -49,7 +49,12 @@ export default function MobileNav({
               initial="initial"
               animate="animate"
               exit="exit"
-              className="fixed inset-0 z-9999 lg:hidden"
+              variants={{
+                initial: { zIndex: -1 },
+                animate: { zIndex: 9999 },
+                exit: { zIndex: -1 }
+              }}
+              className="fixed inset-0 lg:hidden"
             >
               <motion.div 
                 key="sw-backdrop"

@@ -18,24 +18,24 @@ export default function ContentArea({ section, activeTab, onTabChange, onSection
       {section.type === 'content' ? (
         <>
           {/* Tabs */}
-          <div className="flex items-center px-4 md:px-8 border-b border-slate-100 bg-slate-50/50 overflow-x-auto no-scrollbar">
+          <div className="grid grid-cols-2 gap-2 p-4 xl:flex xl:items-center xl:px-8 xl:p-0 border-b border-slate-100 bg-slate-50/50">
             {TABS.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => onTabChange(tab.id as TabId)}
                 className={cn(
-                  "flex items-center gap-2 px-4 py-5 md:px-6 text-sm font-bold whitespace-nowrap transition-all relative",
+                  "flex items-center gap-2 px-4 py-3 xl:py-5 xl:px-6 text-sm font-bold transition-all relative rounded-2xl xl:rounded-none",
                   activeTab === tab.id 
-                    ? "text-primary" 
+                    ? "bg-primary/10 text-primary xl:bg-transparent" 
                     : "text-slate-400 hover:text-slate-600"
                 )}
               >
-                <tab.icon className="w-4 h-4" />
-                {tab.label}
+                <tab.icon className="w-4 h-4 shrink-0" />
+                <span className="truncate xl:whitespace-nowrap">{tab.label}</span>
                 {activeTab === tab.id && (
                   <motion.div 
                     layoutId="activeTabIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-primary rounded-t-full"
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-primary rounded-t-full hidden xl:block"
                   />
                 )}
               </button>
