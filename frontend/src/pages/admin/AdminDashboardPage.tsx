@@ -1,7 +1,20 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../../lib/supabase';
 import type { Banner, Post } from '../../lib/types';
-import { Image, FileText, LogOut, Plus, Trash2, Edit2, Upload, RefreshCw, X } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Image,
+  FileText,
+  LogOut,
+  Plus,
+  Trash2,
+  Edit2,
+  Upload,
+  RefreshCw,
+  X,
+  Menu,
+} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function AdminDashboard() {
@@ -9,6 +22,7 @@ export default function AdminDashboard() {
   const [banners, setBanners] = useState<Banner[]>([]);
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   // Modal/Form states
@@ -138,8 +152,111 @@ export default function AdminDashboard() {
 
   return (
     <div className="w-full min-h-screen bg-slate-50 flex">
-      {/* Sidebar */}
-      <aside className="w-64 bg-white border-r border-slate-200 flex flex-col">
+      {/* Mobile FAB Trigger */}
+      <AnimatePresence>
+        {!isSidebarOpen && (
+          <motion.button
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            onClick={() => {
+              setIsSidebarOpen(true);
+            }}
+            className="lg:hidden fixed bottom-6 right-6 z-40 bg-primary text-white p-4 rounded-full shadow-2xl shadow-primary/40 flex items-center gap-2 hover:scale-105 active:scale-95 transition-all outline-none"
+          >
+            <Menu className="w-6 h-6" />
+            <span className="font-black text-xs uppercase tracking-widest pr-1">Mục lục</span>
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Sidebar Sidebar Overlay for Mobile */}
+      {createPortal(
+        <AnimatePresence>
+          {isSidebarOpen && (
+            <motion.div
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={{
+                initial: { zIndex: -1 },
+                animate: { zIndex: 9999 },
+                exit: { zIndex: -1 },
+              }}
+              className="fixed inset-0 lg:hidden"
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => {
+                  setIsSidebarOpen(false);
+                }}
+                className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+              />
+              <motion.aside
+                initial={{ x: '-100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '-100%' }}
+                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                className="absolute left-0 top-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl flex flex-col overflow-y-auto"
+              >
+                <div className="p-6 border-b border-slate-200 flex items-center justify-between">
+                  <h1 className="text-xl font-black text-primary">Ms.Smile Admin</h1>
+                  <button
+                    onClick={() => {
+                      setIsSidebarOpen(false);
+                    }}
+                    className="p-2 text-slate-400 hover:text-slate-600 transition-colors"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+                <nav className="flex-1 p-4 space-y-2">
+                  <button
+                    onClick={() => {
+                      setActiveTab('banners');
+                      setIsSidebarOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all cursor-pointer ${
+                      activeTab === 'banners'
+                        ? 'bg-primary text-white shadow-lg shadow-teal-200/50'
+                        : 'text-slate-600 hover:bg-slate-50'
+                    }`}
+                  >
+                    <Image size={20} /> Banners
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab('posts');
+                      setIsSidebarOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all cursor-pointer ${
+                      activeTab === 'posts'
+                        ? 'bg-primary text-white shadow-lg shadow-teal-200/50'
+                        : 'text-slate-600 hover:bg-slate-50'
+                    }`}
+                  >
+                    <FileText size={20} /> Posts
+                  </button>
+                </nav>
+                <div className="p-4 mt-auto">
+                  <button
+                    onClick={handleLogout}
+                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-red-500 hover:bg-red-50 transition-all"
+                  >
+                    <LogOut size={20} /> Đăng xuất
+                  </button>
+                </div>
+              </motion.aside>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body,
+      )}
+
+      {/* Desktop Sidebar */}
+      <aside className="hidden lg:flex w-64 bg-white border-r border-slate-200 flex-col">
         <div className="p-6 border-b border-slate-200">
           <h1 className="text-xl font-black text-primary">Ms.Smile Admin</h1>
         </div>
@@ -180,10 +297,10 @@ export default function AdminDashboard() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-4 md:p-8 w-full max-w-full overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-black text-slate-800 capitalize">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+            <h2 className="text-2xl md:text-3xl font-black text-slate-800 capitalize">
               {activeTab} Management
             </h2>
             <button
@@ -197,7 +314,7 @@ export default function AdminDashboard() {
                 }
                 setIsModalOpen(true);
               }}
-              className="bg-primary text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-primary-dark transition-all shadow-lg"
+              className="w-full sm:w-auto bg-primary text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary-dark transition-all shadow-lg text-sm md:text-base"
             >
               <Plus size={20} /> Thêm mới
             </button>
@@ -208,46 +325,48 @@ export default function AdminDashboard() {
               <div className="animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent"></div>
             </div>
           ) : (
-            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-              <table className="w-full text-left">
-                <thead className="bg-slate-50 text-slate-500 text-sm font-bold uppercase tracking-wider">
+            <div className="bg-white rounded-2xl md:rounded-3xl shadow-sm border border-slate-200 overflow-hidden overflow-x-auto custom-scrollbar">
+              <table className="w-full text-left min-w-[600px] md:min-w-full">
+                <thead className="bg-slate-50 text-slate-500 text-[10px] md:text-sm font-bold uppercase tracking-wider">
                   <tr>
-                    <th className="px-6 py-4">ID</th>
+                    <th className="px-4 md:px-6 py-4">ID</th>
                     {activeTab === 'banners' ? (
-                      <th className="px-6 py-4">Nội dung Slogan</th>
+                      <th className="px-4 md:px-6 py-4">Nội dung Slogan</th>
                     ) : (
                       <>
-                        <th className="px-6 py-4">Thumbnail</th>
-                        <th className="px-6 py-4">Nội dung</th>
+                        <th className="px-4 md:px-6 py-4">Thumbnail</th>
+                        <th className="px-4 md:px-6 py-4">Nội dung</th>
                       </>
                     )}
-                    <th className="px-6 py-4 text-right">Thao tác</th>
+                    <th className="px-4 md:px-6 py-4 text-right">Thao tác</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                   {(activeTab === 'banners' ? banners : posts).map((item) => (
                     <tr key={item.id} className="hover:bg-slate-50/50 transition-colors">
-                      <td className="px-6 py-4 font-medium text-slate-400">#{item.id}</td>
+                      <td className="px-4 md:px-6 py-4 font-medium text-slate-400 text-sm">
+                        #{item.id}
+                      </td>
                       {activeTab === 'banners' ? (
-                        <td className="px-6 py-4 font-medium text-slate-700">
+                        <td className="px-4 md:px-6 py-4 font-medium text-slate-700 text-sm md:text-base whitespace-normal wrap-break-word">
                           {(item as Banner).text}
                         </td>
                       ) : (
                         <>
-                          <td className="px-6 py-4">
+                          <td className="px-4 md:px-6 py-4">
                             <img
                               src={(item as Post).image_url}
-                              className="w-12 h-12 rounded-lg object-cover bg-slate-100"
+                              className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover bg-slate-100"
                             />
                           </td>
-                          <td className="px-6 py-4">
-                            <div className="max-w-xs truncate text-slate-600">
+                          <td className="px-4 md:px-6 py-4">
+                            <div className="max-w-[150px] md:max-w-xs truncate text-slate-600 text-sm md:text-base">
                               {(item as Post).content}
                             </div>
                           </td>
                         </>
                       )}
-                      <td className="px-6 py-4 text-right space-x-2">
+                      <td className="px-4 md:px-6 py-4 text-right space-x-1 md:space-x-2">
                         <button
                           onClick={() => {
                             setEditingItem(item);
