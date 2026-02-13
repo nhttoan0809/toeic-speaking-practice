@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mic2, PenTool } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 import PlaceholderContent from './PlaceholderContent';
+import SpeakingPart1Resources from './SpeakingPart1Resources';
 import { TABS, SECTIONS } from './data';
 import type { Section, TabId } from './types';
 
@@ -50,7 +51,7 @@ export default function ContentArea({
           </div>
 
           {/* Tab Content */}
-          <div className="p-8 md:p-12 flex-1">
+          <div className="p-4 md:p-12 flex-1">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`${section.id}-${activeTab}`}
@@ -60,10 +61,14 @@ export default function ContentArea({
                 transition={{ duration: 0.2 }}
                 className="prose prose-slate max-w-none"
               >
-                <PlaceholderContent
-                  title={`${TABS.find((t) => t.id === activeTab)?.label} cho ${section.title}`}
-                  subtitle="Nội dung chi tiết đang được đội ngũ giáo viên biên soạn để gửi đến bạn sớm nhất."
-                />
+                {section.id === 'speaking-1' && activeTab === 'resources' ? (
+                  <SpeakingPart1Resources />
+                ) : (
+                  <PlaceholderContent
+                    title={`${TABS.find((t) => t.id === activeTab)?.label} cho ${section.title}`}
+                    subtitle="Nội dung chi tiết đang được đội ngũ giáo viên biên soạn để gửi đến bạn sớm nhất."
+                  />
+                )}
               </motion.div>
             </AnimatePresence>
           </div>

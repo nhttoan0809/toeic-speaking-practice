@@ -3,7 +3,7 @@ import Header from '../layout/Header';
 
 export default function Layout() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 font-sans">
+    <div className="h-screen max-h-screen flex flex-col bg-slate-50 font-sans">
       <Header />
       <main className="grow flex">
         <Outlet />
