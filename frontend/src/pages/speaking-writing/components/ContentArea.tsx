@@ -3,6 +3,9 @@ import { Mic2, PenTool } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 import PlaceholderContent from './PlaceholderContent';
 import SpeakingPart1Resources from './SpeakingPart1Resources';
+import SpeakingPart2Resources from './SpeakingPart2Resources';
+import SpeakingPart3Resources from './SpeakingPart3Resources';
+import SpeakingPart5Resources from './SpeakingPart5Resources';
 import { TABS, SECTIONS } from './data';
 import type { Section, TabId } from './types';
 
@@ -63,6 +66,12 @@ export default function ContentArea({
               >
                 {section.id === 'speaking-1' && activeTab === 'resources' ? (
                   <SpeakingPart1Resources />
+                ) : section.id === 'speaking-2' && activeTab === 'resources' ? (
+                  <SpeakingPart2Resources />
+                ) : section.id === 'speaking-3' && activeTab === 'resources' ? (
+                  <SpeakingPart3Resources />
+                ) : section.id === 'speaking-5' && activeTab === 'resources' ? (
+                  <SpeakingPart5Resources />
                 ) : (
                   <PlaceholderContent
                     title={`${TABS.find((t) => t.id === activeTab)?.label} cho ${section.title}`}
