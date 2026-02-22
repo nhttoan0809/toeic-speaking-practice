@@ -15,7 +15,7 @@ export default function SidebarItem({ section, active, onClick, isMobile }: Side
     <button
       onClick={onClick}
       className={cn(
-        'w-full flex items-center gap-3 px-4 py-3 text-sm font-bold rounded-2xl transition-all duration-300 group relative',
+        'w-full flex items-center gap-3 px-4 py-3 text-sm font-bold rounded-2xl transition-all duration-300 group relative cursor-pointer',
         active
           ? 'bg-primary text-white shadow-xl shadow-primary/25 translate-x-1'
           : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900',

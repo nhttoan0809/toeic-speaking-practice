@@ -35,7 +35,7 @@ export default function ContentArea({
                   onTabChange(tab.id as TabId);
                 }}
                 className={cn(
-                  'flex items-center gap-2 px-4 py-3 xl:py-5 xl:px-6 text-sm font-bold transition-all relative rounded-2xl xl:rounded-none',
+                  'flex items-center gap-2 px-4 py-3 xl:py-5 xl:px-6 text-sm font-bold transition-all relative rounded-2xl xl:rounded-none cursor-pointer',
                   activeTab === tab.id
                     ? 'bg-primary/10 text-primary xl:bg-transparent'
                     : 'text-slate-400 hover:text-slate-600',
