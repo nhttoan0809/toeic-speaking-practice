@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/ui/Layout';
 import Home from './pages/home/HomePage';
 import SpeakingWriting from './pages/speaking-writing/SpeakingWritingPage';
+import PracticeStructures from './pages/practice-structures/PracticeStructuresPage';
 import AdminLogin from './pages/admin/AdminLoginPage';
 import AdminDashboard from './pages/admin/AdminDashboardPage';
 import { AdminProtectedRoute } from './components/admin/AdminProtectedRoute';
@@ -13,6 +14,7 @@ function App() {
         <Route path="/toeic-speaking-practice" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="speaking-writing" element={<SpeakingWriting />} />
+          <Route path="practice-structures" element={<PracticeStructures />} />
 
           {/* Admin Routes */}
           <Route path="admin/login" element={<AdminLogin />} />

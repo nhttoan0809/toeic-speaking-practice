@@ -1,0 +1,4388 @@
+[
+  {
+    "category": "1. Diễn đạt sở thích, cảm xúc",
+    "title": "I like/love/enjoy (doing) something",
+    "formula": "I like/love/enjoy + V-ing + ...",
+    "meaning": "Dùng để nói bạn thích/yêu/thích thú làm điều gì.",
+    "examples": [
+      {
+        "en": "I enjoy attending training sessions because they improve my communication skills.",
+        "vi": "Tôi thích tham gia các buổi đào tạo vì chúng cải thiện kỹ năng giao tiếp của tôi."
+      },
+      {
+        "en": "I love working on projects that have clear deadlines and measurable results.",
+        "vi": "Tôi thích làm các dự án có deadline rõ ràng và kết quả đo lường được."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi thích học tiếng Anh vì nó giúp tôi làm việc hiệu quả hơn.",
+        "hints": [
+          "enjoy learning English",
+          "work efficiently"
+        ],
+        "answer": "I enjoy learning English because it helps me work more efficiently."
+      },
+      {
+        "prompt": "Tôi yêu thích đọc sách về kinh doanh vào cuối tuần.",
+        "hints": [
+          "love reading",
+          "business books"
+        ],
+        "answer": "I love reading business books on weekends."
+      },
+      {
+        "prompt": "Tôi thích tham gia các hoạt đđộng nhóm vì nó xây dựng tinh thần đồng đội.",
+        "hints": [
+          "participating in team activities",
+          "builds teamwork"
+        ],
+        "answer": "I like participating in team activities because it builds teamwork spirit."
+      },
+      {
+        "prompt": "Tôi thích thú với việc học kỹ năng mới từ đồng nghiệp.",
+        "hints": [
+          "learning new skills",
+          "from colleagues"
+        ],
+        "answer": "I enjoy learning new skills from my colleagues."
+      },
+      {
+        "prompt": "Tôi yêu thích làm việc trong môi trường sáng tạo và năng đđộng.",
+        "hints": [
+          "working in environment",
+          "creative and dynamic"
+        ],
+        "answer": "I love working in a creative and dynamic environment."
+      }
+    ]
+  },
+  {
+    "category": "1. Diễn đạt sở thích, cảm xúc",
+    "title": "I don",
+    "formula": "I don",
+    "meaning": "Dùng để nói bạn không thích/ghét làm điều gì.",
+    "examples": [
+      {
+        "en": "I don't like dealing with last-minute changes because they affect the schedule.",
+        "vi": "Tôi không thích xử lý thay đổi phút chót vì nó ảnh hưởng lịch trình."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi không thích làm việc quá khuya vì ngày hôm sau tôi dễ mệt.",
+        "hints": [
+          "don't like working late",
+          "get tired easily"
+        ],
+        "answer": "I don't like working too late because I get tired easily the next day."
+      },
+      {
+        "prompt": "Tôi ghét bị gián đoạn khi đđang tập trung làm việc quan trọng.",
+        "hints": [
+          "hate being interrupted",
+          "focusing on work"
+        ],
+        "answer": "I hate being interrupted when I'm focusing on important work."
+      },
+      {
+        "prompt": "Tôi không thích các cuộc họp kéo dài mà không có kết quả cụ thể.",
+        "hints": [
+          "long meetings",
+          "no specific results"
+        ],
+        "answer": "I don't like long meetings that have no specific results."
+      },
+      {
+        "prompt": "Tôi ghét phải làm nhiều nhiệm vụ cùng lúc vì nó giảm chất lượng công việc.",
+        "hints": [
+          "hate multitasking",
+          "reduces quality"
+        ],
+        "answer": "I hate multitasking because it reduces work quality."
+      },
+      {
+        "prompt": "Tôi không thích làm việc trong môi trường ồn ào và mất tập trung.",
+        "hints": [
+          "noisy environment",
+          "distracting"
+        ],
+        "answer": "I don't like working in a noisy and distracting environment."
+      }
+    ]
+  },
+  {
+    "category": "1. Diễn đạt sở thích, cảm xúc",
+    "title": "I",
+    "formula": "I",
+    "meaning": "Dùng để nói bạn quan tâm hoặc thích thú với điều gì (từ nhẹ đến mạnh).",
+    "examples": [
+      {
+        "en": "I'm very interested in learning about different cultures.",
+        "vi": "Tôi rất quan tâm đến việc tìm hiểu về các nền văn hóa khác nhau."
+      },
+      {
+        "en": "I'm passionate about developing innovative solutions for customers.",
+        "vi": "Tôi đam mê phát triển các giải pháp sáng tạo cho khách hàng."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi quan tâm đến phát triển kỹ năng lãnh đạo.",
+        "hints": [
+          "interested in",
+          "leadership skills"
+        ],
+        "answer": "I'm interested in developing leadership skills."
+      },
+      {
+        "prompt": "Tôi thích thú với công nghệ mới trong kinh doanh.",
+        "hints": [
+          "keen on",
+          "new technology"
+        ],
+        "answer": "I'm keen on new technology in business."
+      },
+      {
+        "prompt": "Tôi đam mê làm việc với đội ngũ quốc tế.",
+        "hints": [
+          "passionate about working",
+          "international teams"
+        ],
+        "answer": "I'm passionate about working with international teams."
+      },
+      {
+        "prompt": "Tôi rất thích các khóa học về quản lý dự án.",
+        "hints": [
+          "really into courses",
+          "project management"
+        ],
+        "answer": "I'm really into courses about project management."
+      },
+      {
+        "prompt": "Tôi mê mẩn với việc giải quyết vấn đề phức tạp.",
+        "hints": [
+          "crazy about solving",
+          "complex problems"
+        ],
+        "answer": "I'm crazy about solving complex problems."
+      }
+    ]
+  },
+  {
+    "category": "2. Ý kiến cá nhân",
+    "title": "I think/believe that...",
+    "formula": "I think/believe (that) + clause",
+    "meaning": "Dùng để đưa ra ý kiến hoặc suy nghĩ cá nhân.",
+    "examples": [
+      {
+        "en": "I think effective communication is essential for successful teamwork.",
+        "vi": "Tôi nghĩ giao tiếp hiệu quả là cần thiết cho làm việc nhóm thành công."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi nghĩ quản lý thời gian tốt giúp tăng năng suất làm việc.",
+        "hints": [
+          "good time management",
+          "increase productivity"
+        ],
+        "answer": "I think good time management helps increase work productivity."
+      },
+      {
+        "prompt": "Tôi tin rằng làm việc nhóm mđang lại kết quả tốt hơn làm việc cá nhân.",
+        "hints": [
+          "teamwork brings",
+          "betốter results"
+        ],
+        "answer": "I believe teamwork brings better results than individual work."
+      },
+      {
+        "prompt": "Tôi nghĩ kỹ năng giao tiếp là yếu tố quan trọng nhất trong sự nghiệp.",
+        "hints": [
+          "communication skills",
+          "most important"
+        ],
+        "answer": "I think communication skills are the most important factor in career."
+      },
+      {
+        "prompt": "Tôi tin rằng học hỏi liên tục giúp chúng ta thích nghi với thay đổi.",
+        "hints": [
+          "continuous learning",
+          "adapt to changes"
+        ],
+        "answer": "I believe continuous learning helps us adapt to changes."
+      },
+      {
+        "prompt": "Tôi nghĩ cân bằng công việc và cuộc sống là rất cần thiết cho hạnh phúc.",
+        "hints": [
+          "work-life balance",
+          "essential"
+        ],
+        "answer": "I think work-life balance is essential for happiness."
+      }
+    ]
+  },
+  {
+    "category": "2. Ý kiến cá nhân",
+    "title": "For me,...",
+    "formula": "For me, + clause",
+    "meaning": "Dùng để bắt đầu câu khi đưa ra quan đi m cá nhân của riêng bạn.",
+    "examples": [
+      {
+        "en": "For me, the most important thing in a job is work-life balance.",
+        "vi": "Đối với tôi, điều quan trọng nhất trong công việc là cân bằng công việc-cuộc sống."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Đối với tôi, học hỏi liên tục là chìa khóa thành công.",
+        "hints": [
+          "for me",
+          "key to success"
+        ],
+        "answer": "For me, continuous learning is the key to success."
+      },
+      {
+        "prompt": "Đối với tôi, giao tiếp tốt quan trọng hơn kỹ năng kỹ thuật.",
+        "hints": [
+          "for me",
+          "more important than"
+        ],
+        "answer": "For me, good communication is more important than technical skills."
+      },
+      {
+        "prompt": "Đối với tôi, môi trường làm việc tích cực là ưu tiên hàng đầu.",
+        "hints": [
+          "for me",
+          "top priority"
+        ],
+        "answer": "For me, a positive work environment is the top priority."
+      },
+      {
+        "prompt": "Đối với tôi, cơ hội phát triển quan trọng hơn mức lư người cao.",
+        "hints": [
+          "for me",
+          "more important than"
+        ],
+        "answer": "For me, development opportunities are more important than high salary."
+      },
+      {
+        "prompt": "Đối với tôi, sự linh hoạt trong công việc là điều cần thiết.",
+        "hints": [
+          "for me",
+          "essential"
+        ],
+        "answer": "For me, flexibility in work is essential."
+      }
+    ]
+  },
+  {
+    "category": "2. Ý kiến cá nhân",
+    "title": "From my viewpoint/perspective,...",
+    "formula": "From my viewpoint/perspective, + clause",
+    "meaning": "Dùng để nói quan điểm nhìn nhận của bạn về một vấn đề.",
+    "examples": [
+      {
+        "en": "From my perspective, diversity in the workplace brings innovative ideas.",
+        "vi": "Từ góc nhìn của tôi, sự đa dạng ở nơi làm việc mđang lại ý tưởng sáng tạo."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Từ quan điểm của tôi, phản hồi thường xuyên giúp cải thiện hiệu suất.",
+        "hints": [
+          "from my perspective",
+          "regular feedback"
+        ],
+        "answer": "From my perspective, regular feedback helps improve performance."
+      },
+      {
+        "prompt": "Từ góc nhìn của tôi, làm việc nhóm tạo ra môi trường học hỏi.",
+        "hints": [
+          "from my viewpoint",
+          "creates environment"
+        ],
+        "answer": "From my viewpoint, teamwork creates a learning environment."
+      },
+      {
+        "prompt": "Từ quan điểm của tôi, mục tiêu rõ ràng là yếu tố thành công.",
+        "hints": [
+          "from my perspective",
+          "clear goals"
+        ],
+        "answer": "From my perspective, clear goals are a success factor."
+      },
+      {
+        "prompt": "Từ góc nhìn của tôi, sự linh hoạt giúp thích nghi nhanh hơn.",
+        "hints": [
+          "from my viewpoint",
+          "adapt faster"
+        ],
+        "answer": "From my viewpoint, flexibility helps adapt faster."
+      },
+      {
+        "prompt": "Từ quan điểm của tôi, văn hóa công ty ảnh hưởng lớn đến năng suất.",
+        "hints": [
+          "from my perspective",
+          "affects productivity"
+        ],
+        "answer": "From my perspective, company culture greatly affects productivity."
+      }
+    ]
+  },
+  {
+    "category": "2. Ý kiến cá nhân",
+    "title": "In my opinion,...",
+    "formula": "In my opinion, + clause",
+    "meaning": "Dùng để bắt đầu câu khi đưa ra quan điểm cá nhân.",
+    "examples": [
+      {
+        "en": "In my opinion, flexible working hours improve employee satisfaction.",
+        "vi": "Theo quan điểm của tôi, giờ làm việc linh hoạt cải thiện sự hài lòng của nhân viên."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Theo ý kiến của tôi, làm việc từ xa là xu hướng tương lai.",
+        "hints": [
+          "in my opinion",
+          "future trend"
+        ],
+        "answer": "In my opinion, remote work is the future trend."
+      },
+      {
+        "prompt": "Theo ý kiến tôi, đầu tư vào đào tạo là rất quan trọng.",
+        "hints": [
+          "in my opinion",
+          "investing in training"
+        ],
+        "answer": "In my opinion, investing in training is very important."
+      },
+      {
+        "prompt": "Theo ý kiến tôi, công nghệ thay đổi cách chúng ta làm việc.",
+        "hints": [
+          "in my opinion",
+          "changes how we work"
+        ],
+        "answer": "In my opinion, technology changes how we work."
+      },
+      {
+        "prompt": "Theo ý kiến của tôi, giao tiếp tốt là chìa khóa thành công.",
+        "hints": [
+          "in my opinion",
+          "key to success"
+        ],
+        "answer": "In my opinion, good communication is the key to success."
+      },
+      {
+        "prompt": "Theo ý kiến tôi, học hỏi suốt đời là cần thiết.",
+        "hints": [
+          "in my opinion",
+          "lifelong learning"
+        ],
+        "answer": "In my opinion, lifelong learning is necessary."
+      }
+    ]
+  },
+  {
+    "category": "3. Diễn đạt Ưu điểm, Lợi ích",
+    "title": "A is good/important for B",
+    "formula": "A + is + adjective + for + B",
+    "meaning": "Dùng để nói điều gì tốt hoặc quan trọng cho điều khác.",
+    "examples": [
+      {
+        "en": "Regular exercise is good for maintaining work-life balance.",
+        "vi": "Tập thể dục đều đặn tốt cho việc duy trì cân bằng công việc-cuộc sống."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Đào tạo liên tục là quan trọng cho sự phát triển nghề nghiệp.",
+        "hints": [
+          "continuous training",
+          "career development"
+        ],
+        "answer": "Continuous training is important for career development."
+      },
+      {
+        "prompt": "Làm việc nhóm tốt cho việc giải quyết vấn đề phức tạp.",
+        "hints": [
+          "teamwork",
+          "solving problems"
+        ],
+        "answer": "Teamwork is good for solving complex problems."
+      },
+      {
+        "prompt": "Công nghệ mới quan trọng cho việc cạnh tranh trên thị trường.",
+        "hints": [
+          "new technology",
+          "competing"
+        ],
+        "answer": "New technology is important for competing in the market."
+      },
+      {
+        "prompt": "Phản hồi tích cực tốt cho đđộng lực làm việc của nhân viên.",
+        "hints": [
+          "positive feedback",
+          "motivation"
+        ],
+        "answer": "Positive feedback is good for employee work motivation."
+      },
+      {
+        "prompt": "Kế hoạch rõ ràng quan trọng cho việc đạt được mục tiêu.",
+        "hints": [
+          "clear planning",
+          "achieving goals"
+        ],
+        "answer": "Clear planning is important for achieving goals."
+      }
+    ]
+  },
+  {
+    "category": "3. Diễn đạt Ưu điểm, Lợi ích",
+    "title": "A can help (someone) (to) do B",
+    "formula": "A + can help + (someone) + (to) + verb",
+    "meaning": "Dùng để nói điều A có thể giúp ai đó làm được điều B.",
+    "examples": [
+      {
+        "en": "Technology can help employees work more efficiently.",
+        "vi": "Công nghệ có thể giúp nhân viên làm việc hiệu quả hơn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Đào tạo có thể giúp nhân viên phát triển kỹ năng mới.",
+        "hints": [
+          "can help",
+          "develop skills"
+        ],
+        "answer": "Training can help employees develop new skills."
+      },
+      {
+        "prompt": "Giao tiếp tốt có thể giúp nhóm giải quyết xung đột.",
+        "hints": [
+          "can help",
+          "resolve conflicts"
+        ],
+        "answer": "Good communication can help teams resolve conflicts."
+      },
+      {
+        "prompt": "Phản hồi thường xuyên có thể giúp bạn cải thiện hiệu suất.",
+        "hints": [
+          "can help",
+          "improve performance"
+        ],
+        "answer": "Regular feedback can help you improve performance."
+      },
+      {
+        "prompt": "Giờ làm việc linh hoạt có thể giúp nhân viên cân bằng cuộc sống.",
+        "hints": [
+          "can help",
+          "balance lives"
+        ],
+        "answer": "Flexible hours can help employees balance their lives."
+      },
+      {
+        "prompt": "Quản lý thời gian tốt có thể giúp chúng ta hoàn thành nhiều công việc hơn.",
+        "hints": [
+          "can help",
+          "complete tasks"
+        ],
+        "answer": "Good time management can help us complete more tasks."
+      }
+    ]
+  },
+  {
+    "category": "3. Diễn đạt Ưu điểm, Lợi ích",
+    "title": "A allows (someone) to do B",
+    "formula": "A + allows + (someone) + to + verb",
+    "meaning": "Dùng để nói điều A cho phép ai đó làm được điều B.",
+    "examples": [
+      {
+        "en": "Technology allows employees to work from anywhere.",
+        "vi": "Công nghệ cho phép nhân viên làm việc từ bất kỳ đâu."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Đào tạo cho phép nhân viên phát triển kỹ năng mới.",
+        "hints": [
+          "training allows",
+          "develop skills"
+        ],
+        "answer": "Training allows employees to develop new skills."
+      },
+      {
+        "prompt": "Công nghệ cho phép chúng ta giao tiếp nhanh hơn.",
+        "hints": [
+          "technology allows",
+          "communicate faster"
+        ],
+        "answer": "Technology allows us to communicate faster."
+      },
+      {
+        "prompt": "Giờ làm việc linh hoạt cho phép nhân viên cân bằng cuộc sống.",
+        "hints": [
+          "flexible hours allow",
+          "balance lives"
+        ],
+        "answer": "Flexible hours allow employees to balance their lives."
+      },
+      {
+        "prompt": "Phần mềm mới cho phép nhóm làm việc hiệu quả hơn.",
+        "hints": [
+          "software allows",
+          "work efficiently"
+        ],
+        "answer": "New software allows teams to work more efficiently."
+      },
+      {
+        "prompt": "Phản hồi cho phép nhân viên cải thiện hiệu suất.",
+        "hints": [
+          "feedback allows",
+          "improve performance"
+        ],
+        "answer": "Feedback allows employees to improve performance."
+      }
+    ]
+  },
+  {
+    "category": "3. Diễn đạt Ưu điểm, Lợi ích",
+    "title": "A has many benefits",
+    "formula": "A + has + many/several + benefits/advantages",
+    "meaning": "Dùng để nói điều gì có nhiều lợi ích.",
+    "examples": [
+      {
+        "en": "Remote work has many benefits for both employees and companies.",
+        "vi": "Làm việc từ xa có nhiều lợi ích cho cả nhân viên và công ty."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Học tiếng Anh có nhiều lợi ích cho sự nghiệp.",
+        "hints": [
+          "has many benefits",
+          "for career"
+        ],
+        "answer": "Learning English has many benefits for career."
+      },
+      {
+        "prompt": "Làm việc nhóm có nhiều ưu điểm trong dự án lớn.",
+        "hints": [
+          "has many advantages",
+          "large projects"
+        ],
+        "answer": "Teamwork has many advantages in large projects."
+      },
+      {
+        "prompt": "Công nghệ mới có nhiều lợi ích cho năng suất.",
+        "hints": [
+          "has many benefits",
+          "productivity"
+        ],
+        "answer": "New technology has many benefits for productivity."
+      },
+      {
+        "prompt": "Đào tạo thường xuyên có nhiều ưu điểm cho nhân viên.",
+        "hints": [
+          "has many advantages",
+          "employees"
+        ],
+        "answer": "Regular training has many advantages for employees."
+      },
+      {
+        "prompt": "Cân bằng công việc-cuộc sống có nhiều lợi ích cho sức khỏe.",
+        "hints": [
+          "has many benefits",
+          "health"
+        ],
+        "answer": "Work-life balance has many benefits for health."
+      }
+    ]
+  },
+  {
+    "category": "3. Diễn đạt Ưu điểm, Lợi ích",
+    "title": "One good thing about A is...",
+    "formula": "One good thing about + A + is (that) + clause",
+    "meaning": "Dùng để nêu một điều tốt về cái gì đó.",
+    "examples": [
+      {
+        "en": "One good thing about remote work is that you save commuting time.",
+        "vi": "Một điều tốt về làm việc từ xa là bạn tiết kiệm thời gian đi lại."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Một điều tốt về công nghệ là nó tăng hiệu quả công việc.",
+        "hints": [
+          "one good thing",
+          "increases efficiency"
+        ],
+        "answer": "One good thing about technology is that it increases work efficiency."
+      },
+      {
+        "prompt": "Một điều tốt về làm việc nhóm là chia sẻ kiến thức.",
+        "hints": [
+          "one good thing",
+          "shares knowledge"
+        ],
+        "answer": "One good thing about teamwork is that it shares knowledge."
+      },
+      {
+        "prompt": "Một điều tốt về đào tạo là cải thiện kỹ năng nhân viên.",
+        "hints": [
+          "one good thing",
+          "improves skills"
+        ],
+        "answer": "One good thing about training is that it improves employee skills."
+      },
+      {
+        "prompt": "Một điều tốt về giờ linh hoạt là cân bằng cuộc sống tốt hơn.",
+        "hints": [
+          "one good thing",
+          "betốter balance"
+        ],
+        "answer": "One good thing about flexible hours is that you have better work-life balance."
+      },
+      {
+        "prompt": "Một điều tốt về phản hồi thường xuyên là phát hiện vấn đề sớm.",
+        "hints": [
+          "one good thing",
+          "detects problems"
+        ],
+        "answer": "One good thing about regular feedback is that it detects problems early."
+      }
+    ]
+  },
+  {
+    "category": "3. Diễn đạt Ưu điểm, Lợi ích",
+    "title": "X provides (opportunities/benefits/...)",
+    "formula": "X + provides + noun (opportunities/benefits/support/...)",
+    "meaning": "Dùng để nói điều gì cung cấp cơ hội/lợi ích/hỗ trợ.",
+    "examples": [
+      {
+        "en": "This company provides excellent opportunities for career development.",
+        "vi": "Công ty này cung cấp cơ hội tuyệt vời cho sự phát triển nghề nghiệp."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Chương trình đào tạo cung cấp nhiều lợi ích cho nhân viên.",
+        "hints": [
+          "provides",
+          "many benefits"
+        ],
+        "answer": "The training program provides many benefits for employees."
+      },
+      {
+        "prompt": "Công ty cung cấp hỗ trợ tốt cho nhân viên mới.",
+        "hints": [
+          "provides",
+          "good support"
+        ],
+        "answer": "The company provides good support for new employees."
+      },
+      {
+        "prompt": "Công nghệ mới cung cấp cơ hội cải thiện quy trình.",
+        "hints": [
+          "provides opportunities",
+          "improve"
+        ],
+        "answer": "New technology provides opportunities to improve processes."
+      },
+      {
+        "prompt": "Làm việc từ xa cung cấp sự linh hoạt cho nhân viên.",
+        "hints": [
+          "provides flexibility",
+          "employees"
+        ],
+        "answer": "Remote work provides flexibility for employees."
+      },
+      {
+        "prompt": "Dự án này cung cấp kinh nghiệm quý giá cho đội ngũ.",
+        "hints": [
+          "provides",
+          "valuable experience"
+        ],
+        "answer": "This project provides valuable experience for the team."
+      }
+    ]
+  },
+  {
+    "category": "4. Diễn đạt Nhược điểm, Hạn chế",
+    "title": "A is difficult/bad for B",
+    "formula": "A + is + difficult/bad/challenging + for + B",
+    "meaning": "Dùng để nói điều gì khó hoặc xấu cho điều khác.",
+    "examples": [
+      {
+        "en": "Working overtime is bad for your health.",
+        "vi": "Làm việc quá giờ xấu cho sức khỏe của bạn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Làm việc quá nhiều là xấu cho cân bằng cuộc sống.",
+        "hints": [
+          "bad for",
+          "work-life balance"
+        ],
+        "answer": "Working too much is bad for work-life balance."
+      },
+      {
+        "prompt": "Thiếu giao tiếp là khó khăn cho làm việc nhóm.",
+        "hints": [
+          "difficult for",
+          "teamwork"
+        ],
+        "answer": "Lack of communication is difficult for teamwork."
+      },
+      {
+        "prompt": "Công nghệ cũ là xấu cho năng suất.",
+        "hints": [
+          "bad for",
+          "productivity"
+        ],
+        "answer": "Old technology is bad for productivity."
+      },
+      {
+        "prompt": "Thiếu đào tạo là khó khăn cho nhân viên mới.",
+        "hints": [
+          "difficult for",
+          "new employees"
+        ],
+        "answer": "Lack of training is difficult for new employees."
+      },
+      {
+        "prompt": "Áp lực công việc là xấu cho sức khỏe tinh thần.",
+        "hints": [
+          "bad for",
+          "mental health"
+        ],
+        "answer": "Work pressure is bad for mental health."
+      }
+    ]
+  },
+  {
+    "category": "4. Diễn đạt Nhược điểm, Hạn chế",
+    "title": "A can cause (problems/stress/...)",
+    "formula": "A + can cause + noun (problems/stress/issues/...)",
+    "meaning": "Dùng để nói điều gì có thể gây ra vấn đề/stress.",
+    "examples": [
+      {
+        "en": "Poor communication can cause many problems in projects.",
+        "vi": "Giao tiếp kém có thể gây ra nhiều vấn đề trong dự án."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Làm việc quá nhiều có thể gây ra stress.",
+        "hints": [
+          "can cause",
+          "stress"
+        ],
+        "answer": "Working too much can cause stress."
+      },
+      {
+        "prompt": "Thiếu kế hoạch có thể gây ra nhiều vấn đề.",
+        "hints": [
+          "can cause",
+          "many problems"
+        ],
+        "answer": "Lack of planning can cause many problems."
+      },
+      {
+        "prompt": "Công nghệ lỗi thời có thể gây ra sự chậm trễ.",
+        "hints": [
+          "can cause",
+          "delays"
+        ],
+        "answer": "Outdated technology can cause delays."
+      },
+      {
+        "prompt": "Giao tiếp kém có thể gây ra hiểu lầm.",
+        "hints": [
+          "can cause",
+          "misunderstandings"
+        ],
+        "answer": "Poor communication can cause misunderstandings."
+      },
+      {
+        "prompt": "Thiếu đào tạo có thể gây ra lỗi trong công việc.",
+        "hints": [
+          "can cause",
+          "errors"
+        ],
+        "answer": "Lack of training can cause errors in work."
+      }
+    ]
+  },
+  {
+    "category": "4. Diễn đạt Nhược điểm, Hạn chế",
+    "title": "A makes (someone) feel (adjective)",
+    "formula": "A + makes + someone + feel + adjective",
+    "meaning": "Dùng để nói điều gì khiến ai đó cảm thấy như thế nào.",
+    "examples": [
+      {
+        "en": "Long meetings make employees feel tired and unproductive.",
+        "vi": "Cuộc họp dài khiến nhân viên cảm thấy mệt mỏi và không hiệu quả."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Làm việc quá giờ khiến tôi cảm thấy kiệt sức.",
+        "hints": [
+          "makes me feel",
+          "exhausted"
+        ],
+        "answer": "Working overtime makes me feel exhausted."
+      },
+      {
+        "prompt": "Phản hồi tích cực khiến nhân viên cảm thấy có đđộng lực.",
+        "hints": [
+          "makes employees feel",
+          "motivated"
+        ],
+        "answer": "Positive feedback makes employees feel motivated."
+      },
+      {
+        "prompt": "Thiếu giao tiếp khiến đội ngũ cảm thấy bối rối.",
+        "hints": [
+          "makes team feel",
+          "confused"
+        ],
+        "answer": "Lack of communication makes the team feel confused."
+      },
+      {
+        "prompt": "Môi trường tích cực khiến tôi cảm thấy hạnh phúc.",
+        "hints": [
+          "makes me feel",
+          "happy"
+        ],
+        "answer": "A positive environment makes me feel happy."
+      },
+      {
+        "prompt": "Áp lực công việc khiến nhân viên cảm thấy căng thẳng.",
+        "hints": [
+          "makes employees feel",
+          "stressed"
+        ],
+        "answer": "Work pressure makes employees feel stressed."
+      }
+    ]
+  },
+  {
+    "category": "4. Diễn đạt Nhược điểm, Hạn chế",
+    "title": "One bad thing about A is...",
+    "formula": "One bad thing about + A + is (that) + clause",
+    "meaning": "Dùng để nêu một điều xấu/nhược điểm về cái gì đó.",
+    "examples": [
+      {
+        "en": "One bad thing about remote work is that you may feel isolated.",
+        "vi": "Một điều xấu về làm việc từ xa là bạn có thể cảm thấy cô lập."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "M t điều xấu về công nghệ mới là nhân viên cần thời gian học.",
+        "hints": [
+          "one bad thing",
+          "need time"
+        ],
+        "answer": "One bad thing about new technology is that employees need time to learn."
+      },
+      {
+        "prompt": "Một điều xấu về làm việc quá nhiều là ảnh hưởng sức khỏe.",
+        "hints": [
+          "one bad thing",
+          "affects health"
+        ],
+        "answer": "One bad thing about working too much is that it affects health."
+      },
+      {
+        "prompt": "Một điều xấu về văn phòng mở là ồn ào.",
+        "hints": [
+          "one bad thing",
+          "noisy"
+        ],
+        "answer": "One bad thing about open offices is that they're noisy."
+      },
+      {
+        "prompt": "Một điều xấu về dự án lớn là khó quản lý.",
+        "hints": [
+          "one bad thing",
+          "difficult"
+        ],
+        "answer": "One bad thing about large projects is that they're difficult to manage."
+      },
+      {
+        "prompt": "Một điều xấu về họp video là vấn đề kỹ thuật.",
+        "hints": [
+          "one bad thing",
+          "technical issues"
+        ],
+        "answer": "One bad thing about video meetings is technical issues."
+      }
+    ]
+  },
+  {
+    "category": "4. Diễn đạt Nhược điểm, Hạn chế",
+    "title": "It can be challengiống to do something",
+    "formula": "It can be challenging/difficult/hard + to + verb",
+    "meaning": "Dùng để nói việc gì đó có thể khó khăn.",
+    "examples": [
+      {
+        "en": "It can be challenging to manage a large team effectively.",
+        "vi": "Có thể khó khăn khi quản lý một đội ngũ lớn hiệu quả."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Có thể khó khăn khi làm việc với nhiều dự án cùng lúc.",
+        "hints": [
+          "challengiống to",
+          "multiple projects"
+        ],
+        "answer": "It can be challenging to work on multiple projects at once."
+      },
+      {
+        "prompt": "Có thể khó khi học công nghệ mới.",
+        "hints": [
+          "difficult to",
+          "learn"
+        ],
+        "answer": "It can be difficult to learn new technology."
+      },
+      {
+        "prompt": "Có thể khó khăn khi cân bằng công việc và cuộc sống.",
+        "hints": [
+          "challengiống to",
+          "balance"
+        ],
+        "answer": "It can be challenging to balance work and life."
+      },
+      {
+        "prompt": "Có thể khó khi giao tiếp với khách hàng khó tính.",
+        "hints": [
+          "hard to",
+          "communicate"
+        ],
+        "answer": "It can be hard to communicate with difficult customers."
+      },
+      {
+        "prompt": "Có thể khó khăn khi thích nghi với thay để i nhanh.",
+        "hints": [
+          "challengiống to",
+          "adapt"
+        ],
+        "answer": "It can be challenging to adapt to rapid changes."
+      }
+    ]
+  },
+  {
+    "category": "4. Diễn đạt Nhược điểm, Hạn chế",
+    "title": "A sometimes leads to (negative outcome)",
+    "formula": "A + sometimes/often + leads to + noun/V-ing",
+    "meaning": "Dùng để nói điều gì đôi khi dẫn đến kết quả tiêu cực.",
+    "examples": [
+      {
+        "en": "Poor planning sometimes leads to project delays.",
+        "vi": "Kế hoạch kém đôi khi dẫn đến sự chậm trễ dự án."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Làm việc quá nhiều đôi khi dẫn đến kiệt sức.",
+        "hints": [
+          "sometimes leads to",
+          "burnout"
+        ],
+        "answer": "Working too much sometimes leads to burnout."
+      },
+      {
+        "prompt": "Thiếu giao tiếp thường dẫn đến hiểu lầm.",
+        "hints": [
+          "often leads to",
+          "misunderstandings"
+        ],
+        "answer": "Lack of communication often leads to misunderstandings."
+      },
+      {
+        "prompt": "Công nghệ cũ đôi khi dẫn đến mất năng suất.",
+        "hints": [
+          "sometimes leads to",
+          "lost productivity"
+        ],
+        "answer": "Old technology sometimes leads to lost productivity."
+      },
+      {
+        "prompt": "Áp lực công việc thường dẫn đến stress.",
+        "hints": [
+          "often leads to",
+          "stress"
+        ],
+        "answer": "Work pressure often leads to stress."
+      },
+      {
+        "prompt": "Thiếu đào tạo đôi khi dẫn đến lỗi nghiêm trọng.",
+        "hints": [
+          "sometimes leads to",
+          "serious errors"
+        ],
+        "answer": "Lack of training sometimes leads to serious errors."
+      }
+    ]
+  },
+  {
+    "category": "5. Giải thích, Làm rõ, Đi sâu",
+    "title": "This means that...",
+    "formula": "This means (that) + clause",
+    "meaning": "Dùng để giải thích ý nghĩa hoặc hệ quả của điều vừa nói.",
+    "examples": [
+      {
+        "en": "The company is expanding. This means we need more staff.",
+        "vi": "Công ty đđang mở rđộng. Điều này có nghĩa là chúng ta cần thêm nhân viên."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Chúng ta có công nghệ mới. Điều này có nghĩa là chúng ta làm việc hiệu quả hơn.",
+        "hints": [
+          "this means",
+          "work efficiently"
+        ],
+        "answer": "We have new technology. This means we work more efficiently."
+      },
+      {
+        "prompt": "Dự án kết thúc sớm. Điều này có nghĩa là chúng ta có thêm thời gian.",
+        "hints": [
+          "this means",
+          "have more time"
+        ],
+        "answer": "The project finishes early. This means we have more time."
+      },
+      {
+        "prompt": "Công ty đầu tư vào đào tạo. Điều này có nghĩa là nhân viên phát triển kỹ năng.",
+        "hints": [
+          "this means",
+          "develop skills"
+        ],
+        "answer": "The company invests in training. This means employees develop skills."
+      },
+      {
+        "prompt": "Chúng ta áp dụng giờ linh hoạt. Điều này có nghĩa là cân bằng công việc tốt hơn.",
+        "hints": [
+          "this means",
+          "betốter balance"
+        ],
+        "answer": "We adopt flexible hours. This means better work-life balance."
+      },
+      {
+        "prompt": "Nhóm giao tiếp tốt. Điều này có nghĩa là ít vấn đề hơn.",
+        "hints": [
+          "this means",
+          "fewer problems"
+        ],
+        "answer": "The team communicates well. This means fewer problems."
+      }
+    ]
+  },
+  {
+    "category": "5. Giải thích, Làm rõ, Đi sâu",
+    "title": "Because (of).../The reason is (that)...",
+    "formula": "Because/Because of + noun/clause OR The reason is (that) + clause",
+    "meaning": "Dùng để giải thích nguyên nhân hoặc lý do.",
+    "examples": [
+      {
+        "en": "We changed the process because it wasn't efficient.",
+        "vi": "Chúng tôi thay đổi quy trình vì nó không hiệu quả."
+      },
+      {
+        "en": "The reason is that we need to improve productivity.",
+        "vi": "Lý do là chúng ta cần cải thiện năng suất."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi học tiếng Anh vì nó mở ra cơ hội nghề nghiệp.",
+        "hints": [
+          "because",
+          "opens opportunities"
+        ],
+        "answer": "I learn English because it opens career opportunities."
+      },
+      {
+        "prompt": "Do công nghệ mới, chúng tôi làm việc nhanh hơn.",
+        "hints": [
+          "because of",
+          "new technology"
+        ],
+        "answer": "Because of new technology, we work faster."
+      },
+      {
+        "prompt": "Lý do là chúng ta cần cải thiện giao tiếp.",
+        "hints": [
+          "the reason is",
+          "need to improve"
+        ],
+        "answer": "The reason is that we need to improve communication."
+      },
+      {
+        "prompt": "Nhân viên hài lòng vì văn hóa công ty tích cực.",
+        "hints": [
+          "because",
+          "culture positive"
+        ],
+        "answer": "Employees are satisfied because the company culture is positive."
+      },
+      {
+        "prompt": "Do thiếu đào tạo, nhân viên gặp khó khăn.",
+        "hints": [
+          "because of lack",
+          "face difficulties"
+        ],
+        "answer": "Because of lack of training, employees face difficulties."
+      }
+    ]
+  },
+  {
+    "category": "5. Giải thích, Làm rõ, Đi sâu",
+    "title": "For example,.../Like...",
+    "formula": "For example, + clause OR Like + noun/clause",
+    "meaning": "Dùng để đưa ra ví dụ minh họa.",
+    "examples": [
+      {
+        "en": "Many companies offer benefits. For example, they provide health insurance.",
+        "vi": "Nhiều công ty cung cấp phúc lợi. Ví dụ, họ cung cấp bảo hiểm sức khỏe."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Có nhiều kỹ năng quan trọng. Ví dụ, giao tiếp và làm việc nhóm.",
+        "hints": [
+          "for example",
+          "communication"
+        ],
+        "answer": "There are many important skills. For example, communication and teamwork."
+      },
+      {
+        "prompt": "Công ty cung cấp nhiều phúc lợi, như bảo hiểm và đào tạo.",
+        "hints": [
+          "like",
+          "insurance"
+        ],
+        "answer": "The company provides many benefits, like insurance and training."
+      },
+      {
+        "prompt": "Tôi thích học nhiều thứ. Ví dụ, ngôn ngữ và công nghệ.",
+        "hints": [
+          "for example",
+          "languages"
+        ],
+        "answer": "I enjoy learning many things. For example, languages and technology."
+      },
+      {
+        "prompt": "Có nhiều cách cải thiện, như phản hồi và đào tạo.",
+        "hints": [
+          "like",
+          "feedback"
+        ],
+        "answer": "There are many ways to improve, like feedback and training."
+      },
+      {
+        "prompt": "Công nghệ giúp nhiều việc. Ví dụ, giao tiếp và quản lý dự án.",
+        "hints": [
+          "for example",
+          "communication"
+        ],
+        "answer": "Technology helps with many things. For example, communication and project management."
+      }
+    ]
+  },
+  {
+    "category": "5. Giải thích, Làm rõ, Đi sâu",
+    "title": "What I mean is...",
+    "formula": "What I mean is (that) + clause",
+    "meaning": "Dùng để làm rõ ý bạn muốn nói.",
+    "examples": [
+      {
+        "en": "What I mean is that we need better planning for success.",
+        "vi": "Ý tôi là chúng ta cần kế hoạch tốt hơn để thành công."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Ý tôi là chúng ta cần cải thiện giao tiếp trong nhóm.",
+        "hints": [
+          "what I mean",
+          "improve communication"
+        ],
+        "answer": "What I mean is that we need to improve team communication."
+      },
+      {
+        "prompt": "Ý tôi là công nghệ giúp chúng ta làm việc hiệu qu hơn.",
+        "hints": [
+          "what I mean",
+          "more efficiently"
+        ],
+        "answer": "What I mean is that technology helps us work more efficiently."
+      },
+      {
+        "prompt": "Ý tôi là đào tạo rất quan trọng cho sự phát triển.",
+        "hints": [
+          "what I mean",
+          "very important"
+        ],
+        "answer": "What I mean is that training is very important for development."
+      },
+      {
+        "prompt": "Ý tôi là chúng ta nên tập trung vào chất lượng.",
+        "hints": [
+          "what I mean",
+          "focus on"
+        ],
+        "answer": "What I mean is that we should focus on quality."
+      },
+      {
+        "prompt": "Ý tôi là cân bằng cuộc sống cải thiện năng suất.",
+        "hints": [
+          "what I mean",
+          "improves"
+        ],
+        "answer": "What I mean is that work-life balance improves productivity."
+      }
+    ]
+  },
+  {
+    "category": "5. Giải thích, Làm rõ, Đi sâu",
+    "title": "So,...",
+    "formula": "So, + clause",
+    "meaning": "Dùng để nói về kết quả hoặc kết luận t điều trước đó.",
+    "examples": [
+      {
+        "en": "We have new software. So, we can work faster now.",
+        "vi": "Chúng ta có phần mềm mới. Vì vậy, chúng ta có thể làm việc nhanh hơn bây giờ."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Chúng ta cần cải thiện hiệu quả. Vì vậy, chúng ta nên sử dụng công nghệ mới.",
+        "hints": [
+          "so",
+          "should use"
+        ],
+        "answer": "We need to improve efficiency. So, we should use new technology."
+      },
+      {
+        "prompt": "Dự án rất phức tạp. Vì vậy, chúng ta cần nhiều thời gian hơn.",
+        "hints": [
+          "so",
+          "need more"
+        ],
+        "answer": "The project is very complex. So, we need more time."
+      },
+      {
+        "prompt": "Nhân viên cần kỹ năng mới. Vì vậy, công ty cung cấp đào tạo.",
+        "hints": [
+          "so",
+          "provides training"
+        ],
+        "answer": "Employees need new skills. So, the company provides training."
+      },
+      {
+        "prompt": "Giao tiếp rất quan trọng. Vì vậy, chúng ta họp thường xuyên.",
+        "hints": [
+          "so",
+          "regular meetings"
+        ],
+        "answer": "Communication is very important. So, we have regular meetings."
+      },
+      {
+        "prompt": "Công việc rất nhiều. Vì vậy, chúng ta cần thêm nhân viên.",
+        "hints": [
+          "so",
+          "need more"
+        ],
+        "answer": "There's a lot of work. So, we need more employees."
+      }
+    ]
+  },
+  {
+    "category": "5. Giải thích, Làm rõ, Đi sâu",
+    "title": "In other words,...",
+    "formula": "In other words, + clause",
+    "meaning": "Dùng để diễn đạt lại ý bằng cách khác rõ ràng hơn.",
+    "examples": [
+      {
+        "en": "We need to be more efficient. In other words, we should work smarter, not harder.",
+        "vi": "Chúng ta cần hiệu quả hơn. Nói cách khác, chúng ta nên làm việc thông minh hơn, không phải vất vả hơn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Chúng ta cần cải thiện quy trình. Nói cách khác, chúng ta nên làm việc hiệu quả hơn.",
+        "hints": [
+          "in other words",
+          "more efficiently"
+        ],
+        "answer": "We need to improve processes. In other words, we should work more efficiently."
+      },
+      {
+        "prompt": "Công ty đầu tư vào nhân viên. Nói cách khác, họ coi trọng sự phát triển.",
+        "hints": [
+          "in other words",
+          "value development"
+        ],
+        "answer": "The company invests in employees. In other words, they value development."
+      },
+      {
+        "prompt": "Chúng ta cần giao tiếp tốt hơn. N i cách khác, chia sẻ thông tin rõ ràng.",
+        "hints": [
+          "in other words",
+          "share clearly"
+        ],
+        "answer": "We need better communication. In other words, share information clearly."
+      },
+      {
+        "prompt": "Dự án cần nhiều nguồn lực. Nói cách khác, chúng ta cần thêm thời gian và người.",
+        "hints": [
+          "in other words",
+          "more time"
+        ],
+        "answer": "The project needs more resources. In other words, we need more time and people."
+      },
+      {
+        "prompt": "Họ làm việc không hiệu quả. Nói cách khác, lãng phí thời gian.",
+        "hints": [
+          "in other words",
+          "waste time"
+        ],
+        "answer": "They work inefficiently. In other words, they waste time."
+      }
+    ]
+  },
+  {
+    "category": "6. Cung cấp ý mới/Luận điểm bổ sung",
+    "title": "In addition/Furthermore/Moreover/Besides,...",
+    "formula": "In addition/Furthermore/Moreover/Besides, + clause",
+    "meaning": "Dùng để bổ sung thêm thông tin hoặc ý kiến.",
+    "examples": [
+      {
+        "en": "Technology improves efficiency. In addition, it reduces costs.",
+        "vi": "Công nghệ cải thiện hiệu quả. Thêm vào đó, nó giảm chi phí."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Đào tạo cải thiện kỹ năng. Thêm vào đó, nó tăng đđộng lực.",
+        "hints": [
+          "in addition",
+          "increases"
+        ],
+        "answer": "Training improves skills. In addition, it increases motivation."
+      },
+      {
+        "prompt": "Công nghệ tiết kiệm thời gian. Hơn nữa, nó giảm lỗi.",
+        "hints": [
+          "furthermore",
+          "reduces"
+        ],
+        "answer": "Technology saves time. Furthermore, it reduces errors."
+      },
+      {
+        "prompt": "Làm việc nhóm hiệu quả. Ngoài ra, nó xây dựng mối quan hệ.",
+        "hints": [
+          "moreover",
+          "builds"
+        ],
+        "answer": "Teamwork is effective. Moreover, it builds relationships."
+      },
+      {
+        "prompt": "Ph n hồi giúp cải thiện. Bên cạnh đó, nó tạo đđộng lực.",
+        "hints": [
+          "besides",
+          "creates"
+        ],
+        "answer": "Feedback helps improve. Besides, it creates motivation."
+      },
+      {
+        "prompt": "Công ty cung cấp lương tốt. Thêm vào đó, có nhiều phúc lợi.",
+        "hints": [
+          "in addition",
+          "many benefits"
+        ],
+        "answer": "The company provides good salary. In addition, there are many benefits."
+      }
+    ]
+  },
+  {
+    "category": "6. Cung cấp ý mới/Luận điểm bổ sung",
+    "title": "Also/And also,...",
+    "formula": "Also/And also, + clause",
+    "meaning": "Dùng để thêm thông tin tương tự hoặc bổ sung.",
+    "examples": [
+      {
+        "en": "We need better planning. Also, we should improve communication.",
+        "vi": "Chúng ta cần kế hoạch tốt hơn. Ngoài ra, chúng ta nên cải thiện giao tiếp."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi học tiếng Anh. Ngoài ra, tôi học công nghệ.",
+        "hints": [
+          "also",
+          "learn technology"
+        ],
+        "answer": "I learn English. Also, I learn technology."
+      },
+      {
+        "prompt": "Công ty cung cấp đào tạo. Và cũng, họ hỗ trợ phát triển nghề nghiệp.",
+        "hints": [
+          "and also",
+          "support"
+        ],
+        "answer": "The company provides training. And also, they support career development."
+      },
+      {
+        "prompt": "Chúng ta cần làm việc chăm chỉ. Ngoài ra, chúng ta cần làm việc thông minh.",
+        "hints": [
+          "also",
+          "work smart"
+        ],
+        "answer": "We need to work hard. Also, we need to work smart."
+      },
+      {
+        "prompt": "Nhân viên cần kỹ năng kỹ thuật. Và cũng, họ cần kỹ năng mềm.",
+        "hints": [
+          "and also",
+          "soft skills"
+        ],
+        "answer": "Employees need technical skills. And also, they need soft skills."
+      },
+      {
+        "prompt": "Dự án cần thời gian. Ngoài ra, nó cần nguồn lực.",
+        "hints": [
+          "also",
+          "needs resources"
+        ],
+        "answer": "The project needs time. Also, it needs resources."
+      }
+    ]
+  },
+  {
+    "category": "6. Cung cấp ý mới/Luận điểm bổ sung",
+    "title": "What",
+    "formula": "What",
+    "meaning": "Dùng để thêm điểm quan trọng hoặc nhấn mạnh thêm.",
+    "examples": [
+      {
+        "en": "Remote work saves time. What's more, it improves work-life balance.",
+        "vi": "Làm việc từ xa tiết kiệm thời gian. Hơn thế nữa, nó cải thiện cân bằng công việc-cuộc sống."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Công nghệ tăng hiệu quả. Hơn thế nữa, nó giảm chi phí.",
+        "hints": [
+          "what's more",
+          "reduces costs"
+        ],
+        "answer": "Technology increases efficiency. What's more, it reduces costs."
+      },
+      {
+        "prompt": "Đào tạo cải thiện kỹ năng. Hơn thế nữa, nó tăng sự tự tin.",
+        "hints": [
+          "what's more",
+          "increases confidence"
+        ],
+        "answer": "Training improves skills. What's more, it increases confidence."
+      },
+      {
+        "prompt": "Làm việc nhóm hiệu quả. Hơn thế nữa, nó vui vẻ hơn.",
+        "hints": [
+          "what's more",
+          "more enjoyable"
+        ],
+        "answer": "Teamwork is effective. What's more, it's more enjoyable."
+      },
+      {
+        "prompt": "Phản hồi giúp phát triển. Hơn thế nữa, nó xây dựng niềm tin.",
+        "hints": [
+          "what's more",
+          "builds trust"
+        ],
+        "answer": "Feedback helps development. What's more, it builds trust."
+      },
+      {
+        "prompt": "Công ty có văn hóa tốt. Hơn thế nữa, lương rất cạnh tranh.",
+        "hints": [
+          "what's more",
+          "very competitive"
+        ],
+        "answer": "The company has good culture. What's more, the salary is very competitive."
+      }
+    ]
+  },
+  {
+    "category": "6. Cung cấp ý mới/Luận điểm bổ sung",
+    "title": "On top of that,...",
+    "formula": "On top of that, + clause",
+    "meaning": "Dùng để thêm điểm bổ sung (thường là tích cực hoặc tiêu cực).",
+    "examples": [
+      {
+        "en": "The project is delayed. On top of that, we're over budget.",
+        "vi": "Dự án bị chậm. Thêm vào đó, chúng ta vượt ngân sách."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Công việc rất nhiều. Thêm vào đó, deadline rất gấp.",
+        "hints": [
+          "on top of that",
+          "very tight"
+        ],
+        "answer": "There's a lot of work. On top of that, the deadline is very tight."
+      },
+      {
+        "prompt": "Nhân viên thiếu đào tạo. Thêm vào đó, họ thiếu kinh nghiệm.",
+        "hints": [
+          "on top of that",
+          "lack experience"
+        ],
+        "answer": "Employees lack training. On top of that, they lack experience."
+      },
+      {
+        "prompt": "Công ty cung cấp lương tốt. Thêm vào đó, có nhiều cơ hội thăng tiến.",
+        "hints": [
+          "on top of that",
+          "promotion"
+        ],
+        "answer": "The company provides good salary. On top of that, there are many promotion opportunities."
+      },
+      {
+        "prompt": "Dự án phức tạp. Thêm vào đó, chúng ta thiếu nguồn lực.",
+        "hints": [
+          "on top of that",
+          "lack resources"
+        ],
+        "answer": "The project is complex. On top of that, we lack resources."
+      },
+      {
+        "prompt": "Công nghệ tăng hiệu quả. Thêm vào đó, nó dễ sử dụng.",
+        "hints": [
+          "on top of that",
+          "easy to use"
+        ],
+        "answer": "Technology increases efficiency. On top of that, it's easy to use."
+      }
+    ]
+  },
+  {
+    "category": "6. Cung cấp ý mới/Luận điểm bổ sung",
+    "title": "Another point is that...",
+    "formula": "Another point is that + clause",
+    "meaning": "Dùng để đưa ra một luận điểm khác.",
+    "examples": [
+      {
+        "en": "Another point is that teamwork improves creativity.",
+        "vi": "Một điểm khác là làm việc nhóm cải thiện sáng tạo."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Một điểm khác là đào tạo tăng sự hài lòng của nhân viên.",
+        "hints": [
+          "another point",
+          "increases satisfaction"
+        ],
+        "answer": "Another point is that training increases employee satisfaction."
+      },
+      {
+        "prompt": "Một điểm khác là công nghệ giúp giao tiếp tốt hơn.",
+        "hints": [
+          "another point",
+          "helps betốter"
+        ],
+        "answer": "Another point is that technology helps better communication."
+      },
+      {
+        "prompt": "Một điểm khác là làm việc từ xa tiết kiệm chi phí.",
+        "hints": [
+          "another point",
+          "saves costs"
+        ],
+        "answer": "Another point is that remote work saves costs."
+      },
+      {
+        "prompt": "Một điểm khác là phản hồi giúp xây dựng niềm tin.",
+        "hints": [
+          "another point",
+          "build trust"
+        ],
+        "answer": "Another point is that feedback helps build trust."
+      },
+      {
+        "prompt": "Một điểm khác là c n bằng cuộc sống tăng năng suất.",
+        "hints": [
+          "another point",
+          "increases"
+        ],
+        "answer": "Another point is that work-life balance increases productivity."
+      }
+    ]
+  },
+  {
+    "category": "7. Diễn đạt về thời gian/Tần suất",
+    "title": "S + spend a lot of time (doing something)",
+    "formula": "Subject + spend + a lot of time/much time + V-ing",
+    "meaning": "Dùng để nói ai đó dành nhiều thời gian cho việc gì.",
+    "examples": [
+      {
+        "en": "I spend a lot of time preparing presentations every week.",
+        "vi": "Tôi dành nhiều thời gian chuẩn bị bài thuyết trình mỗi tuần."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi dành nhiều thời gian học tiếng Anh mỗi ngày.",
+        "hints": [
+          "spend a lot of time",
+          "every day"
+        ],
+        "answer": "I spend a lot of time learning English every day."
+      },
+      {
+        "prompt": "Công ty dành nhiều thời gian đào tạo nhân viên mới.",
+        "hints": [
+          "spends a lot of time",
+          "training"
+        ],
+        "answer": "The company spends a lot of time training new employees."
+      },
+      {
+        "prompt": "Chúng tôi dành nhiều thời gian thảo lu n chiến lược.",
+        "hints": [
+          "spend a lot of time",
+          "discussing"
+        ],
+        "answer": "We spend a lot of time discussing strategies."
+      },
+      {
+        "prompt": "Quản lý dành nhiều thời gian lắng nghe nhân viên.",
+        "hints": [
+          "spend a lot of time",
+          "listening"
+        ],
+        "answer": "Managers spend a lot of time listening to employees."
+      },
+      {
+        "prompt": "Tôi dành nhiều thời gian đọc tin tức kinh doanh.",
+        "hints": [
+          "spend a lot of time",
+          "reading"
+        ],
+        "answer": "I spend a lot of time reading business news."
+      }
+    ]
+  },
+  {
+    "category": "7. Diễn đạt về thời gian/Tần suất",
+    "title": "S + used to + V; but now, S + V",
+    "formula": "Subject + used to + verb; but now, + subject + verb (present)",
+    "meaning": "Dùng để nói về thói quen/tình huống trong quá khứ nhưng bây giờ đã khác.",
+    "examples": [
+      {
+        "en": "I used to work in an office; but now, I work from home.",
+        "vi": "Tôi từng làm việc ở văn phòng; nhưng bây giờ, tôi làm việc tại nhà."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi từng không thích thuyết trình; nhưng bây giờ, tôi tự tin hơn.",
+        "hints": [
+          "used to dislike",
+          "but now"
+        ],
+        "answer": "I used to dislike presentations; but now, I'm more confident."
+      },
+      {
+        "prompt": "Công ty từng sử dụng công nghệ cũ; nhưng bây giờ, họ có hệ thống mới.",
+        "hints": [
+          "used to use",
+          "but now"
+        ],
+        "answer": "The company used to use old technology; but now, they have a new system."
+      },
+      {
+        "prompt": "Chúng tôi từng họp mỗi ngày; nhưng bây giờ, chúng tôi họp mỗi tuần.",
+        "hints": [
+          "used to meet",
+          "but now"
+        ],
+        "answer": "We used to meet daily; but now, we meet weekly."
+      },
+      {
+        "prompt": "Tôi từng làm việc một mình; nhưng bây giờ, tôi làm việc trong nhóm.",
+        "hints": [
+          "used to work",
+          "but now"
+        ],
+        "answer": "I used to work alone; but now, I work in a team."
+      },
+      {
+        "prompt": "Nhân viên từng thiếu đào tạo; nhưng bây giờ, họ được đào tạo thường xuyên.",
+        "hints": [
+          "used to lack",
+          "but now"
+        ],
+        "answer": "Employees used to lack training; but now, they receive regular training."
+      }
+    ]
+  },
+  {
+    "category": "7. Diễn đạt về thời gian/Tần suất",
+    "title": "It takes (time) to do something",
+    "formula": "It takes + time + to + verb",
+    "meaning": "Dùng để nói mất bao lâu để làm điều gì.",
+    "examples": [
+      {
+        "en": "It takes about six months to complete this training program.",
+        "vi": "Mất khoảng sáu tháng để hoàn thành chương trình đào tạo này."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Mất hai tuần để học cách sử dụng phần mềm mới.",
+        "hints": [
+          "it takes",
+          "to learn"
+        ],
+        "answer": "It takes two weeks to learn how to use new software."
+      },
+      {
+        "prompt": "Mất nhiều thời gian để xây dựng đội người mạnh.",
+        "hints": [
+          "it takes time",
+          "to build"
+        ],
+        "answer": "It takes a lot of time to build a strong team."
+      },
+      {
+        "prompt": "Mất một tháng để hoàn thành dự án này.",
+        "hints": [
+          "it takes month",
+          "to complete"
+        ],
+        "answer": "It takes one month to complete this project."
+      },
+      {
+        "prompt": "Mất ba năm để phát triển kỹ năng chuyên môn.",
+        "hints": [
+          "it takes years",
+          "to develop"
+        ],
+        "answer": "It takes three years to develop professional skills."
+      },
+      {
+        "prompt": "Mất nhiều nỗ lực để đạt được mục tiêu.",
+        "hints": [
+          "it takes effort",
+          "to achieve"
+        ],
+        "answer": "It takes a lot of effort to achieve goals."
+      }
+    ]
+  },
+  {
+    "category": "7. Diễn đạt về thời gian/Tần suất",
+    "title": "Nowadays,.../In the past,...",
+    "formula": "Nowadays, + clause OR In the past, + clause",
+    "meaning": "Dùng để so sánh hiện tại và quá khứ.",
+    "examples": [
+      {
+        "en": "Nowadays, most people work remotely. In the past, everyone worked in offices.",
+        "vi": "Ngày nay, hầu hết mọi người làm việc từ xa. Trong quá khứ, mọi người làm việc ở văn phòng."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Ngày nay, công nghệ rất quan trọng. Trong quá khứ, mọi thứ làm thủ công.",
+        "hints": [
+          "nowadays",
+          "in the past"
+        ],
+        "answer": "Nowadays, technology is very important. In the past, everything was done manually."
+      },
+      {
+        "prompt": "Ngày nay, giao tiếp trực tuyến phổ biến. Trong quá kh , người ta gặp mặt trực tiếp.",
+        "hints": [
+          "nowadays",
+          "in the past"
+        ],
+        "answer": "Nowadays, online communication is common. In the past, people met face-to-face."
+      },
+      {
+        "prompt": "Ngày nay, nhân viên cần nhiều kỹ năng. Trong quá khứ, chỉ cần một kỹ năng.",
+        "hints": [
+          "nowadays",
+          "in the past"
+        ],
+        "answer": "Nowadays, employees need many skills. In the past, only one skill was needed."
+      },
+      {
+        "prompt": "Ngày nay, làm việc linh hoạt là bình thường. Trong quá khứ, giờ làm việc cố định.",
+        "hints": [
+          "nowadays",
+          "in the past"
+        ],
+        "answer": "Nowadays, flexible work is normal. In the past, working hours were fixed."
+      },
+      {
+        "prompt": "Ngày nay, đào tạo liên tục. Trong quá khứ, đào tạo một lần.",
+        "hints": [
+          "nowadays",
+          "in the past"
+        ],
+        "answer": "Nowadays, training is continuous. In the past, training was once."
+      }
+    ]
+  },
+  {
+    "category": "7. Diễn đạt về thời gian/Tần suất",
+    "title": "S + often/usually/sometimes + V",
+    "formula": "Subject + adverb of frequency + verb + ...",
+    "meaning": "Dùng các trạng từ chỉ tần suất để nói việc gì x y ra thường xuyên như thế nào.",
+    "examples": [
+      {
+        "en": "We usually have team meetings every Monday morning.",
+        "vi": "Chúng tôi thường có cuộc họp nhóm vào sáng thứ Hai hàng tuần."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi thường đến văn phòng lúc 8 giờ sáng.",
+        "hints": [
+          "usually arrive",
+          "at 8 AM"
+        ],
+        "answer": "I usually arrive at the office at 8 AM."
+      },
+      {
+        "prompt": "Chúng tôi thường xuyên tổ chức đào tạo cho nhân viên.",
+        "hints": [
+          "often organize",
+          "training"
+        ],
+        "answer": "We often organize training for employees."
+      },
+      {
+        "prompt": "Đôi khi tôi làm việc từ nhà vào thứ Sáu.",
+        "hints": [
+          "sometimes work",
+          "from home"
+        ],
+        "answer": "Sometimes I work from home on Fridays."
+      },
+      {
+        "prompt": "Công ty thường cung cấp phản hồi hàng tháng.",
+        "hints": [
+          "usually provides",
+          "monthly"
+        ],
+        "answer": "The company usually provides monthly feedback."
+      },
+      {
+        "prompt": "Chúng tôi thường xuyên nhận yêu cầu từ khách hàng.",
+        "hints": [
+          "often receive",
+          "from customers"
+        ],
+        "answer": "We often receive requests from customers."
+      }
+    ]
+  },
+  {
+    "category": "8. So sánh, Đối chiếu",
+    "title": "A is (more/less + adjective) than B",
+    "formula": "A + is + more/less + adjective + than + B",
+    "meaning": "Dùng để so sánh hai đối tượng về một đặc điểm.",
+    "examples": [
+      {
+        "en": "Online meetings are more convenient than face-to-face meetings.",
+        "vi": "Họp online tiện lợi hơn các cuộc họp mặt đối mặt."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Làm việc từ xa linh hoạt hơn làm việc tại văn phòng.",
+        "hints": [
+          "more flexible than",
+          "office work"
+        ],
+        "answer": "Remote work is more flexible than office work."
+      },
+      {
+        "prompt": "Dự án này phức tạp hơn những dự án trước đây.",
+        "hints": [
+          "more complex than",
+          "previous projects"
+        ],
+        "answer": "This project is more complex than previous projects."
+      },
+      {
+        "prompt": "Giao tiếp qua email ít hiệu quả hơn giao tiếp trực tiếp.",
+        "hints": [
+          "less effective than",
+          "direct communication"
+        ],
+        "answer": "Email communication is less effective than direct communication."
+      },
+      {
+        "prompt": "Nhân viên trẻ thường năng đđộng hơn nhân viên có kinh nghiệm.",
+        "hints": [
+          "more dynamic than",
+          "experienced employees"
+        ],
+        "answer": "Young employees are usually more dynamic than experienced employees."
+      },
+      {
+        "prompt": "Phần mềm mới dễ sử dụng hơn phiên bản cũ.",
+        "hints": [
+          "easier to use than",
+          "old version"
+        ],
+        "answer": "The new software is easier to use than the old version."
+      }
+    ]
+  },
+  {
+    "category": "8. So sánh, Đối chiếu",
+    "title": "A is as (adjective) as B",
+    "formula": "A + is + as + adjective + as + B",
+    "meaning": "Dùng để nói hai thứ bằng nhau về một đặc điểm.",
+    "examples": [
+      {
+        "en": "This software is as effective as the previous version.",
+        "vi": "Phần mềm này hiệu quả như phiên bản trước."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Làm việc từ xa hiệu quả như làm việc tại văn phòng.",
+        "hints": [
+          "as effective as",
+          "office work"
+        ],
+        "answer": "Remote work is as effective as office work."
+      },
+      {
+        "prompt": "Giao tiếp qua video rõ ràng như gặp mặt trực tiếp.",
+        "hints": [
+          "as clear as",
+          "face-to-face"
+        ],
+        "answer": "Video communication is as clear as face-to-face meetings."
+      },
+      {
+        "prompt": "Nhân viên mới nhiệt tình như nhân viên cũ.",
+        "hints": [
+          "as enthusiastic as",
+          "old employees"
+        ],
+        "answer": "New employees are as enthusiastic as old employees."
+      },
+      {
+        "prompt": "Đào tạo online tốt như đào tạo trực tiếp.",
+        "hints": [
+          "as good as",
+          "in-person"
+        ],
+        "answer": "Online training is as good as in-person training."
+      },
+      {
+        "prompt": "Dự án này quan trọng như dự án trước.",
+        "hints": [
+          "as important as",
+          "previous project"
+        ],
+        "answer": "This project is as important as the previous project."
+      }
+    ]
+  },
+  {
+    "category": "8. So sánh, Đối chiếu",
+    "title": "A is different from B",
+    "formula": "A + is different from + B",
+    "meaning": "Dùng để nói hai thứ khác nhau.",
+    "examples": [
+      {
+        "en": "Remote work is different from office work in many ways.",
+        "vi": "Làm việc từ xa khác với làm việc văn phòng ở nhiều mặt."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Văn hóa công ty này khác với công ty trước của tôi.",
+        "hints": [
+          "different from",
+          "previous company"
+        ],
+        "answer": "This company culture is different from my previous company."
+      },
+      {
+        "prompt": "Làm việc nhóm khác với làm việc độc lập.",
+        "hints": [
+          "different from",
+          "working independently"
+        ],
+        "answer": "Teamwork is different from working independently."
+      },
+      {
+        "prompt": "Công nghệ mới khác với công nghệ cũ về nhiều mặt.",
+        "hints": [
+          "different from",
+          "in many ways"
+        ],
+        "answer": "New technology is different from old technology in many ways."
+      },
+      {
+        "prompt": "Quản lý hiện đại khác với quản lý truyền thống.",
+        "hints": [
+          "different from",
+          "traditional"
+        ],
+        "answer": "Modern management is different from traditional management."
+      },
+      {
+        "prompt": "Kỹ năng mềm khác với kỹ năng kỹ thuật.",
+        "hints": [
+          "different from",
+          "technical skills"
+        ],
+        "answer": "Soft skills are different from technical skills."
+      }
+    ]
+  },
+  {
+    "category": "8. So sánh, Đối chiếu",
+    "title": "A and B are similar",
+    "formula": "A and B + are similar/alike",
+    "meaning": "Dùng để nói hai thứ giống nhau.",
+    "examples": [
+      {
+        "en": "Online training and in-person training are similar in effectiveness.",
+        "vi": "Đào tạo trực tuyến và đào tạo trực tiếp giống nhau về hiệu quả."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Làm việc từ xa và làm việc văn phòng giống nhau về năng suất.",
+        "hints": [
+          "are similar",
+          "productivity"
+        ],
+        "answer": "Remote work and office work are similar in productivity."
+      },
+      {
+        "prompt": "Nhân viên mới và nhân viên cũ giống nhau về đđộng lực.",
+        "hints": [
+          "are similar",
+          "motivation"
+        ],
+        "answer": "New employees and old employees are similar in motivation."
+      },
+      {
+        "prompt": "Hai dự án này giống nhau về quy mô.",
+        "hints": [
+          "are similar",
+          "scale"
+        ],
+        "answer": "These two projects are similar in scale."
+      },
+      {
+        "prompt": "Kỹ năng giao tiếp và kỹ năng làm việc nhóm giống nhau về tầm quan trọng.",
+        "hints": [
+          "are similar",
+          "importance"
+        ],
+        "answer": "Communication skills and teamwork skills are similar in importance."
+      },
+      {
+        "prompt": "Công nghệ này và công nghệ kia giống nhau về chức năng.",
+        "hints": [
+          "are similar",
+          "function"
+        ],
+        "answer": "This technology and that technology are similar in function."
+      }
+    ]
+  },
+  {
+    "category": "8. So sánh, Đối chiếu",
+    "title": "On the one hand,..., but on the other hand,...",
+    "formula": "On the one hand, + clause, but on the other hand, + clause",
+    "meaning": "Dùng để đưa ra hai mặt đối lập của vấn đề.",
+    "examples": [
+      {
+        "en": "On the one hand, remote work is flexible, but on the other hand, it can be isolating.",
+        "vi": "Một mặt, làm việc từ xa linh hoạt, nhưng mặt khác, nó có thể cô lập."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Một mặt, công nghệ tăng hiệu quả, nhưng mặt khác, nó tốn kém.",
+        "hints": [
+          "on the one hand",
+          "on the other hand"
+        ],
+        "answer": "On the one hand, technology increases efficiency, but on the other hand, it's expensive."
+      },
+      {
+        "prompt": "Một mặt, làm việc nhóm tốt, nhưng mặt khác, nó mất thời gian.",
+        "hints": [
+          "on the one hand",
+          "on the other hand"
+        ],
+        "answer": "On the one hand, teamwork is good, but on the other hand, it takes time."
+      },
+      {
+        "prompt": "Một mặt, đào tạo quan trọng, nhưng mặt khác, nó đắt tiền.",
+        "hints": [
+          "on the one hand",
+          "on the other hand"
+        ],
+        "answer": "On the one hand, training is important, but on the other hand, it's costly."
+      },
+      {
+        "prompt": "Một mặt, giờ linh hoạt tự do, nhưng mặt khác, khó quản lý.",
+        "hints": [
+          "on the one hand",
+          "on the other hand"
+        ],
+        "answer": "On the one hand, flexible hours are free, but on the other hand, they're hard to manage."
+      },
+      {
+        "prompt": "Một mặt, văn phòng mở tạo giao tiếp, nhưng mặt khác, nó ồn ào.",
+        "hints": [
+          "on the one hand",
+          "on the other hand"
+        ],
+        "answer": "On the one hand, open offices create communication, but on the other hand, they're noisy."
+      }
+    ]
+  },
+  {
+    "category": "8. So sánh, Đối chiếu",
+    "title": "Unlike A, B is + adj",
+    "formula": "Unlike + A, B + is + adjective",
+    "meaning": "Dùng để so sánh đối chiếu, nhấn mạnh sự khác biệt.",
+    "examples": [
+      {
+        "en": "Unlike traditional offices, modern workplaces are more flexible.",
+        "vi": "Không gi người văn phòng truyền thống, nơi làm việc hiện đại linh hoạt hơn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Không giống công nghệ cũ, công nghệ mới nhanh hơn.",
+        "hints": [
+          "unlike",
+          "is faster"
+        ],
+        "answer": "Unlike old technology, new technology is faster."
+      },
+      {
+        "prompt": "Không giống làm việc độc lập, làm việc nhóm hiệu quả hơn.",
+        "hints": [
+          "unlike",
+          "more effective"
+        ],
+        "answer": "Unlike working independently, teamwork is more effective."
+      },
+      {
+        "prompt": "Không giống đào tạo một lần, đào tạo liên tục tốt hơn.",
+        "hints": [
+          "unlike",
+          "is betốter"
+        ],
+        "answer": "Unlike one-time training, continuous training is better."
+      },
+      {
+        "prompt": "Không giống quản lý truyền thống, quản lý hiện đại linh hoạt hơn.",
+        "hints": [
+          "unlike",
+          "more flexible"
+        ],
+        "answer": "Unlike traditional management, modern management is more flexible."
+      },
+      {
+        "prompt": "Không giống văn phòng cố để nh, làm việc từ xa tự do hơn.",
+        "hints": [
+          "unlike",
+          "is freer"
+        ],
+        "answer": "Unlike fixed offices, remote work is freer."
+      }
+    ]
+  },
+  {
+    "category": "9. Đưa ra giải pháp, đề xuất",
+    "title": "We should/need to do something",
+    "formula": "We should/need to + verb + ...",
+    "meaning": "Dùng để đưa ra giải pháp hoặc hành đđộng cần thiết.",
+    "examples": [
+      {
+        "en": "We should improve our customer service to increase satisfaction.",
+        "vi": "Chúng ta nên cải thiện dịch vụ khách hàng để tăng sự hài lòng."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Chúng ta nên đầu tư vào đào tạo nhân viên.",
+        "hints": [
+          "should invest",
+          "training"
+        ],
+        "answer": "We should invest in employee training."
+      },
+      {
+        "prompt": "Chúng ta cần cải thiện quy trình làm việc.",
+        "hints": [
+          "need to improve",
+          "processes"
+        ],
+        "answer": "We need to improve work processes."
+      },
+      {
+        "prompt": "Chúng ta nên tổ chức họp nhóm thường xuyên.",
+        "hints": [
+          "should organize",
+          "regular meetings"
+        ],
+        "answer": "We should organize regular team meetings."
+      },
+      {
+        "prompt": "Chúng ta cần giải quyết vấn đề giao tiếp ngay lập tức.",
+        "hints": [
+          "need to address",
+          "immediately"
+        ],
+        "answer": "We need to address communication issues immediately."
+      },
+      {
+        "prompt": "Chúng ta nên áp dụng công nghệ mới.",
+        "hints": [
+          "should adopt",
+          "new technology"
+        ],
+        "answer": "We should adopt new technology."
+      }
+    ]
+  },
+  {
+    "category": "9. Đưa ra giải pháp, đề xuất",
+    "title": "It",
+    "formula": "It",
+    "meaning": "Dùng để đề xuất một ý tưởng t t.",
+    "examples": [
+      {
+        "en": "It's a good idea to have regular feedback sessions.",
+        "vi": "Đó là một ý tưởng tốt khi có các buổi phản hồi thường xuyên."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Đó là tưởng tốt khi đầu tư vào công nghệ mới.",
+        "hints": [
+          "good idea",
+          "invest"
+        ],
+        "answer": "It's a good idea to invest in new technology."
+      },
+      {
+        "prompt": "Đó là ý tưởng tốt khi tổ chức đào tạo định kỳ.",
+        "hints": [
+          "good idea",
+          "organize"
+        ],
+        "answer": "It's a good idea to organize regular training."
+      },
+      {
+        "prompt": "Đó là ý tưởng tốt khi lắng nghe ý kiến nhân viên.",
+        "hints": [
+          "good idea",
+          "listen"
+        ],
+        "answer": "It's a good idea to listen to employee opinions."
+      },
+      {
+        "prompt": "Đó là ý tưởng tốt khi có giờ làm việc linh hoạt.",
+        "hints": [
+          "good idea",
+          "flexible"
+        ],
+        "answer": "It's a good idea to have flexible working hours."
+      },
+      {
+        "prompt": "Đó là ý tưởng tốt khi xây dựng văn hóa công ty tích cực.",
+        "hints": [
+          "good idea",
+          "build"
+        ],
+        "answer": "It's a good idea to build a positive company culture."
+      }
+    ]
+  },
+  {
+    "category": "9. Đưa ra giải pháp, đề xuất",
+    "title": "People should + V",
+    "formula": "People should + verb",
+    "meaning": "Dùng để đưa ra lời khuyên chung cho mọi người.",
+    "examples": [
+      {
+        "en": "People should focus on continuous learning.",
+        "vi": "Mọi người nên tập trung vào học hỏi liên tục."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Mọi người nên cải thiện kỹ năng giao tiếp.",
+        "hints": [
+          "people should",
+          "improve"
+        ],
+        "answer": "People should improve communication skills."
+      },
+      {
+        "prompt": "Mọi người nên cân bằng công việc và cuộc sống.",
+        "hints": [
+          "people should",
+          "balance"
+        ],
+        "answer": "People should balance work and life."
+      },
+      {
+        "prompt": "M i người nên học công nghệ mới.",
+        "hints": [
+          "people should",
+          "learn"
+        ],
+        "answer": "People should learn new technology."
+      },
+      {
+        "prompt": "Mọi người nên làm việc nhóm hiệu quả.",
+        "hints": [
+          "people should",
+          "work effectively"
+        ],
+        "answer": "People should work in teams effectively."
+      },
+      {
+        "prompt": "Mọi người nên tìm kiếm phản hồi thường xuyên.",
+        "hints": [
+          "people should",
+          "seek"
+        ],
+        "answer": "People should seek regular feedback."
+      }
+    ]
+  },
+  {
+    "category": "10. Diễn tả sự cần thiết, bắt buộc",
+    "title": "S has/have to do something",
+    "formula": "Subject + has/have to + verb + ...",
+    "meaning": "Dùng để nói ai đó phải làm gì (có tính bắt buộc).",
+    "examples": [
+      {
+        "en": "All employees have to attend the safety training session.",
+        "vi": "Tất cả nhân viên phải tham dự buổi đào tạo an toàn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Nhân viên phải hoàn thành khóa đào tạo trước khi bắt đầu làm việc.",
+        "hints": [
+          "have to complete",
+          "before starting"
+        ],
+        "answer": "Employees have to complete the training before starting work."
+      },
+      {
+        "prompt": "Tôi phải tham gia cuộc họp với khách hàng vào sáng mai.",
+        "hints": [
+          "have to atốtend",
+          "tomorrow morning"
+        ],
+        "answer": "I have to attend the meeting with clients tomorrow morning."
+      },
+      {
+        "prompt": "Chúng ta phải nộp đề xuất dự án trước ngày 15.",
+        "hints": [
+          "have to submit",
+          "before 15th"
+        ],
+        "answer": "We have to submit the project proposal before the 15th."
+      },
+      {
+        "prompt": "Anh ấy phải làm thêm giờ để hoàn thành công việc đúng hạn.",
+        "hints": [
+          "has to work overtime",
+          "on time"
+        ],
+        "answer": "He has to work overtime to complete the work on time."
+      },
+      {
+        "prompt": "Nhân viên mới phải trải qua thời gian thử việc ba tháng.",
+        "hints": [
+          "have to go through",
+          "probation period"
+        ],
+        "answer": "New employees have to go through a three-month probation period."
+      }
+    ]
+  },
+  {
+    "category": "10. Diễn tả sự cần thiết, bắt buộc",
+    "title": "It is important/essential/crucial/necessary for (someone) to do something",
+    "formula": "It is + important/essential/crucial/necessary + for + someone + to + verb",
+    "meaning": "Dùng để nói điều gì là quan trọng/cần thiết cho ai đó làm.",
+    "examples": [
+      {
+        "en": "It is essential for employees to communicate clearly with team members.",
+        "vi": "Việc nhân viên giao tiếp rõ ràng với thành viên nhóm là cần thiết."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Việc học kỹ năng mới là quan trọng cho sự phát triển nghề nghiệp.",
+        "hints": [
+          "it is important",
+          "to learn"
+        ],
+        "answer": "It is important for people to learn new skills for career development."
+      },
+      {
+        "prompt": "Việc có kế hoạch rõ ràng là thiết yếu cho thành công của dự án.",
+        "hints": [
+          "it is essential",
+          "to have"
+        ],
+        "answer": "It is essential for teams to have a clear plan for project success."
+      },
+      {
+        "prompt": "Việc duy trì cân bằng công việc-cuộc sống là cần thiết cho nhân viên.",
+        "hints": [
+          "it is necessary",
+          "to maintain"
+        ],
+        "answer": "It is necessary for employees to maintain work-life balance."
+      },
+      {
+        "prompt": "Việc phản hồi thường xuyên là quan trọng cho quản lý để cải thiện hiệu suất.",
+        "hints": [
+          "it is crucial",
+          "to provide"
+        ],
+        "answer": "It is crucial for managers to provide regular feedback to improve performance."
+      },
+      {
+        "prompt": "Việc đầu tư vào công nghệ là cần thiết cho công ty để cạnh tranh.",
+        "hints": [
+          "it is necessary",
+          "to invest"
+        ],
+        "answer": "It is necessary for companies to invest in technology to compete."
+      }
+    ]
+  },
+  {
+    "category": "10. Diễn tả sự cần thiết, bắt buộc",
+    "title": "A needs to be done",
+    "formula": "A + needs to be + past participle",
+    "meaning": "Dùng để nói điều gì cần được làm (câu bị đđộng).",
+    "examples": [
+      {
+        "en": "This report needs to be completed by Friday.",
+        "vi": "Báo cáo này cần được hoàn thành trước thứ Sáu."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Dự án này cần được hoàn thành trước deadline.",
+        "hints": [
+          "needs to be",
+          "completed"
+        ],
+        "answer": "This project needs to be completed before the deadline."
+      },
+      {
+        "prompt": "Vấn đề này cần được giải quyết ngay lập tức.",
+        "hints": [
+          "needs to be",
+          "solved"
+        ],
+        "answer": "This problem needs to be solved immediately."
+      },
+      {
+        "prompt": "Nhân viên mới cần được đào tạo đúng cách.",
+        "hints": [
+          "need to be",
+          "trained"
+        ],
+        "answer": "New employees need to be trained properly."
+      },
+      {
+        "prompt": "Quy trình này cần được cải thiện để tăng hiệu quả.",
+        "hints": [
+          "needs to be",
+          "improved"
+        ],
+        "answer": "This process needs to be improved to increase efficiency."
+      },
+      {
+        "prompt": "Công nghệ cũ cần được thay thế bằng hệ thống mới.",
+        "hints": [
+          "needs to be",
+          "replaced"
+        ],
+        "answer": "Old technology needs to be replaced with new systems."
+      }
+    ]
+  },
+  {
+    "category": "10. Diễn tả sự cần thiết, bắt buộc",
+    "title": "We must V",
+    "formula": "We must + verb + ...",
+    "meaning": "Dùng để nói sự bắt buộc mạnh (phải làm).",
+    "examples": [
+      {
+        "en": "We must follow company policies at all times.",
+        "vi": "Chúng ta phải tuân thủ chính sách công ty mọi lúc."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Chúng ta phải hoàn thành dự án đúng hạn.",
+        "hints": [
+          "we must",
+          "on time"
+        ],
+        "answer": "We must complete the project on time."
+      },
+      {
+        "prompt": "Chúng ta phải tuân thủ các quy định an toàn.",
+        "hints": [
+          "we must comply",
+          "safety"
+        ],
+        "answer": "We must comply with safety regulations."
+      },
+      {
+        "prompt": "Chúng ta phải giữ thông tin khách hàng bảo mật.",
+        "hints": [
+          "we must keep",
+          "confidential"
+        ],
+        "answer": "We must keep customer information confidential."
+      },
+      {
+        "prompt": "Chúng ta phải cải thiện chất lượng sản ph m.",
+        "hints": [
+          "we must improve",
+          "quality"
+        ],
+        "answer": "We must improve product quality."
+      },
+      {
+        "prompt": "Chúng ta phải làm việc cùng nhau để đạt mục tiêu.",
+        "hints": [
+          "we must work",
+          "achieve goals"
+        ],
+        "answer": "We must work together to achieve goals."
+      }
+    ]
+  },
+  {
+    "category": "10. Diễn tả sự cần thiết, bắt buộc",
+    "title": "S is required to V",
+    "formula": "Subject + is/are required to + verb",
+    "meaning": "Dùng để nói ai đó được yêu cầu phải làm gì (mđang tính chính thức).",
+    "examples": [
+      {
+        "en": "All staff are required to wear ID badges in the building.",
+        "vi": "Tất cả nhân viên được yêu cầu đeo thẻ ID trong tòa nhà."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Nhân viên được yêu cầu tham dự đào tạo hàng tháng.",
+        "hints": [
+          "are required to",
+          "atốtend"
+        ],
+        "answer": "Employees are required to attend monthly training."
+      },
+      {
+        "prompt": "Chúng tôi được yêu cầu báo cáo tiến độ hàng tuần.",
+        "hints": [
+          "are required to",
+          "report"
+        ],
+        "answer": "We are required to report progress weekly."
+      },
+      {
+        "prompt": "Người quản lý được yêu cầu cung cấp phản hồi cho nhân viên.",
+        "hints": [
+          "are required to",
+          "provide"
+        ],
+        "answer": "Managers are required to provide feedback to employees."
+      },
+      {
+        "prompt": "Tất cả thành viên được yêu cầu tuân thủ quy định công ty.",
+        "hints": [
+          "are required to",
+          "comply"
+        ],
+        "answer": "All members are required to comply with company regulations."
+      },
+      {
+        "prompt": "Nhân viên được yêu cầu hoàn thành khóa đào tạo bắt buộc.",
+        "hints": [
+          "are required to",
+          "complete"
+        ],
+        "answer": "Employees are required to complete mandatory training."
+      }
+    ]
+  },
+  {
+    "category": "11. Diễn tả sự thật, hiện trạng chung",
+    "title": "It is true that...",
+    "formula": "It is true that + clause",
+    "meaning": "Dùng để khẳng định một sự thật.",
+    "examples": [
+      {
+        "en": "It is true that technology has changed the way we work.",
+        "vi": "Sự thật là công nghệ đã thay đổi cách chúng ta làm việc."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Sự thật là giao tiếp tốt rất quan trọng trong công việc.",
+        "hints": [
+          "it is true",
+          "very important"
+        ],
+        "answer": "It is true that good communication is very important at work."
+      },
+      {
+        "prompt": "Sự thật là làm việc từ xa ngày càng phổ biến.",
+        "hints": [
+          "it is true",
+          "becoming popular"
+        ],
+        "answer": "It is true that remote work is becoming more popular."
+      },
+      {
+        "prompt": "Sự thật là nhân viên cần đào tạo liên tục.",
+        "hints": [
+          "it is true",
+          "need training"
+        ],
+        "answer": "It is true that employees need continuous training."
+      },
+      {
+        "prompt": "Sự thật là cân bằng cuộc sống cải thiện năng suất.",
+        "hints": [
+          "it is true",
+          "improves"
+        ],
+        "answer": "It is true that work-life balance improves productivity."
+      },
+      {
+        "prompt": "Sự thật là công nghệ giúp doanh nghiệp phát triển nhanh hơn.",
+        "hints": [
+          "it is true",
+          "grow faster"
+        ],
+        "answer": "It is true that technology helps businesses grow faster."
+      }
+    ]
+  },
+  {
+    "category": "11. Diễn tả sự thật, hiện trạng chung",
+    "title": "Most people (agree/believe/think) that...",
+    "formula": "Most people + agree/believe/think + that + clause",
+    "meaning": "Dùng để nói quan điểm chung của đa số mọi người.",
+    "examples": [
+      {
+        "en": "Most people believe that teamwork leads to better results.",
+        "vi": "Đa số mọi người tin rằng làm việc nhóm mđang lại kết quả tốt hơn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Đa số mọi người nghĩ rằng học tiếng Anh mở ra cơ hội nghề nghiệp.",
+        "hints": [
+          "most people think",
+          "opens opportunities"
+        ],
+        "answer": "Most people think that learning English opens career opportunities."
+      },
+      {
+        "prompt": "Đa số mọi người đồng ý rằng công nghệ thay đổi cuộc sống.",
+        "hints": [
+          "most people agree",
+          "changes lives"
+        ],
+        "answer": "Most people agree that technology changes our lives."
+      },
+      {
+        "prompt": "Đa số mọi người tin rằng đào tạo cải thiện kỹ năng.",
+        "hints": [
+          "most people believe",
+          "improves"
+        ],
+        "answer": "Most people believe that training improves skills."
+      },
+      {
+        "prompt": "Đa số mọi người nghĩ rằng cân bằng công việc là quan trọng.",
+        "hints": [
+          "most people think",
+          "is important"
+        ],
+        "answer": "Most people think that work balance is important."
+      },
+      {
+        "prompt": "Đa số mọi người đồng ý rằng giao tiếp là kỹ năng cần thiết.",
+        "hints": [
+          "most people agree",
+          "necessary skill"
+        ],
+        "answer": "Most people agree that communication is a necessary skill."
+      }
+    ]
+  },
+  {
+    "category": "11. Diễn tả sự thật, hiện trạng chung",
+    "title": "A is becoming more and more + adj",
+    "formula": "A + is becoming + more and more + adjective",
+    "meaning": "Dùng để nói xu hướng ngày càng tăng.",
+    "examples": [
+      {
+        "en": "Remote work is becoming more and more popular among companies.",
+        "vi": "Làm việc từ xa ngày càng phổ biến trong các công ty."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Công nghệ đđang ngày càng quan trọng trong kinh doanh.",
+        "hints": [
+          "becoming more and more",
+          "important"
+        ],
+        "answer": "Technology is becoming more and more important in business."
+      },
+      {
+        "prompt": "Thị trường việc làm đđang ngày càng cạnh tranh.",
+        "hints": [
+          "becoming more and more",
+          "competitive"
+        ],
+        "answer": "The job market is becoming more and more competitive."
+      },
+      {
+        "prompt": "Làm việc từ xa đđang ngày càng phổ biến.",
+        "hints": [
+          "becoming more and more",
+          "common"
+        ],
+        "answer": "Remote work is becoming more and more common."
+      },
+      {
+        "prompt": "Kỹ năng mềm đđang ngày càng cần thiết.",
+        "hints": [
+          "becoming more and more",
+          "necessary"
+        ],
+        "answer": "Soft skills are becoming more and more necessary."
+      },
+      {
+        "prompt": "Môi trường làm việc đđang ngày càng linh hoạt.",
+        "hints": [
+          "becoming more and more",
+          "flexible"
+        ],
+        "answer": "Work environments are becoming more and more flexible."
+      }
+    ]
+  },
+  {
+    "category": "11. Diễn tả sự thật, hiện trạng chung",
+    "title": "There are (many/few) A in B",
+    "formula": "There are + many/few/several + noun + in + place/context",
+    "meaning": "Dùng để nói về số lượng của cái gì ở đâu.",
+    "examples": [
+      {
+        "en": "There are many opportunities for career growth in this company.",
+        "vi": "Có nhiều cơ hội phát triển nghề nghiệp trong công ty này."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Có nhiều thách thức trong thị trường lao đđộng hiện nay.",
+        "hints": [
+          "there are many",
+          "challenges"
+        ],
+        "answer": "There are many challenges in today's job market."
+      },
+      {
+        "prompt": "Có ít cơ hội thăng tiến trong công ty nhỏ.",
+        "hints": [
+          "there are few",
+          "opportunities"
+        ],
+        "answer": "There are few promotion opportunities in small companies."
+      },
+      {
+        "prompt": "Có nhiều lợi ích khi làm việc từ xa.",
+        "hints": [
+          "there are many",
+          "benefits"
+        ],
+        "answer": "There are many benefits in remote work."
+      },
+      {
+        "prompt": "Có một số vấn đề với hệ thống cũ.",
+        "hints": [
+          "there are several",
+          "problems"
+        ],
+        "answer": "There are several problems with the old system."
+      },
+      {
+        "prompt": "Có nhiều cách để cải thiện năng suất.",
+        "hints": [
+          "there are many",
+          "ways"
+        ],
+        "answer": "There are many ways to improve productivity."
+      }
+    ]
+  },
+  {
+    "category": "11. Diễn tả sự thật, hiện trạng chung",
+    "title": "A is a common problem",
+    "formula": "A + is a common/typical/frequent + problem/issue/challenge",
+    "meaning": "Dùng để nói điều gì là vấn đề phổ biến.",
+    "examples": [
+      {
+        "en": "Lack of communication is a common problem in large organizations.",
+        "vi": "Thiếu giao tiếp là vấn đề phổ biến trong các tổ chức lớn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Thiếu đđộng lực là vấn đề phổ biến ở nơi làm việc.",
+        "hints": [
+          "common problem",
+          "workplace"
+        ],
+        "answer": "Lack of motivation is a common problem in the workplace."
+      },
+      {
+        "prompt": "Làm việc quá giờ là thách thức thường gặp trong các công ty khởi nghiệp.",
+        "hints": [
+          "frequent challenge",
+          "startup"
+        ],
+        "answer": "Working overtime is a frequent challenge in startup companies."
+      },
+      {
+        "prompt": "Stress công việc là vấn đề điển hình trong môi trường áp lực cao.",
+        "hints": [
+          "typical problem",
+          "high-pressure"
+        ],
+        "answer": "Work stress is a typical problem in high-pressure environments."
+      },
+      {
+        "prompt": "Thiếu đào tạo là vấn đề phổ biến với nhân viên mới.",
+        "hints": [
+          "common issue",
+          "new employees"
+        ],
+        "answer": "Lack of training is a common issue with new employees."
+      },
+      {
+        "prompt": "Xung đột trong nhóm là thách thức thường gặp.",
+        "hints": [
+          "frequent challenge",
+          "conflicts"
+        ],
+        "answer": "Team conflicts are a frequent challenge."
+      }
+    ]
+  },
+  {
+    "category": "12. Diễn đạt khả năng, tiềm năng",
+    "title": "It is possible to do something",
+    "formula": "It is possible to + verb + ...",
+    "meaning": "Dùng để nói việc gì đó có thể được thực hiện.",
+    "examples": [
+      {
+        "en": "It is possible to complete this project within the deadline.",
+        "vi": "Có thể hoàn thành dự án này trong thời hạn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Có thể học tiếng Anh qua ứng dụng di đđộng.",
+        "hints": [
+          "it is possible",
+          "learn through"
+        ],
+        "answer": "It is possible to learn English through mobile apps."
+      },
+      {
+        "prompt": "Có thể làm việc từ xa mà vẫn duy trì năng suất cao.",
+        "hints": [
+          "it is possible",
+          "while maintaining"
+        ],
+        "answer": "It is possible to work remotely while maintaining high productivity."
+      },
+      {
+        "prompt": "Có thể cải thiện kỹ năng giao tiếp bằng cách thực hành hàng ngày.",
+        "hints": [
+          "it is possible",
+          "by practicing"
+        ],
+        "answer": "It is possible to improve communication skills by practicing daily."
+      },
+      {
+        "prompt": "Có thể xây dựng sự nghiệp thành công mà không có bằng đại học.",
+        "hints": [
+          "it is possible",
+          "without degree"
+        ],
+        "answer": "It is possible to build a successful career without a university degree."
+      },
+      {
+        "prompt": "Có thể cân bằng công việc và gia đình với kế hoạch tốt.",
+        "hints": [
+          "it is possible",
+          "with planning"
+        ],
+        "answer": "It is possible to balance work and family with good planning."
+      }
+    ]
+  },
+  {
+    "category": "12. Diễn đạt khả năng, tiềm năng",
+    "title": "A has the potential to V",
+    "formula": "A + has/have + the potential to + verb",
+    "meaning": "Dùng để nói điều gì có tiềm năng làm gì.",
+    "examples": [
+      {
+        "en": "This new technology has the potential to revolutionize the industry.",
+        "vi": "Công nghệ mới này có tiềm năng cách mạng hóa ngành công nghiệp."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Nhân viên trẻ có tiềm năng trở thành lãnh đạo trong tương lai.",
+        "hints": [
+          "have the potential",
+          "to become"
+        ],
+        "answer": "Young employees have the potential to become leaders in the future."
+      },
+      {
+        "prompt": "Dự án này có tiềm năng tăng doanh thu đáng kể.",
+        "hints": [
+          "has the potential",
+          "to increase"
+        ],
+        "answer": "This project has the potential to increase revenue significantly."
+      },
+      {
+        "prompt": "Công nghệ AI có tiềm năng thay đổi cách chúng ta làm việc.",
+        "hints": [
+          "has the potential",
+          "to change"
+        ],
+        "answer": "AI technology has the potential to change how we work."
+      },
+      {
+        "prompt": "Chiến lược mới có tiềm năng cải thiện hiệu quả hoạt đđộng.",
+        "hints": [
+          "has the potential",
+          "to improve"
+        ],
+        "answer": "The new strategy has the potential to improve operational efficiency."
+      },
+      {
+        "prompt": "Sản phẩm này có tiềm năng chiếm lĩnh thị trường.",
+        "hints": [
+          "has the potential",
+          "to dominate"
+        ],
+        "answer": "This product has the potential to dominate the market."
+      }
+    ]
+  },
+  {
+    "category": "12. Diễn đạt khả năng, tiềm năng",
+    "title": "There is a chance that...",
+    "formula": "There is a chance that + clause",
+    "meaning": "Dùng để nói có khả năng điều gì xảy ra.",
+    "examples": [
+      {
+        "en": "There is a chance that we will expand to new markets next year.",
+        "vi": "Có khả năng chúng ta sẽ mở rđộng sđang thị trường mới vào năm sau."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Có khả năng dự án sẽ kết thúc sớm hơn dự kiến.",
+        "hints": [
+          "there is a chance",
+          "earlier than"
+        ],
+        "answer": "There is a chance that the project will finish earlier than expected."
+      },
+      {
+        "prompt": "Có khả năng công ty sẽ tuyển thêm nhân viên vào quý tới.",
+        "hints": [
+          "there is a chance",
+          "next quarter"
+        ],
+        "answer": "There is a chance that the company will hire more employees next quarter."
+      },
+      {
+        "prompt": "Có khả năng chúng ta sẽ được thăng chức nếu làm việc tốt.",
+        "hints": [
+          "there is a chance",
+          "get promoted"
+        ],
+        "answer": "There is a chance that we will get promoted if we work well."
+      },
+      {
+        "prompt": "Có khả năng cuộc họp sẽ bị hoãn do thời tiết xấu.",
+        "hints": [
+          "there is a chance",
+          "due to"
+        ],
+        "answer": "There is a chance that the meeting will be postponed due to bad weather."
+      },
+      {
+        "prompt": "Có khả năng họ sẽ chấp nhận đề xuất của chúng ta.",
+        "hints": [
+          "there is a chance",
+          "will accept"
+        ],
+        "answer": "There is a chance that they will accept our proposal."
+      }
+    ]
+  },
+  {
+    "category": "13. Diễn tả mục đích",
+    "title": "S V to V",
+    "formula": "Subject + verb + to + verb",
+    "meaning": "Dùng để nói mục đích của hành đđộng.",
+    "examples": [
+      {
+        "en": "I study English to improve my career opportunities.",
+        "vi": "Tôi học tiếng Anh để cải thiện cơ hội nghề nghiệp."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi tham gia khóa đào tạo để phát triển kỹ năng mới.",
+        "hints": [
+          "atốtend courses",
+          "to develop"
+        ],
+        "answer": "I attend training courses to develop new skills."
+      },
+      {
+        "prompt": "Chúng tôi họp hàng tuần để thảo luận tiến độ dự án.",
+        "hints": [
+          "meet weekly",
+          "to discuss"
+        ],
+        "answer": "We meet weekly to discuss project progress."
+      },
+      {
+        "prompt": "Công ty đầu tư vào công nghệ để tăng năng suất.",
+        "hints": [
+          "invests in",
+          "to increase"
+        ],
+        "answer": "The company invests in technology to increase productivity."
+      },
+      {
+        "prompt": "Nhân viên làm thêm giờ để hoàn thành deadline.",
+        "hints": [
+          "work overtime",
+          "to meet"
+        ],
+        "answer": "Employees work overtime to meet the deadline."
+      },
+      {
+        "prompt": "Tôi đọc sách kinh doanh để mở rđộng kiến thức.",
+        "hints": [
+          "read books",
+          "to expand"
+        ],
+        "answer": "I read business books to expand my knowledge."
+      }
+    ]
+  },
+  {
+    "category": "13. Diễn tả mục đích",
+    "title": "S V for N",
+    "formula": "Subject + verb + for + noun",
+    "meaning": "Dùng để nói mục đích với danh từ.",
+    "examples": [
+      {
+        "en": "We're preparing for the annual conference.",
+        "vi": "Chúng tôi đđang chuẩn bị cho hội nghị thường niên."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Chúng tôi đđang lên kế hoạch cho chiến dịch marketing mới.",
+        "hints": [
+          "planning for",
+          "marketing campaign"
+        ],
+        "answer": "We're planning for the new marketing campaign."
+      },
+      {
+        "prompt": "Nhân viên đđang chuẩn bị cho buổi thuyết trình quan trọng.",
+        "hints": [
+          "preparing for",
+          "presentation"
+        ],
+        "answer": "Employees are preparing for the important presentation."
+      },
+      {
+        "prompt": "Công ty đđang tuyển dụng cho vị trí quản lý mới.",
+        "hints": [
+          "recruiting for",
+          "position"
+        ],
+        "answer": "The company is recruiting for the new management position."
+      },
+      {
+        "prompt": "Chúng tôi đđang đào tạo cho dự án sắp tới.",
+        "hints": [
+          "training for",
+          "upcoming"
+        ],
+        "answer": "We're training for the upcoming project."
+      },
+      {
+        "prompt": "Họ đđang tiết kiệm cho kế hoạch mở rđộng.",
+        "hints": [
+          "saving for",
+          "expansion"
+        ],
+        "answer": "They're saving for the expansion plan."
+      }
+    ]
+  },
+  {
+    "category": "13. Diễn tả mục đích",
+    "title": "S V in order to/to/so as to do something",
+    "formula": "Subject + verb + in order to/to/so as to + verb",
+    "meaning": "Dùng để nhấn mạnh mục đích (trđang trọng hơn).",
+    "examples": [
+      {
+        "en": "We implemented new software in order to streamline our processes.",
+        "vi": "Chúng tôi áp dụng phần mềm mới để tối ưu hóa quy trình."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Công ty thay đổi chính sách nhằm cải thiện sự hài lòng của nhân viên.",
+        "hints": [
+          "in order to",
+          "improve"
+        ],
+        "answer": "The company changed policies in order to improve employee satisfaction."
+      },
+      {
+        "prompt": "Chúng tôi thuê thêm nhân viên để đáp ứng nhu cầu khách hàng.",
+        "hints": [
+          "so as to",
+          "meet demand"
+        ],
+        "answer": "We hired more staff so as to meet customer demand."
+      },
+      {
+        "prompt": "Nhân viên tham gia đào tạo nhằm nâng cao chuyên môn.",
+        "hints": [
+          "in order to",
+          "enhance"
+        ],
+        "answer": "Employees attend training in order to enhance their expertise."
+      },
+      {
+        "prompt": "Họ làm việc chăm chỉ để đạt được mục tiêu doanh số.",
+        "hints": [
+          "so as to",
+          "achieve"
+        ],
+        "answer": "They work hard so as to achieve sales targets."
+      },
+      {
+        "prompt": "Chúng tôi đầu tư vào R&D nhằm phát triển sản phẩm mới.",
+        "hints": [
+          "in order to",
+          "develop"
+        ],
+        "answer": "We invest in R&D in order to develop new products."
+      }
+    ]
+  },
+  {
+    "category": "13. Diễn tả mục đích",
+    "title": "S V so that S can V",
+    "formula": "Subject + verb + so that + subject + can/could/will/would + verb",
+    "meaning": "Dùng để nói mục đích với mệnh đề đầy đủ.",
+    "examples": [
+      {
+        "en": "We provide training so that employees can develop their skills.",
+        "vi": "Chúng tôi cung cấp đào tạo để nhân viên có thể phát triển kỹ năng."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Công ty cung cấp laptop để nhân viên có thể làm việc từ xa.",
+        "hints": [
+          "so that",
+          "can work"
+        ],
+        "answer": "The company provides laptops so that employees can work remotely."
+      },
+      {
+        "prompt": "Chúng tôi tổ chức họp thường xuyên để mọi người có thể chia sẻ ý tưởng.",
+        "hints": [
+          "so that",
+          "can share"
+        ],
+        "answer": "We organize regular meetings so that people can share ideas."
+      },
+      {
+        "prompt": "Quản lý cung cấp phản hồi để nhân viên có thể cải thiện hiệu suất.",
+        "hints": [
+          "so that",
+          "can improve"
+        ],
+        "answer": "Managers provide feedback so that employees can improve performance."
+      },
+      {
+        "prompt": "Họ đơn giản hóa quy trình để khách hàng có thể dễ dàng sử dụng.",
+        "hints": [
+          "so that",
+          "can use"
+        ],
+        "answer": "They simplify the process so that customers can use it easily."
+      },
+      {
+        "prompt": "Chúng tôi tạo môi trường thoải mái để nhân viên có thể làm việc tốt nhất.",
+        "hints": [
+          "so that",
+          "can work"
+        ],
+        "answer": "We create a comfortable environment so that employees can work at their best."
+      }
+    ]
+  },
+  {
+    "category": "14. Diễn tả nguyên nhân/Hậu quả",
+    "title": "Because of A, B happens",
+    "formula": "Because of + noun/noun phrase, + clause",
+    "meaning": "Dùng để nói nguyên nhân (danh từ) dẫn đến kết quả.",
+    "examples": [
+      {
+        "en": "Because of the new technology, we can work more efficiently.",
+        "vi": "Do công nghệ mới, chúng ta có thể làm việc hiệu quả hơn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Do đào tạo tốt, nhân viên có kỹ năng cao.",
+        "hints": [
+          "because of",
+          "good training"
+        ],
+        "answer": "Because of good training, employees have high skills."
+      },
+      {
+        "prompt": "Do thời tiết xấu, cuộc họp bị hoãn.",
+        "hints": [
+          "because of",
+          "was postponed"
+        ],
+        "answer": "Because of bad weather, the meeting was postponed."
+      },
+      {
+        "prompt": "Do công nghệ mới, chi phí giảm đáng kể.",
+        "hints": [
+          "because of",
+          "decreased"
+        ],
+        "answer": "Because of new technology, costs decreased significantly."
+      },
+      {
+        "prompt": "Do làm việc nhóm tốt, dự án hoàn thành đúng hạn.",
+        "hints": [
+          "because of",
+          "finished"
+        ],
+        "answer": "Because of good teamwork, the project finished on time."
+      },
+      {
+        "prompt": "Do thiếu giao tiếp, nhiều vấn đề phát sinh.",
+        "hints": [
+          "because of lack",
+          "arose"
+        ],
+        "answer": "Because of lack of communication, many problems arose."
+      }
+    ]
+  },
+  {
+    "category": "14. Diễn tả nguyên nhân/Hậu quả",
+    "title": "A leads to B",
+    "formula": "A + leads to + B (noun/V-ing)",
+    "meaning": "Dùng để nói A dẫn đến B.",
+    "examples": [
+      {
+        "en": "Good communication leads to better teamwork.",
+        "vi": "Giao tiếp tốt dẫn đến làm việc nhóm tốt hơn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Đào tạo thường xuyên dẫn đến cải thiện kỹ năng.",
+        "hints": [
+          "leads to",
+          "improved skills"
+        ],
+        "answer": "Regular training leads to improved skills."
+      },
+      {
+        "prompt": "Công nghệ mới dẫn đến tăng năng suất.",
+        "hints": [
+          "leads to",
+          "increased"
+        ],
+        "answer": "New technology leads to increased productivity."
+      },
+      {
+        "prompt": "Làm việc quá nhiều dẫn đến kiệt sức.",
+        "hints": [
+          "leads to",
+          "burnout"
+        ],
+        "answer": "Working too much leads to burnout."
+      },
+      {
+        "prompt": "Phản hồi tích cực dẫn đến đđộng lực cao hơn.",
+        "hints": [
+          "leads to",
+          "higher motivation"
+        ],
+        "answer": "Positive feedback leads to higher motivation."
+      },
+      {
+        "prompt": "Kế hoạch kém dẫn đến thất bại dự án.",
+        "hints": [
+          "leads to",
+          "failure"
+        ],
+        "answer": "Poor planning leads to project failure."
+      }
+    ]
+  },
+  {
+    "category": "14. Diễn tả nguyên nhân/Hậu quả",
+    "title": "A results in B",
+    "formula": "A + results in + B (noun/V-ing)",
+    "meaning": "Dùng để nói A có kết quả là B (tương tự",
+    "examples": [
+      {
+        "en": "Effective management results in higher employee satisfaction.",
+        "vi": "Quản lý hiệu quả có kết quả là sự hài lòng nhân viên cao hơn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Đầu tư vào đào tạo có kết quả là nhân viên giỏi hơn.",
+        "hints": [
+          "results in",
+          "betốter employees"
+        ],
+        "answer": "Investment in training results in better employees."
+      },
+      {
+        "prompt": "Giao tiếp kém có kết quả là nhiều xung đột.",
+        "hints": [
+          "results in",
+          "conflicts"
+        ],
+        "answer": "Poor communication results in many conflicts."
+      },
+      {
+        "prompt": "Công nghệ tốt có kết quả là quy trình nhanh hơn.",
+        "hints": [
+          "results in",
+          "faster"
+        ],
+        "answer": "Good technology results in faster processes."
+      },
+      {
+        "prompt": "Làm việc chăm chỉ có kết quả là thăng tiến.",
+        "hints": [
+          "results in",
+          "promotion"
+        ],
+        "answer": "Hard work results in promotion."
+      },
+      {
+        "prompt": "Thiếu kế hoạch có kết quả là lãng phí thời gian.",
+        "hints": [
+          "results in",
+          "wasted"
+        ],
+        "answer": "Lack of planning results in wasted time."
+      }
+    ]
+  },
+  {
+    "category": "14. Diễn tả nguyên nhân/Hậu quả",
+    "title": "A is caused by B",
+    "formula": "A + is/are caused by + B",
+    "meaning": "Dùng để nói A được gây ra bởi B (câu bị đđộng).",
+    "examples": [
+      {
+        "en": "The delay was caused by technical problems.",
+        "vi": "Sự chậm trễ được gây ra bởi vấn đề kỹ thuật."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Vấn đề này được gây ra bởi thiếu giao tiếp.",
+        "hints": [
+          "is caused by",
+          "lack of"
+        ],
+        "answer": "This problem is caused by lack of communication."
+      },
+      {
+        "prompt": "Sự chậm trễ được gây ra bởi kế hoạch kém.",
+        "hints": [
+          "is caused by",
+          "poor planning"
+        ],
+        "answer": "The delay is caused by poor planning."
+      },
+      {
+        "prompt": "Stress được gây ra bởi áp lực công việc cao.",
+        "hints": [
+          "is caused by",
+          "high pressure"
+        ],
+        "answer": "Stress is caused by high work pressure."
+      },
+      {
+        "prompt": "Lỗi này được gây ra bởi thiếu đào tạo.",
+        "hints": [
+          "is caused by",
+          "lack of"
+        ],
+        "answer": "This error is caused by lack of training."
+      },
+      {
+        "prompt": "Thành công được gây ra bởi làm việc nhóm tốt.",
+        "hints": [
+          "is caused by",
+          "good teamwork"
+        ],
+        "answer": "Success is caused by good teamwork."
+      }
+    ]
+  },
+  {
+    "category": "14. Diễn tả nguyên nhân/Hậu quả",
+    "title": "As a result.../Consequently.../Therefore.../So...",
+    "formula": "As a result/Consequently/Therefore/So, + clause",
+    "meaning": "Dùng để nói về kết quả/hậu quả của điều trước đó.",
+    "examples": [
+      {
+        "en": "We invested in new equipment. As a result, productivity increased by 30%.",
+        "vi": "Chúng tôi đầu tư vào thiết bị mới. Kết quả là năng suất tăng 30%."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Công ty cải thiện đào tạo. Kết quả là nhân viên làm việc tốt hơn.",
+        "hints": [
+          "as a result",
+          "work betốter"
+        ],
+        "answer": "The company improved training. As a result, employees work better."
+      },
+      {
+        "prompt": "Chúng tôi tăng giao tiếp. Do đó, ít vấn đề hơn.",
+        "hints": [
+          "consequently",
+          "fewer problems"
+        ],
+        "answer": "We increased communication. Consequently, there are fewer problems."
+      },
+      {
+        "prompt": "Họ áp dụng công nghệ mới. Vì vậy, tiết kiệm thời gian.",
+        "hints": [
+          "therefore",
+          "save time"
+        ],
+        "answer": "They adopted new technology. Therefore, they save time."
+      },
+      {
+        "prompt": "Dự án hoàn thành sớm. Vì vậy, khách hàng rất hài lòng.",
+        "hints": [
+          "so",
+          "very satisfied"
+        ],
+        "answer": "The project finished early. So, customers are very satisfied."
+      },
+      {
+        "prompt": "Nhân viên được đào tạo tốt. Kết quả là chất lượng cao hơn.",
+        "hints": [
+          "as a result",
+          "quality higher"
+        ],
+        "answer": "Employees are well-trained. As a result, quality is higher."
+      }
+    ]
+  },
+  {
+    "category": "15. Diễn tả ưu tiên",
+    "title": "I think A is the most important thing",
+    "formula": "I think + A + is the most important thing/factor/aspect",
+    "meaning": "Dùng để nói điều gì là quan trọng nhất.",
+    "examples": [
+      {
+        "en": "I think communication is the most important thing in teamwork.",
+        "vi": "Tôi nghĩ giao tiếp là điều quan trọng nhất trong làm việc nhóm."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tôi nghĩ kỹ năng giao tiếp là yếu tố quan trọng nhất trong sự nghiệp.",
+        "hints": [
+          "most important factor",
+          "in career"
+        ],
+        "answer": "I think communication skills are the most important factor in career."
+      },
+      {
+        "prompt": "Tôi nghĩ cân bằng cuộc sống là điều quan trọng nhất cho hạnh phúc.",
+        "hints": [
+          "most important thing",
+          "for happiness"
+        ],
+        "answer": "I think work-life balance is the most important thing for happiness."
+      },
+      {
+        "prompt": "Tôi nghĩ đào tạo là khía cạnh quan trọng nhất của phát triển.",
+        "hints": [
+          "most important aspect",
+          "of development"
+        ],
+        "answer": "I think training is the most important aspect of development."
+      },
+      {
+        "prompt": "Tôi nghĩ thái độ là yếu tố quan trọng nhất khi tuyển dụng.",
+        "hints": [
+          "most important factor",
+          "when hiring"
+        ],
+        "answer": "I think attitude is the most important factor when hiring."
+      },
+      {
+        "prompt": "Tôi nghĩ lắng nghe là kỹ năng quan trọng nhất của lãnh đạo.",
+        "hints": [
+          "most important skill",
+          "of leadership"
+        ],
+        "answer": "I think listening is the most important skill of leadership."
+      }
+    ]
+  },
+  {
+    "category": "15. Diễn tả ưu tiên",
+    "title": "My top priority is (to do) something",
+    "formula": "My/Our top priority is + noun/to + verb",
+    "meaning": "Dùng để nói ưu tiên hàng đầu.",
+    "examples": [
+      {
+        "en": "My top priority is to complete this project successfully.",
+        "vi": "Ưu tiên hàng đầu của tôi là hoàn thành dự án này thành công."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Ưu tiên hàng đầu của tôi là phát triển kỹ năng lãnh đạo.",
+        "hints": [
+          "top priority",
+          "develop"
+        ],
+        "answer": "My top priority is to develop leadership skills."
+      },
+      {
+        "prompt": "Ưu tiên hàng đầu của chúng tôi là sự hài lòng của khách hàng.",
+        "hints": [
+          "top priority",
+          "customer satisfaction"
+        ],
+        "answer": "Our top priority is customer satisfaction."
+      },
+      {
+        "prompt": "Ưu tiên hàng đầu của công ty là đào tạo nhân viên.",
+        "hints": [
+          "top priority",
+          "employee training"
+        ],
+        "answer": "The company's top priority is employee training."
+      },
+      {
+        "prompt": "Ưu tiên hàng đầu của tôi là cải thiện giao tiếp trong nhóm.",
+        "hints": [
+          "top priority",
+          "improve"
+        ],
+        "answer": "My top priority is to improve team communication."
+      },
+      {
+        "prompt": "Ưu tiên hàng đầu của chúng tôi là chất lượng sản phẩm.",
+        "hints": [
+          "top priority",
+          "product quality"
+        ],
+        "answer": "Our top priority is product quality."
+      }
+    ]
+  },
+  {
+    "category": "15. Diễn tả ưu tiên",
+    "title": "S should prioritize (N/V-ing)",
+    "formula": "Subject + should prioritize + noun/V-ing",
+    "meaning": "Dùng để nói ai nên ưu tiên điều gì.",
+    "examples": [
+      {
+        "en": "Companies should prioritize employee well-being.",
+        "vi": "Các công ty nên ưu tiên sức khỏe của nhân viên."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Nhân viên nên ưu tiên việc học kỹ năng mới.",
+        "hints": [
+          "should prioritize",
+          "learning"
+        ],
+        "answer": "Employees should prioritize learning new skills."
+      },
+      {
+        "prompt": "Công ty nên ưu tiên đầu tư vào đào tạo.",
+        "hints": [
+          "should prioritize",
+          "investing"
+        ],
+        "answer": "Companies should prioritize investing in training."
+      },
+      {
+        "prompt": "Quản lý nên ưu tiên giao tiếp với đội ngũ.",
+        "hints": [
+          "should prioritize",
+          "communicating"
+        ],
+        "answer": "Managers should prioritize communicating with their teams."
+      },
+      {
+        "prompt": "Chúng ta nên ưu tiên chất lượng hơn là số lượng.",
+        "hints": [
+          "should prioritize",
+          "quality"
+        ],
+        "answer": "We should prioritize quality over quantity."
+      },
+      {
+        "prompt": "Lãnh đạo nên ưu tiên việc xây dựng văn hóa tích cực.",
+        "hints": [
+          "should prioritize",
+          "building"
+        ],
+        "answer": "Leaders should prioritize building positive culture."
+      }
+    ]
+  },
+  {
+    "category": "16. Diễn tả giải pháp thay thế",
+    "title": "Instead of A, (we/I) can do B",
+    "formula": "Instead of + noun/V-ing, + subject + can + verb",
+    "meaning": "Dùng để đề xuất làm B thay vì A.",
+    "examples": [
+      {
+        "en": "Instead of working late, we can start earlier in the morning.",
+        "vi": "Thay vì làm việc muộn, chúng ta có thể bắt đầu sớm hơn vào buổi sáng."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Thay vì họp trực tiếp, chúng ta có thể họp video.",
+        "hints": [
+          "instead of",
+          "can have"
+        ],
+        "answer": "Instead of meeting in person, we can have video meetings."
+      },
+      {
+        "prompt": "Thay vì thuê nhân viên mới, chúng ta có thể đào tạo nhân viên hiện tại.",
+        "hints": [
+          "instead of hiring",
+          "can train"
+        ],
+        "answer": "Instead of hiring new staff, we can train current employees."
+      },
+      {
+        "prompt": "Thay vì mua phần mềm đắt, chúng ta có thể dùng giải pháp mã nguồn mở.",
+        "hints": [
+          "instead of buying",
+          "can use"
+        ],
+        "answer": "Instead of buying expensive software, we can use open-source solutions."
+      },
+      {
+        "prompt": "Thay vì làm việc văn phòng, nhân viên có thể làm việc từ xa.",
+        "hints": [
+          "instead of working",
+          "can work"
+        ],
+        "answer": "Instead of working in offices, employees can work remotely."
+      },
+      {
+        "prompt": "Thay vì gửi email, tôi có thể gọi điện trực tiếp.",
+        "hints": [
+          "instead of sending",
+          "can call"
+        ],
+        "answer": "Instead of sending emails, I can call directly."
+      }
+    ]
+  },
+  {
+    "category": "16. Diễn tả giải pháp thay thế",
+    "title": "S has (the option) to do A or B",
+    "formula": "Subject + has/have + the option + to + verb A + or + verb B",
+    "meaning": "Dùng để nói ai có lựa chọn làm A hoặc B.",
+    "examples": [
+      {
+        "en": "Employees have the option to work from home or come to the office.",
+        "vi": "Nhân viên có lựa chọn làm việc tại nhà hoặc đến văn phòng."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Nhân viên có lựa chọn tham gia đào tạo online hoặc trực tiếp.",
+        "hints": [
+          "have the option",
+          "or"
+        ],
+        "answer": "Employees have the option to attend online training or in-person training."
+      },
+      {
+        "prompt": "Chúng ta có lựa chọn thuê chuyên gia hoặc đào tạo nội bộ.",
+        "hints": [
+          "have the option",
+          "or train"
+        ],
+        "answer": "We have the option to hire experts or train internally."
+      },
+      {
+        "prompt": "Khách hàng có lựa chọn thanh toán trực tuyến hoặc chuyển khoản.",
+        "hints": [
+          "have the option",
+          "or by"
+        ],
+        "answer": "Customers have the option to pay online or by bank transfer."
+      },
+      {
+        "prompt": "Bạn có lựa chọn làm việc toàn thời gian hoặc bán thời gian.",
+        "hints": [
+          "have the option",
+          "or part-time"
+        ],
+        "answer": "You have the option to work full-time or part-time."
+      },
+      {
+        "prompt": "Công ty có lựa chọn mở rđộng hoặc tập trung vào chất lượng.",
+        "hints": [
+          "has the option",
+          "or focus"
+        ],
+        "answer": "The company has the option to expand or focus on quality."
+      }
+    ]
+  },
+  {
+    "category": "16. Diễn tả giải pháp thay thế",
+    "title": "Another option is to do A",
+    "formula": "Another option is to + verb",
+    "meaning": "Dùng để đưa ra một lựa chọn khác.",
+    "examples": [
+      {
+        "en": "Another option is to outsource some of the work.",
+        "vi": "Một lựa chọn khác là thuê ngoài một phần công việc."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Một lựa chọn khác là sử dụng công nghệ tự đđộng hóa.",
+        "hints": [
+          "another option",
+          "to use"
+        ],
+        "answer": "Another option is to use automation technology."
+      },
+      {
+        "prompt": "Một lựa chọn khác là đào tạo nhân viên có sẵn.",
+        "hints": [
+          "another option",
+          "to train"
+        ],
+        "answer": "Another option is to train existing employees."
+      },
+      {
+        "prompt": "Một lựa chọn khác là h p tác với đối tác bên ngoài.",
+        "hints": [
+          "another option",
+          "to partner"
+        ],
+        "answer": "Another option is to partner with external partners."
+      },
+      {
+        "prompt": "Một lựa chọn khác là giảm phạm vi dự án.",
+        "hints": [
+          "another option",
+          "to reduce"
+        ],
+        "answer": "Another option is to reduce the project scope."
+      },
+      {
+        "prompt": "Một lựa chọn khác là kéo dài thời gian hoàn thành.",
+        "hints": [
+          "another option",
+          "to extend"
+        ],
+        "answer": "Another option is to extend the completion time."
+      }
+    ]
+  },
+  {
+    "category": "16. Diễn tả giải pháp thay thế",
+    "title": "A can be used for B or C",
+    "formula": "A + can be used for + B + or + C",
+    "meaning": "Dùng để nói A có thể được dùng cho B hoặc C.",
+    "examples": [
+      {
+        "en": "This software can be used for project management or customer tracking.",
+        "vi": "Phần mềm này có thể được dùng cho quản lý dự án hoặc theo dõi khách hàng."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Công cụ này có thể được dùng cho đào tạo hoặc đánh giá nhân viên.",
+        "hints": [
+          "can be used for",
+          "or"
+        ],
+        "answer": "This tool can be used for training or employee evaluation."
+      },
+      {
+        "prompt": "Phòng họp có thể được dùng cho thuyết trình hoặc làm việc nhóm.",
+        "hints": [
+          "can be used for",
+          "or teamwork"
+        ],
+        "answer": "The meeting room can be used for presentations or teamwork."
+      },
+      {
+        "prompt": "Ngân sách này có thể được dùng cho marketing hoặc R&D.",
+        "hints": [
+          "can be used for",
+          "or R&D"
+        ],
+        "answer": "This budget can be used for marketing or R&D."
+      },
+      {
+        "prompt": "Nhân viên có thể được phân công cho dự án A hoặc dự án B.",
+        "hints": [
+          "can be used for",
+          "or project"
+        ],
+        "answer": "Employees can be used for project A or project B."
+      },
+      {
+        "prompt": "Thời gian này có thể được dùng cho đào tạo hoặc phát triển chiến lược.",
+        "hints": [
+          "can be used for",
+          "or strategy"
+        ],
+        "answer": "This time can be used for training or strategy development."
+      }
+    ]
+  },
+  {
+    "category": "17. Diễn đạt điều kiện/Giả định",
+    "title": "If S + V hiện tại đơn, S + can/may/will + V",
+    "formula": "If + subject + present simple, subject + can/may/will + verb",
+    "meaning": "Dùng để nói điều kiện có thể xảy ra ở hiện tại/tương lai.",
+    "examples": [
+      {
+        "en": "If we invest in training, employees will perform better.",
+        "vi": "Nếu chúng ta đầu tư vào đào tạo, nhân viên sẽ làm việc tốt hơn."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Nếu công ty cung cấp giờ linh hoạt, nhân viên sẽ hạnh phúc hơn.",
+        "hints": [
+          "if provides",
+          "will be"
+        ],
+        "answer": "If the company provides flexible hours, employees will be happier."
+      },
+      {
+        "prompt": "Nếu chúng ta cải thiện giao tiếp, chúng ta có thể giải quyết vấn đề nhanh hơn.",
+        "hints": [
+          "if improve",
+          "can solve"
+        ],
+        "answer": "If we improve communication, we can solve problems faster."
+      },
+      {
+        "prompt": "Nếu bạn làm việc chăm chỉ, bạn có thể được thăng tiến.",
+        "hints": [
+          "if work",
+          "may get"
+        ],
+        "answer": "If you work hard, you may get promoted."
+      },
+      {
+        "prompt": "Nếu dự án hoàn thành đúng hạn, khách hàng sẽ hài lòng.",
+        "hints": [
+          "if finishes",
+          "will be"
+        ],
+        "answer": "If the project finishes on time, customers will be satisfied."
+      },
+      {
+        "prompt": "Nếu chúng ta áp dụng công nghệ mới, chúng ta sẽ tiết kiệm thời gian.",
+        "hints": [
+          "if adopt",
+          "will save"
+        ],
+        "answer": "If we adopt new technology, we will save time."
+      }
+    ]
+  },
+  {
+    "category": "17. Diễn đạt điều kiện/Giả định",
+    "title": "If S + V-quá khứ đơn, S + could/might/would + V",
+    "formula": "If + subject + past simple, subject + could/might/would + verb",
+    "meaning": "Dùng để nói điều kiện không có thật ở hiện tại (giả định).",
+    "examples": [
+      {
+        "en": "If I had more time, I would learn another language.",
+        "vi": "Nếu tôi có nhiều thời gian hơn, tôi sẽ học một ngôn ngữ khác."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Nếu công ty có ngân sách lớn hơn, họ có thể thuê thêm nhân viên.",
+        "hints": [
+          "if had",
+          "could hire"
+        ],
+        "answer": "If the company had a bigger budget, they could hire more employees."
+      },
+      {
+        "prompt": "Nếu tôi là quản lý, tôi sẽ cải thiện giao tiếp trong nhóm.",
+        "hints": [
+          "if were",
+          "would improve"
+        ],
+        "answer": "If I were a manager, I would improve team communication."
+      },
+      {
+        "prompt": "Nếu chúng ta có công nghệ tốt hơn, chúng ta có thể làm việc hiệu quả hơn.",
+        "hints": [
+          "if had",
+          "could work"
+        ],
+        "answer": "If we had better technology, we could work more efficiently."
+      },
+      {
+        "prompt": "Nếu nhân viên được đào tạo tốt hơn, họ sẽ mắc ít lỗi hơn.",
+        "hints": [
+          "if were trained",
+          "would make"
+        ],
+        "answer": "If employees were better trained, they would make fewer mistakes."
+      },
+      {
+        "prompt": "Nếu văn phòng rđộng hơn, chúng ta có thể tạo không gian sáng tạo.",
+        "hints": [
+          "if were bigger",
+          "could create"
+        ],
+        "answer": "If the office were bigger, we could create creative spaces."
+      }
+    ]
+  },
+  {
+    "category": "17. Diễn đạt điều kiện/Giả định",
+    "title": "Provided that + S + V, S + V",
+    "formula": "Provided that + subject + verb, subject + verb",
+    "meaning": "Dùng để nói điều kiện (miễn là/với điều kiện là).",
+    "examples": [
+      {
+        "en": "Provided that we meet the deadline, the client will be satisfied.",
+        "vi": "Với điều kiện chúng ta đáp ứng deadline, khách hàng sẽ hài lòng."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Với điều kiện nhân viên hoàn thành đào tạo, họ có thể bắt đầu làm việc.",
+        "hints": [
+          "provided that",
+          "can start"
+        ],
+        "answer": "Provided that employees complete training, they can start working."
+      },
+      {
+        "prompt": "Miễn là chúng ta có ngân sách, chúng ta sẽ mở rđộng nhóm.",
+        "hints": [
+          "provided that",
+          "will expand"
+        ],
+        "answer": "Provided that we have the budget, we will expand the team."
+      },
+      {
+        "prompt": "Với điều kiện dự án thành công, công ty sẽ đầu tư thêm.",
+        "hints": [
+          "provided that",
+          "will invest"
+        ],
+        "answer": "Provided that the project succeeds, the company will invest more."
+      },
+      {
+        "prompt": "Miễn là bạn đạt mục tiêu, bạn sẽ nhận thưởng.",
+        "hints": [
+          "provided that",
+          "will receive"
+        ],
+        "answer": "Provided that you meet targets, you will receive a bonus."
+      },
+      {
+        "prompt": "Với điều kiện thời tiết tốt, cuộc họp sẽ diễn ra ngoài tr i.",
+        "hints": [
+          "provided that",
+          "will be"
+        ],
+        "answer": "Provided that the weather is good, the meeting will be outdoors."
+      }
+    ]
+  },
+  {
+    "category": "17. Diễn đạt điều kiện/Giả định",
+    "title": "Unless + S + V, S + V (phủ định)",
+    "formula": "Unless + subject + verb, subject + verb (negative meaning)",
+    "meaning": "Dùng để nói điều kiện phủ định (trừ khi/nếu không).",
+    "examples": [
+      {
+        "en": "Unless we improve quality, we will lose customers.",
+        "vi": "Trừ khi chúng ta cải thiện chất lượng, chúng ta sẽ mất khách hàng."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Trừ khi chúng ta hành đđộng ngay, chúng ta sẽ bỏ lỡ cơ hội.",
+        "hints": [
+          "unless act",
+          "will miss"
+        ],
+        "answer": "Unless we act now, we will miss the opportunity."
+      },
+      {
+        "prompt": "Trừ khi nhân viên được đào tạo, họ sẽ mắc nhiều lỗi.",
+        "hints": [
+          "unless are trained",
+          "will make"
+        ],
+        "answer": "Unless employees are trained, they will make many mistakes."
+      },
+      {
+        "prompt": "Trừ khi công ty thay đổi, họ sẽ tụt hậu so với đối thủ.",
+        "hints": [
+          "unless changes",
+          "will fall"
+        ],
+        "answer": "Unless the company changes, they will fall behind competitors."
+      },
+      {
+        "prompt": "Trừ khi chúng ta cải thiện giao tiếp, vấn đề sẽ tiếp tục.",
+        "hints": [
+          "unless improve",
+          "will continue"
+        ],
+        "answer": "Unless we improve communication, problems will continue."
+      },
+      {
+        "prompt": "Trừ khi bạn nộp báo cáo đúng hạn, bạn sẽ bị phạt.",
+        "hints": [
+          "unless submit",
+          "will be"
+        ],
+        "answer": "Unless you submit the report on time, you will be penalized."
+      }
+    ]
+  },
+  {
+    "category": "18. Diễn tả tổng kết/Kết luận",
+    "title": "In conclusion,...",
+    "formula": "In conclusion, + clause",
+    "meaning": "Dùng để bắt đầu phần kết luận (trđang trọng).",
+    "examples": [
+      {
+        "en": "In conclusion, effective communication is essential for business success.",
+        "vi": "Tóm lại, giao tiếp hiệu quả là cần thiết cho thành công kinh doanh."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tóm lại, đào tạo là chìa khóa cho sự phát triển nhân viên.",
+        "hints": [
+          "in conclusion",
+          "key to"
+        ],
+        "answer": "In conclusion, training is the key to employee development."
+      },
+      {
+        "prompt": "Tóm lại, công nghệ đã thay đổi cách chúng ta làm việc.",
+        "hints": [
+          "in conclusion",
+          "has changed"
+        ],
+        "answer": "In conclusion, technology has changed how we work."
+      },
+      {
+        "prompt": "Tóm lại, làm việc nhóm mđang lại kết quả tốt hơn.",
+        "hints": [
+          "in conclusion",
+          "brings"
+        ],
+        "answer": "In conclusion, teamwork brings better results."
+      },
+      {
+        "prompt": "Tóm lại, cân bằng cuộc sống quan trọng cho năng suất.",
+        "hints": [
+          "in conclusion",
+          "important for"
+        ],
+        "answer": "In conclusion, work-life balance is important for productivity."
+      },
+      {
+        "prompt": "Tóm lại, đầu tư vào con người là đầu tư thông minh nhất.",
+        "hints": [
+          "in conclusion",
+          "smartest"
+        ],
+        "answer": "In conclusion, investing in people is the smartest investment."
+      }
+    ]
+  },
+  {
+    "category": "18. Diễn tả tổng kết/Kết luận",
+    "title": "To sum up,...",
+    "formula": "To sum up, + clause",
+    "meaning": "Dùng để tóm tắt các điểm chính.",
+    "examples": [
+      {
+        "en": "To sum up, we need to focus on three main areas: training, technology, and teamwork.",
+        "vi": "Tóm lại, chúng ta cần tập trung vào ba lĩnh vực chính: đào tạo, công nghệ và làm việc nhóm."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tóm lại, chúng ta cần cải thiện cả kỹ năng cứng và mềm.",
+        "hints": [
+          "to sum up",
+          "both hard"
+        ],
+        "answer": "To sum up, we need to improve both hard and soft skills."
+      },
+      {
+        "prompt": "Tóm lại, thành công phụ thuộc vào giao tiếp và hợp tác.",
+        "hints": [
+          "to sum up",
+          "depends on"
+        ],
+        "answer": "To sum up, success depends on communication and cooperation."
+      },
+      {
+        "prompt": "Tóm lại, công ty cần đầu tư vào nhân viên và công nghệ.",
+        "hints": [
+          "to sum up",
+          "needs to"
+        ],
+        "answer": "To sum up, the company needs to invest in employees and technology."
+      },
+      {
+        "prompt": "Tóm lại, kế hoạch tốt và thực hiện tốt là chìa khóa.",
+        "hints": [
+          "to sum up",
+          "are the keys"
+        ],
+        "answer": "To sum up, good planning and good execution are the keys."
+      },
+      {
+        "prompt": "Tóm lại, học hỏi liên tục là cần thiết trong thế giới hiện đại.",
+        "hints": [
+          "to sum up",
+          "is necessary"
+        ],
+        "answer": "To sum up, continuous learning is necessary in the modern world."
+      }
+    ]
+  },
+  {
+    "category": "18. Diễn tả tổng kết/Kết luận",
+    "title": "Overall,...",
+    "formula": "Overall, + clause",
+    "meaning": "Dùng để đưa ra đánh giá tổng quan.",
+    "examples": [
+      {
+        "en": "Overall, the project was successful despite some challenges.",
+        "vi": "Nhìn chung, dự án thành công mặc dù có một số thách thức."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Nhìn chung, nhân viên rất hài lòng với chính sách mới.",
+        "hints": [
+          "overall",
+          "very satisfied"
+        ],
+        "answer": "Overall, employees are very satisfied with the new policies."
+      },
+      {
+        "prompt": "Nhìn chung, công nghệ đã cải thiện hiệu quả làm việc.",
+        "hints": [
+          "overall",
+          "has improved"
+        ],
+        "answer": "Overall, technology has improved work efficiency."
+      },
+      {
+        "prompt": "Nhìn chung, chương trình đào tạo rất thành công.",
+        "hints": [
+          "overall",
+          "very successful"
+        ],
+        "answer": "Overall, the training program was very successful."
+      },
+      {
+        "prompt": "Nhìn chung, công ty đđang phát triển theo đúng hướng.",
+        "hints": [
+          "overall",
+          "right direction"
+        ],
+        "answer": "Overall, the company is developing in the right direction."
+      },
+      {
+        "prompt": "Nhìn chung, kết quả vượt quá mong đợi của ch người tôi.",
+        "hints": [
+          "overall",
+          "exceeded"
+        ],
+        "answer": "Overall, the results exceeded our expectations."
+      }
+    ]
+  },
+  {
+    "category": "18. Diễn tả tổng kết/Kết luận",
+    "title": "Therefore, I think...",
+    "formula": "Therefore, I think + clause",
+    "meaning": "Dùng để đưa ra kết luận cá nhân dựa trên lý do trước đó.",
+    "examples": [
+      {
+        "en": "Therefore, I think we should invest more in employee development.",
+        "vi": "Vì vậy, tôi nghĩ chúng ta nên đầu tư nhiều hơn vào phát triển nhân viên."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Vì vậy, tôi nghĩ giao tiếp là kỹ năng quan trọng nhất.",
+        "hints": [
+          "therefore I think",
+          "most important"
+        ],
+        "answer": "Therefore, I think communication is the most important skill."
+      },
+      {
+        "prompt": "Vì vậy, tôi nghĩ chúng ta nên thay đổi chiến lược.",
+        "hints": [
+          "therefore I think",
+          "should change"
+        ],
+        "answer": "Therefore, I think we should change our strategy."
+      },
+      {
+        "prompt": "Vì vậy, tôi nghĩ công nghệ là chìa khóa cho tương lai.",
+        "hints": [
+          "therefore I think",
+          "key to"
+        ],
+        "answer": "Therefore, I think technology is the key to the future."
+      },
+      {
+        "prompt": "Vì vậy, tôi nghĩ làm việc nhóm mđang lại giá trị lớn.",
+        "hints": [
+          "therefore I think",
+          "brings"
+        ],
+        "answer": "Therefore, I think teamwork brings great value."
+      },
+      {
+        "prompt": "Vì vậy, tôi nghĩ chúng ta nên ưu tiên đào tạo nhân viên.",
+        "hints": [
+          "therefore I think",
+          "should prioritize"
+        ],
+        "answer": "Therefore, I think we should prioritize employee training."
+      }
+    ]
+  }
+]

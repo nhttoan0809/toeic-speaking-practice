@@ -13,6 +13,7 @@ export default defineConfig({
         main: 'index.html',
         admin: 'admin.html',
         'speaking-writing': 'speaking-writing.html',
+        'practice-structures': 'practice-structures.html',
       },
     },
   },
