@@ -4,6 +4,8 @@ import { supabase } from '../../lib/supabase';
 import type { Post } from '../../lib/types';
 import HeroBanner from './components/HeroBanner';
 import PostGrid from './components/PostGrid';
+import TestimonialSection from './components/TestimonialSection';
+import ContactSection from './components/ContactSection';
 
 export default function Home() {
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
@@ -68,6 +70,9 @@ export default function Home() {
           setIsModalOpen(false);
         }}
       />
+
+      <TestimonialSection />
+      <ContactSection />
     </div>
   );
 }

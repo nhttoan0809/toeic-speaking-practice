@@ -45,7 +45,7 @@ export default function SpeakingWriting() {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <div className="w-full flex bg-slate-50 font-sans selection:bg-primary/20">
         <Sidebar activeSection={activeSection} onSectionChange={handleSectionChange} />
 
