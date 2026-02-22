@@ -411,7 +411,7 @@ export default function AdminDashboard() {
                 }
                 setIsModalOpen(true);
               }}
-              className="w-full sm:w-auto bg-primary text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary-dark transition-all shadow-lg text-sm md:text-base"
+              className="w-full sm:w-auto bg-primary text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary-dark transition-all shadow-lg text-sm md:text-base cursor-pointer"
             >
               <Plus size={20} /> Thêm mới
             </button>
@@ -521,7 +521,7 @@ export default function AdminDashboard() {
                             setSelectedFile(null);
                             setIsModalOpen(true);
                           }}
-                          className="p-2 text-slate-400 hover:text-primary transition-colors"
+                          className="p-2 text-slate-400 hover:text-primary transition-colors cursor-pointer"
                         >
                           <Edit2 size={18} />
                         </button>
@@ -529,7 +529,7 @@ export default function AdminDashboard() {
                           onClick={() => {
                             void handleDelete(item.id);
                           }}
-                          className="p-2 text-slate-400 hover:text-red-500 transition-colors"
+                          className="p-2 text-slate-400 hover:text-red-500 transition-colors cursor-pointer"
                         >
                           <Trash2 size={18} />
                         </button>
@@ -789,14 +789,14 @@ export default function AdminDashboard() {
                   onClick={() => {
                     setIsModalOpen(false);
                   }}
-                  className="flex-1 bg-slate-100 text-slate-600 font-bold py-3.5 rounded-xl hover:bg-slate-200 transition-all"
+                  className="flex-1 bg-slate-100 text-slate-600 font-bold py-3.5 rounded-xl hover:bg-slate-200 transition-all cursor-pointer"
                 >
                   Hủy
                 </button>
                 <button
                   type="submit"
                   disabled={uploadProgress}
-                  className="flex-1 bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary-dark transition-all shadow-lg disabled:opacity-50"
+                  className="flex-1 bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary-dark transition-all shadow-lg cursor-pointer disabled:opacity-50"
                 >
                   {uploadProgress ? 'Đang lưu...' : 'Lưu lại'}
                 </button>
