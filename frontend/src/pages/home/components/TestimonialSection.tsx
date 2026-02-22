@@ -1,52 +1,33 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Maximize2, X } from 'lucide-react';
-import chatMessenger from '../../../assets/testimonials/chat-messenger.png';
-import chatZalo from '../../../assets/testimonials/chat-zalo.png';
-import fbPost from '../../../assets/testimonials/fb-post.png';
-import scoreReport from '../../../assets/testimonials/score-report.png';
-
-interface Testimonial {
-  id: number;
-  image: string;
-  title: string;
-  subtitle: string;
-  delay: number;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    image: chatMessenger,
-    title: 'Tin nhắn từ học viên',
-    subtitle: 'Vượt target ngoạn mục',
-    delay: 0.1,
-  },
-  {
-    id: 2,
-    image: fbPost,
-    title: 'Chia sẻ từ học viên',
-    subtitle: 'Hành trình chinh phục TOEIC',
-    delay: 0.2,
-  },
-  {
-    id: 3,
-    image: chatZalo,
-    title: 'Lời cảm ơn từ phụ huynh',
-    subtitle: 'Sự tận tâm của cô Luyến',
-    delay: 0.3,
-  },
-  {
-    id: 4,
-    image: scoreReport,
-    title: 'Bảng điểm thực tế',
-    subtitle: 'Kết quả xứng đáng',
-    delay: 0.4,
-  },
-];
+import { supabase } from '../../../lib/supabase';
+import type { Testimonial } from '../../../lib/types';
 
 export default function TestimonialSection() {
   const [selectedItem, setSelectedItem] = useState<Testimonial | null>(null);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('testimonials')
+          .select('*')
+          .order('created_at', { ascending: true });
+
+        if (error) throw error;
+        setTestimonials(data);
+      } catch (error) {
+        console.error('Error fetching testimonials:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    void fetchTestimonials();
+  }, []);
 
   // Prevent scrolling when lightbox is open
   useEffect(() => {
@@ -92,53 +73,59 @@ export default function TestimonialSection() {
         </motion.p>
       </div>
 
-      <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-        {testimonials.map((item) => (
-          <motion.div
-            key={item.id}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: item.delay }}
-            onClick={() => {
-              setSelectedItem(item);
-            }}
-            className="break-inside-avoid mb-6 group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 cursor-pointer"
-          >
-            {/* Hover Indicator */}
-            <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="p-2 bg-white/20 backdrop-blur-md rounded-full text-white border border-white/30">
-                <Maximize2 className="w-5 h-5" />
-              </div>
-            </div>
-
-            {/* Smooth Backdrop Blur with Mask */}
-            <div
-              className="absolute inset-x-0 bottom-0 z-10 h-1/2 backdrop-blur-xs pointer-events-none"
-              style={{
-                maskImage: 'linear-gradient(to top, black, transparent)',
-                WebkitMaskImage: 'linear-gradient(to top, black, transparent)',
+      {loading ? (
+        <div className="flex justify-center py-20">
+          <div className="animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent"></div>
+        </div>
+      ) : (
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+          {testimonials.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: (item.delay ?? 0.1) * ((index % 3) + 1) }}
+              onClick={() => {
+                setSelectedItem(item);
               }}
-            />
+              className="break-inside-avoid mb-6 group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 cursor-pointer"
+            >
+              {/* Hover Indicator */}
+              <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="p-2 bg-white/20 backdrop-blur-md rounded-full text-white border border-white/30">
+                  <Maximize2 className="w-5 h-5" />
+                </div>
+              </div>
 
-            {/* Content Overlay with enhanced contrast */}
-            <div className="absolute inset-x-0 bottom-0 z-20 p-6 pt-12 bg-linear-to-t from-slate-900/90 via-slate-900/40 to-transparent transition-all duration-500">
-              <p className="text-white/70 text-sm font-medium mb-1 drop-shadow-md">
-                {item.subtitle}
-              </p>
-              <h3 className="text-white text-xl font-bold group-hover:text-primary transition-colors drop-shadow-lg">
-                {item.title}
-              </h3>
-            </div>
+              {/* Smooth Backdrop Blur with Mask */}
+              <div
+                className="absolute inset-x-0 bottom-0 z-10 h-1/2 backdrop-blur-xs pointer-events-none"
+                style={{
+                  maskImage: 'linear-gradient(to top, black, transparent)',
+                  WebkitMaskImage: 'linear-gradient(to top, black, transparent)',
+                }}
+              />
 
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-          </motion.div>
-        ))}
-      </div>
+              {/* Content Overlay with enhanced contrast */}
+              <div className="absolute inset-x-0 bottom-0 z-20 p-6 pt-12 bg-linear-to-t from-slate-900/90 via-slate-900/40 to-transparent transition-all duration-500">
+                <p className="text-white/70 text-sm font-medium mb-1 drop-shadow-md">
+                  {item.subtitle}
+                </p>
+                <h3 className="text-white text-xl font-bold group-hover:text-primary transition-colors drop-shadow-lg">
+                  {item.title}
+                </h3>
+              </div>
+
+              <img
+                src={item.image_url}
+                alt={item.title}
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </motion.div>
+          ))}
+        </div>
+      )}
 
       {/* Lightbox Modal */}
       <AnimatePresence>
@@ -171,7 +158,7 @@ export default function TestimonialSection() {
 
               <div className="w-full overflow-hidden rounded-3xl shadow-2xl bg-white/5 border border-white/10">
                 <img
-                  src={selectedItem.image}
+                  src={selectedItem.image_url}
                   alt={selectedItem.title}
                   className="w-full h-auto max-h-[80vh] object-contain mx-auto"
                 />

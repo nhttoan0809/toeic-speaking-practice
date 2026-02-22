@@ -1,11 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../../lib/supabase';
-import type { Banner, Post } from '../../lib/types';
+import type { Banner, Post, Testimonial, Contact } from '../../lib/types';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Image,
   FileText,
+  MessageSquare,
+  Share2,
   LogOut,
   Plus,
   Trash2,
@@ -18,34 +20,65 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 export default function AdminDashboard() {
-  const [activeTab, setActiveTab] = useState<'banners' | 'posts'>('banners');
+  const [activeTab, setActiveTab] = useState<'banners' | 'posts' | 'testimonials' | 'contacts'>(
+    'banners',
+  );
   const [banners, setBanners] = useState<Banner[]>([]);
   const [posts, setPosts] = useState<Post[]>([]);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [contacts, setContacts] = useState<Contact[]>([]);
   const [loading, setLoading] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   // Modal/Form states
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editingItem, setEditingItem] = useState<Banner | Post | null>(null);
-  const [formData, setFormData] = useState<Banner | Post | null>(null);
+  const [editingItem, setEditingItem] = useState<Banner | Post | Testimonial | Contact | null>(
+    null,
+  );
+  const [formData, setFormData] = useState<Banner | Post | Testimonial | Contact | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [uploadProgress, setUploadProgress] = useState(false);
 
   const fetchData = useCallback(async () => {
     setLoading(true);
-    if (activeTab === 'banners') {
-      const { data } = await supabase
-        .from('banners')
-        .select('*')
-        .order('created_at', { ascending: false });
-      setBanners(data ?? []);
-    } else {
-      const { data } = await supabase
-        .from('posts')
-        .select('*')
-        .order('created_at', { ascending: false });
-      setPosts(data ?? []);
+    try {
+      switch (activeTab) {
+        case 'banners': {
+          const { data } = await supabase
+            .from('banners')
+            .select('*')
+            .order('created_at', { ascending: false });
+          setBanners(data ?? []);
+          break;
+        }
+        case 'posts': {
+          const { data } = await supabase
+            .from('posts')
+            .select('*')
+            .order('created_at', { ascending: false });
+          setPosts(data ?? []);
+          break;
+        }
+        case 'testimonials': {
+          const { data } = await supabase
+            .from('testimonials')
+            .select('*')
+            .order('created_at', { ascending: false });
+          setTestimonials(data ?? []);
+          break;
+        }
+        case 'contacts': {
+          const { data } = await supabase
+            .from('contacts')
+            .select('*')
+            .order('created_at', { ascending: false });
+          setContacts(data ?? []);
+          break;
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
     setLoading(false);
   }, [activeTab]);
@@ -65,11 +98,11 @@ export default function AdminDashboard() {
 
     if (formData === null) return;
 
-    // Validation for posts: must have an image (either existing or newly selected)
-    if (activeTab === 'posts') {
-      const postData = formData as Post;
-      if (!selectedFile && !postData.image_url) {
-        alert('Vui lòng chọn hình ảnh cho bài viết.');
+    // Validation for posts/testimonials: must have an image
+    if (activeTab === 'posts' || activeTab === 'testimonials') {
+      const itemData = formData as Post | Testimonial;
+      if (!selectedFile && !itemData.image_url) {
+        alert('Vui lòng chọn hình ảnh.');
         return;
       }
     }
@@ -80,23 +113,26 @@ export default function AdminDashboard() {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { id, created_at, ...saveData } = formData;
 
-      // Handle image upload for posts
-      if (activeTab === 'posts' && selectedFile) {
+      // Handle image upload for posts and testimonials
+      if ((activeTab === 'posts' || activeTab === 'testimonials') && selectedFile) {
+        const bucket = activeTab === 'posts' ? 'posts' : 'testimonials';
         const fileExt = selectedFile.name.split('.').pop();
         const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
-        const filePath = `post-images/${fileName}`;
+        const folder = activeTab === 'posts' ? 'post-images' : 'testimonial-images';
+        const filePath = `${folder}/${fileName}`;
 
         const { error: uploadError } = await supabase.storage
-          .from('posts')
+          .from(bucket)
           .upload(filePath, selectedFile);
 
         if (uploadError) throw uploadError;
 
-        const { data } = supabase.storage.from('posts').getPublicUrl(filePath);
-        (saveData as Post).image_url = data.publicUrl;
-
-        // If editing and has old image, we could delete it here, but let's keep it simple
-        // and just update the database record. Cleanup could be managed separately.
+        const { data } = supabase.storage.from(bucket).getPublicUrl(filePath);
+        if (activeTab === 'posts') {
+          (saveData as Post).image_url = data.publicUrl;
+        } else {
+          (saveData as Testimonial).image_url = data.publicUrl;
+        }
       }
 
       if (editingItem) {
@@ -120,25 +156,20 @@ export default function AdminDashboard() {
     }
   };
 
-  const deleteStorageImage = async (imageUrl: string) => {
-    try {
-      if (!imageUrl.includes('/storage/v1/object/public/posts/')) return;
-      const filePath = imageUrl.split('/storage/v1/object/public/posts/').pop();
-      if (filePath) {
-        await supabase.storage.from('posts').remove([filePath]);
-      }
-    } catch (error) {
-      console.error('Error deleting image from storage:', error);
-    }
-  };
-
   const handleDelete = async (id: number) => {
     if (window.confirm('Bạn có chắc chắn muốn xóa?')) {
-      // For posts, we need to delete the image from storage first
-      if (activeTab === 'posts') {
-        const post = posts.find((p) => p.id === id);
-        if (post?.image_url) {
-          await deleteStorageImage(post.image_url);
+      // For posts and testimonials, we need to delete the image from storage first
+      if (activeTab === 'posts' || activeTab === 'testimonials') {
+        const item = (activeTab === 'posts' ? posts : testimonials).find((p) => p.id === id);
+        if (item?.image_url) {
+          const bucket = activeTab === 'posts' ? 'posts' : 'testimonials';
+          const indicator = `/storage/v1/object/public/${bucket}/`;
+          if (item.image_url.includes(indicator)) {
+            const filePath = item.image_url.split(indicator).pop();
+            if (filePath) {
+              await supabase.storage.from(bucket).remove([filePath]);
+            }
+          }
         }
       }
 
@@ -239,6 +270,32 @@ export default function AdminDashboard() {
                   >
                     <FileText size={20} /> Posts
                   </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab('testimonials');
+                      setIsSidebarOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all cursor-pointer ${
+                      activeTab === 'testimonials'
+                        ? 'bg-primary text-white shadow-lg shadow-teal-200/50'
+                        : 'text-slate-600 hover:bg-slate-50'
+                    }`}
+                  >
+                    <MessageSquare size={20} /> Testimonials
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab('contacts');
+                      setIsSidebarOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all cursor-pointer ${
+                      activeTab === 'contacts'
+                        ? 'bg-primary text-white shadow-lg shadow-teal-200/50'
+                        : 'text-slate-600 hover:bg-slate-50'
+                    }`}
+                  >
+                    <Share2 size={20} /> Contacts
+                  </button>
                 </nav>
                 <div className="p-4 mt-auto">
                   <button
@@ -285,6 +342,30 @@ export default function AdminDashboard() {
           >
             <FileText size={20} /> Posts
           </button>
+          <button
+            onClick={() => {
+              setActiveTab('testimonials');
+            }}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all cursor-pointer ${
+              activeTab === 'testimonials'
+                ? 'bg-primary text-white shadow-lg shadow-teal-200/50'
+                : 'text-slate-600 hover:bg-slate-50'
+            }`}
+          >
+            <MessageSquare size={20} /> Testimonials
+          </button>
+          <button
+            onClick={() => {
+              setActiveTab('contacts');
+            }}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all cursor-pointer ${
+              activeTab === 'contacts'
+                ? 'bg-primary text-white shadow-lg shadow-teal-200/50'
+                : 'text-slate-600 hover:bg-slate-50'
+            }`}
+          >
+            <Share2 size={20} /> Contacts
+          </button>
         </nav>
         <div className="p-4 mt-auto">
           <button
@@ -309,8 +390,24 @@ export default function AdminDashboard() {
                 setSelectedFile(null);
                 if (activeTab === 'banners') {
                   setFormData({ text: '', is_active: true } as Banner);
-                } else {
+                } else if (activeTab === 'posts') {
                   setFormData({ image_url: '', content: '', link: '' } as Post);
+                } else if (activeTab === 'testimonials') {
+                  setFormData({
+                    image_url: '',
+                    title: '',
+                    subtitle: '',
+                    delay: 0.1,
+                  } as Testimonial);
+                } else {
+                  setFormData({
+                    platform_id: 'fanpage',
+                    name: '',
+                    label: '',
+                    description: '',
+                    link: '',
+                    delay: 0.1,
+                  } as Contact);
                 }
                 setIsModalOpen(true);
               }}
@@ -332,17 +429,34 @@ export default function AdminDashboard() {
                     <th className="px-4 md:px-6 py-4">ID</th>
                     {activeTab === 'banners' ? (
                       <th className="px-4 md:px-6 py-4">Nội dung Slogan</th>
-                    ) : (
+                    ) : activeTab === 'posts' ? (
                       <>
                         <th className="px-4 md:px-6 py-4">Thumbnail</th>
                         <th className="px-4 md:px-6 py-4">Nội dung</th>
+                      </>
+                    ) : activeTab === 'testimonials' ? (
+                      <>
+                        <th className="px-4 md:px-6 py-4">Ảnh</th>
+                        <th className="px-4 md:px-6 py-4">Tiêu đề / Phụ đề</th>
+                      </>
+                    ) : (
+                      <>
+                        <th className="px-4 md:px-6 py-4">Nền tảng</th>
+                        <th className="px-4 md:px-6 py-4">Tên / Nhãn</th>
                       </>
                     )}
                     <th className="px-4 md:px-6 py-4 text-right">Thao tác</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
-                  {(activeTab === 'banners' ? banners : posts).map((item) => (
+                  {(activeTab === 'banners'
+                    ? banners
+                    : activeTab === 'posts'
+                      ? posts
+                      : activeTab === 'testimonials'
+                        ? testimonials
+                        : contacts
+                  ).map((item) => (
                     <tr key={item.id} className="hover:bg-slate-50/50 transition-colors">
                       <td className="px-4 md:px-6 py-4 font-medium text-slate-400 text-sm">
                         #{item.id}
@@ -351,7 +465,7 @@ export default function AdminDashboard() {
                         <td className="px-4 md:px-6 py-4 font-medium text-slate-700 text-sm md:text-base whitespace-normal wrap-break-word">
                           {(item as Banner).text}
                         </td>
-                      ) : (
+                      ) : activeTab === 'posts' ? (
                         <>
                           <td className="px-4 md:px-6 py-4">
                             <img
@@ -362,6 +476,39 @@ export default function AdminDashboard() {
                           <td className="px-4 md:px-6 py-4">
                             <div className="max-w-[150px] md:max-w-xs truncate text-slate-600 text-sm md:text-base">
                               {(item as Post).content}
+                            </div>
+                          </td>
+                        </>
+                      ) : activeTab === 'testimonials' ? (
+                        <>
+                          <td className="px-4 md:px-6 py-4">
+                            <img
+                              src={(item as Testimonial).image_url}
+                              className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover bg-slate-100"
+                            />
+                          </td>
+                          <td className="px-4 md:px-6 py-4">
+                            <div className="text-sm md:text-base font-bold text-slate-700">
+                              {(item as Testimonial).title}
+                            </div>
+                            <div className="text-xs text-slate-400 font-medium">
+                              {(item as Testimonial).subtitle}
+                            </div>
+                          </td>
+                        </>
+                      ) : (
+                        <>
+                          <td className="px-4 md:px-6 py-4">
+                            <span className="capitalize text-sm font-bold text-primary">
+                              {(item as Contact).platform_id}
+                            </span>
+                          </td>
+                          <td className="px-4 md:px-6 py-4">
+                            <div className="text-sm md:text-base font-bold text-slate-700">
+                              {(item as Contact).name}
+                            </div>
+                            <div className="text-xs text-slate-400 font-medium">
+                              {(item as Contact).label}
                             </div>
                           </td>
                         </>
@@ -401,7 +548,14 @@ export default function AdminDashboard() {
         <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 border border-slate-100">
             <h3 className="text-2xl font-black text-slate-800 mb-6">
-              {editingItem ? 'Chỉnh sửa' : 'Thêm mới'} {activeTab === 'banners' ? 'Banner' : 'Post'}
+              {editingItem ? 'Chỉnh sửa' : 'Thêm mới'}{' '}
+              {activeTab === 'banners'
+                ? 'Banner'
+                : activeTab === 'posts'
+                  ? 'Post'
+                  : activeTab === 'testimonials'
+                    ? 'Testimonial'
+                    : 'Contact'}
             </h3>
             <form
               onSubmit={(e) => {
@@ -422,18 +576,18 @@ export default function AdminDashboard() {
                     required
                   />
                 </div>
-              ) : (
+              ) : activeTab === 'posts' || activeTab === 'testimonials' ? (
                 <>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">Hình ảnh</label>
                     <div className="space-y-4">
-                      {(formData as Post).image_url || selectedFile ? (
+                      {(formData as Post | Testimonial).image_url || selectedFile ? (
                         <div className="relative group w-full aspect-video rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
                           <img
                             src={
                               selectedFile
                                 ? URL.createObjectURL(selectedFile)
-                                : (formData as Post).image_url
+                                : (formData as Post | Testimonial).image_url
                             }
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             alt="Preview"
@@ -490,31 +644,141 @@ export default function AdminDashboard() {
                       )}
                     </div>
                   </div>
+                  {activeTab === 'posts' ? (
+                    <>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 mb-2">
+                          Nội dung bài viết
+                        </label>
+                        <textarea
+                          value={(formData as Post).content || ''}
+                          onChange={(e) => {
+                            setFormData({ ...formData, content: e.target.value } as Post);
+                          }}
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                          rows={5}
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 mb-2">
+                          External Link (FB...)
+                        </label>
+                        <input
+                          type="text"
+                          value={(formData as Post).link || ''}
+                          onChange={(e) => {
+                            setFormData({ ...formData, link: e.target.value } as Post);
+                          }}
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 mb-2">
+                          Tiêu đề
+                        </label>
+                        <input
+                          type="text"
+                          value={(formData as Testimonial).title || ''}
+                          onChange={(e) => {
+                            setFormData({ ...formData, title: e.target.value } as Testimonial);
+                          }}
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 mb-2">
+                          Phụ đề (Subtitle)
+                        </label>
+                        <input
+                          type="text"
+                          value={(formData as Testimonial).subtitle || ''}
+                          onChange={(e) => {
+                            setFormData({ ...formData, subtitle: e.target.value } as Testimonial);
+                          }}
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                          required
+                        />
+                      </div>
+                    </>
+                  )}
+                </>
+              ) : (
+                <>
                   <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">
-                      Nội dung bài viết
-                    </label>
-                    <textarea
-                      value={(formData as Post).content || ''}
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Nền tảng</label>
+                    <select
+                      value={(formData as Contact).platform_id}
                       onChange={(e) => {
-                        setFormData({ ...formData, content: e.target.value } as Post);
+                        setFormData({
+                          ...formData,
+                          platform_id: e.target.value as Contact['platform_id'],
+                        } as Contact);
                       }}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
-                      rows={5}
+                    >
+                      <option value="fanpage">Fanpage</option>
+                      <option value="tiktok">TikTok</option>
+                      <option value="facebook">Facebook Personal</option>
+                      <option value="youtube">YouTube</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 mb-2">
+                      Tên hiển thị
+                    </label>
+                    <input
+                      type="text"
+                      value={(formData as Contact).name || ''}
+                      onChange={(e) => {
+                        setFormData({ ...formData, name: e.target.value } as Contact);
+                      }}
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
                       required
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">
-                      External Link (FB...)
+                      Label (@...)
                     </label>
                     <input
                       type="text"
-                      value={(formData as Post).link || ''}
+                      value={(formData as Contact).label || ''}
                       onChange={(e) => {
-                        setFormData({ ...formData, link: e.target.value } as Post);
+                        setFormData({ ...formData, label: e.target.value } as Contact);
                       }}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Mô tả</label>
+                    <textarea
+                      value={(formData as Contact).description || ''}
+                      onChange={(e) => {
+                        setFormData({ ...formData, description: e.target.value } as Contact);
+                      }}
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      rows={2}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 mb-2">
+                      Link liên kết
+                    </label>
+                    <input
+                      type="text"
+                      value={(formData as Contact).link || ''}
+                      onChange={(e) => {
+                        setFormData({ ...formData, link: e.target.value } as Contact);
+                      }}
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      required
                     />
                   </div>
                 </>

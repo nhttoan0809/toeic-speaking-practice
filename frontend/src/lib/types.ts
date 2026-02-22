@@ -13,6 +13,26 @@ export interface Post {
   created_at: string;
 }
 
+export interface Testimonial {
+  id: number;
+  image_url: string;
+  title: string;
+  subtitle: string;
+  delay?: number;
+  created_at?: string;
+}
+
+export interface Contact {
+  id: number;
+  platform_id: 'fanpage' | 'tiktok' | 'facebook' | 'youtube';
+  name: string;
+  label: string;
+  description: string;
+  link: string;
+  delay?: number;
+  created_at?: string;
+}
+
 export interface AuthState {
   isAdmin: boolean;
   username: string | null;
