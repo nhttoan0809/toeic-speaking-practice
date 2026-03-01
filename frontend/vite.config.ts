@@ -12,7 +12,8 @@ export default defineConfig({
       input: {
         main: 'index.html',
         admin: 'admin.html',
-        'speaking-writing': 'speaking-writing.html',
+        sw: 'speaking-writing.html',
+        'speaking-club': 'speaking-club.html',
       },
     },
   },
