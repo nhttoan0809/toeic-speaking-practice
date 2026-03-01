@@ -22,6 +22,11 @@ export default function Header() {
 
   const navLinks = [
     {
+      name: 'Speaking Club',
+      path: '/toeic-speaking-practice/speaking-club',
+      type: 'internal',
+    },
+    {
       name: 'Speaking & Writing',
       path: '/toeic-speaking-practice/speaking-writing',
       type: 'internal',

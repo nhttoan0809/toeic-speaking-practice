@@ -9,6 +9,8 @@
     "build": "tsc -b && vite build",
     "lint:check": "eslint .",
     "lint:fix": "eslint . --fix",
+    "type-check": "tsc -p tsconfig.app.json --noEmit",
+    "check": "npm run type-check && npm run lint:check",
     "format:check": "prettier . --check",
     "format:fix": "prettier --write .",
     "preview": "vite preview",

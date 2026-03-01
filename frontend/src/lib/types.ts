@@ -37,3 +37,27 @@ export interface AuthState {
   isAdmin: boolean;
   username: string | null;
 }
+
+export interface TimelineEvent {
+  time: string;
+  activity: string;
+  description?: string;
+}
+
+export interface ResourceLink {
+  label: string;
+  url: string;
+}
+
+export type AdminTab = 'banners' | 'posts' | 'testimonials' | 'contacts' | 'speaking-club';
+
+export interface SpeakingClubPost {
+  id: number;
+  week_number: number;
+  title: string;
+  description: string;
+  timeline: TimelineEvent[];
+  resources: ResourceLink[];
+  images: string[];
+  created_at: string;
+}
