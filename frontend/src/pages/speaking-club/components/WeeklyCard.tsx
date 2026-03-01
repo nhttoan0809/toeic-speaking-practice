@@ -20,14 +20,24 @@ export default function WeeklyCard({ post, index }: WeeklyCardProps) {
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left Side: Images & Info */}
         <div className="p-8 border-r border-slate-50">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="px-4 py-1.5 rounded-full bg-accent text-white font-bold text-sm">
-              Tuần {post.week_number}
-            </span>
-            <span className="text-slate-400 text-sm flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
-              {new Date(post.created_at).toLocaleDateString('vi-VN')}
-            </span>
+          <div className="flex flex-col gap-2 mb-6">
+            <div className="flex items-center gap-3">
+              <span className="px-4 py-1.5 rounded-full bg-accent text-white font-bold text-sm">
+                Tuần {post.week_number}
+              </span>
+              {post.session_start_time && (
+                <div className="text-primary text-sm font-bold flex items-center gap-1 bg-primary/5 w-fit px-3 py-1.5 rounded-lg border border-primary/10">
+                  <Calendar className="w-4 h-4" />
+                  Ngày bắt đầu: {new Date(post.session_start_time).toLocaleDateString('vi-VN')}
+                </div>
+              )}
+            </div>
+            {/* {post.session_start_time && (
+              <div className="text-primary text-sm font-bold flex items-center gap-1 bg-primary/5 w-fit px-3 py-1.5 rounded-lg border border-primary/10">
+                <Calendar className="w-4 h-4" />
+                Ngày bắt đầu: {new Date(post.session_start_time).toLocaleDateString('vi-VN')}
+              </div>
+            )} */}
           </div>
 
           <h2 className="text-2xl md:text-3xl font-black text-slate-800 mb-4">{post.title}</h2>

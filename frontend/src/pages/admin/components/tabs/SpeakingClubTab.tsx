@@ -74,6 +74,7 @@ export default function SpeakingClubTab() {
         week_number: 1,
         title: '',
         description: '',
+        session_start_time: '',
         timeline: [],
         resources: [],
         images: [],
@@ -214,6 +215,25 @@ export default function SpeakingClubTab() {
               />
             </div>
             <div className="sm:col-span-3">
+              <label className="block text-sm font-bold text-slate-700 mb-2">Ngày bắt đầu</label>
+              <input
+                type="date"
+                value={
+                  formData.session_start_time
+                    ? new Date(formData.session_start_time).toISOString().split('T')[0]
+                    : ''
+                }
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setFormData({
+                    ...formData,
+                    session_start_time: val ? new Date(val).toISOString() : '',
+                  });
+                }}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 font-bold text-slate-800"
+              />
+            </div>
+            <div className="sm:col-span-4">
               <label className="block text-sm font-bold text-slate-700 mb-2">
                 Tiêu đề buổi học
               </label>

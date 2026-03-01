@@ -23,7 +23,7 @@ export default function UpcomingSessionCard() {
 
         <div>
           <h3 className="text-2xl font-black text-slate-800 mb-2">
-            Buổi học tiếp theo đang được chuẩn bị!
+            Các buổi học tiếp theo đang được chuẩn bị!
           </h3>
           <p className="text-slate-500">
             Chúng mình đang lên kế hoạch cho những hoạt động bùng nổ nhất. Theo dõi Fanpage để không

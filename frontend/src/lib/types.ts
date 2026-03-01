@@ -59,5 +59,6 @@ export interface SpeakingClubPost {
   timeline: TimelineEvent[];
   resources: ResourceLink[];
   images: string[];
+  session_start_time?: string;
   created_at: string;
 }
